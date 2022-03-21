@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="olH-kV-R9r">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="Home" id="atz-hz-6G5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" selectedImage="house.fill" id="7gi-hI-ppn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IfW-pF-VNB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901" y="463"/>
+        </scene>
+        <!--Record-->
+        <scene sceneID="3Io-pM-jIN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Record" referencedIdentifier="Record" id="HvD-Jy-fpO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="기록" image="person" catalog="system" selectedImage="person.fill" id="NBZ-PF-CpQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYu-od-lg1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1401" y="463"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="Nw1-uW-zv5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Map" referencedIdentifier="Map" id="mEq-Ye-eGw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="지도" image="map" catalog="system" selectedImage="map.fill" id="8Wg-sz-BID"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4S6-8N-dxO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="463"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="c96-DK-nqq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="Search" id="EAu-D1-hV1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="둘러보기" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="VaW-xw-qRR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VXy-kY-f3I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082" y="463"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="XPx-KM-Na4">
+            <objects>
+                <tabBarController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="7s8-OT-vlV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2vj-1M-HLp">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="atz-hz-6G5" kind="relationship" relationship="viewControllers" id="9Yj-LY-Ugd"/>
+		       <segue destination="EAu-D1-hV1" kind="relationship" relationship="viewControllers" id="yB8-T5-OXW"/>
+                        <segue destination="mEq-Ye-eGw" kind="relationship" relationship="viewControllers" id="5pu-dp-yQI"/>
+		       <segue destination="HvD-Jy-fpO" kind="relationship" relationship="viewControllers" id="tY6-WR-Al6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ac1-0G-gsA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1154" y="-11"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+    </resources>
+</document>

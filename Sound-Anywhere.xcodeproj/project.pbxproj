@@ -10,22 +10,79 @@
 		7FB0BEC2BDF41BD08AF91954 /* Pods_Sound_Anywhere.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5844E77307A1BB36C6D5AF8 /* Pods_Sound_Anywhere.framework */; };
 		B45164C427E8C81100347409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C327E8C81100347409 /* AppDelegate.swift */; };
 		B45164C627E8C81100347409 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C527E8C81100347409 /* SceneDelegate.swift */; };
-		B45164C827E8C81100347409 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C727E8C81100347409 /* ViewController.swift */; };
-		B45164CB27E8C81100347409 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45164C927E8C81100347409 /* Main.storyboard */; };
 		B45164CD27E8C81300347409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45164CC27E8C81300347409 /* Assets.xcassets */; };
 		B45164D027E8C81300347409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45164CE27E8C81300347409 /* LaunchScreen.storyboard */; };
+		B4775A6527E8D9BB00425734 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A6427E8D9AE00425734 /* Presentation.framework */; };
+		B4775A6627E8D9BB00425734 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A6427E8D9AE00425734 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4775A9E27E8DA9600425734 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A9627E8DA7F00425734 /* Domain.framework */; };
+		B4775A9F27E8DA9600425734 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A9627E8DA7F00425734 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4775AA027E8DA9B00425734 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A9D27E8DA8D00425734 /* Data.framework */; };
+		B4775AA127E8DA9B00425734 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A9D27E8DA8D00425734 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4775AD427E8DC0A00425734 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775AC227E8DB7700425734 /* Common.framework */; };
+		B4775AD527E8DC0A00425734 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4775AC227E8DB7700425734 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B4775A6327E8D9AE00425734 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4775A5F27E8D9AE00425734 /* Presentation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B47759A327E8D73C00425734;
+			remoteInfo = Presentation;
+		};
+		B4775A9527E8DA7F00425734 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4775A9127E8DA7F00425734 /* Domain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4775A7227E8DA2B00425734;
+			remoteInfo = Domain;
+		};
+		B4775A9C27E8DA8D00425734 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4775A9827E8DA8D00425734 /* Data.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4775A8627E8DA6500425734;
+			remoteInfo = Data;
+		};
+		B4775AC127E8DB7700425734 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4775ABD27E8DB7700425734 /* Common.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4775AB027E8DB5A00425734;
+			remoteInfo = Common;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B4775A6727E8D9BB00425734 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B4775AA127E8DA9B00425734 /* Data.framework in Embed Frameworks */,
+				B4775AD527E8DC0A00425734 /* Common.framework in Embed Frameworks */,
+				B4775A9F27E8DA9600425734 /* Domain.framework in Embed Frameworks */,
+				B4775A6627E8D9BB00425734 /* Presentation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		89F9D2C91305C3EFF47AB391 /* Pods-Sound-Anywhere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound-Anywhere.release.xcconfig"; path = "Target Support Files/Pods-Sound-Anywhere/Pods-Sound-Anywhere.release.xcconfig"; sourceTree = "<group>"; };
 		B45164C027E8C81100347409 /* Sound-Anywhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound-Anywhere.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45164C327E8C81100347409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B45164C527E8C81100347409 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B45164C727E8C81100347409 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B45164CA27E8C81100347409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B45164CC27E8C81300347409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B45164CF27E8C81300347409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B45164D127E8C81300347409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B47758A027E8D01700425734 /* Sound-Anywhere.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sound-Anywhere.entitlements"; sourceTree = "<group>"; };
+		B4775A5F27E8D9AE00425734 /* Presentation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Presentation.xcodeproj; path = Presentation/Presentation.xcodeproj; sourceTree = "<group>"; };
+		B4775A9127E8DA7F00425734 /* Domain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Domain.xcodeproj; path = Domain/Domain.xcodeproj; sourceTree = "<group>"; };
+		B4775A9827E8DA8D00425734 /* Data.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Data.xcodeproj; path = Data/Data.xcodeproj; sourceTree = "<group>"; };
+		B4775ABD27E8DB7700425734 /* Common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Common.xcodeproj; path = Common/Common.xcodeproj; sourceTree = "<group>"; };
 		F5844E77307A1BB36C6D5AF8 /* Pods_Sound_Anywhere.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sound_Anywhere.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8C05D464D295819E7B5611 /* Pods-Sound-Anywhere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound-Anywhere.debug.xcconfig"; path = "Target Support Files/Pods-Sound-Anywhere/Pods-Sound-Anywhere.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,6 +92,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4775AA027E8DA9B00425734 /* Data.framework in Frameworks */,
+				B4775A9E27E8DA9600425734 /* Domain.framework in Frameworks */,
+				B4775AD427E8DC0A00425734 /* Common.framework in Frameworks */,
+				B4775A6527E8D9BB00425734 /* Presentation.framework in Frameworks */,
 				7FB0BEC2BDF41BD08AF91954 /* Pods_Sound_Anywhere.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +106,10 @@
 		B45164B727E8C81100347409 = {
 			isa = PBXGroup;
 			children = (
+				B4775ABD27E8DB7700425734 /* Common.xcodeproj */,
+				B4775A5F27E8D9AE00425734 /* Presentation.xcodeproj */,
+				B4775A9127E8DA7F00425734 /* Domain.xcodeproj */,
+				B4775A9827E8DA8D00425734 /* Data.xcodeproj */,
 				B45164C227E8C81100347409 /* Sound-Anywhere */,
 				B45164C127E8C81100347409 /* Products */,
 				F6096212917CECE416E2B423 /* Pods */,
@@ -63,15 +128,46 @@
 		B45164C227E8C81100347409 /* Sound-Anywhere */ = {
 			isa = PBXGroup;
 			children = (
+				B47758A027E8D01700425734 /* Sound-Anywhere.entitlements */,
 				B45164C327E8C81100347409 /* AppDelegate.swift */,
 				B45164C527E8C81100347409 /* SceneDelegate.swift */,
-				B45164C727E8C81100347409 /* ViewController.swift */,
-				B45164C927E8C81100347409 /* Main.storyboard */,
 				B45164CC27E8C81300347409 /* Assets.xcassets */,
 				B45164CE27E8C81300347409 /* LaunchScreen.storyboard */,
 				B45164D127E8C81300347409 /* Info.plist */,
 			);
 			path = "Sound-Anywhere";
+			sourceTree = "<group>";
+		};
+		B4775A6027E8D9AE00425734 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4775A6427E8D9AE00425734 /* Presentation.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4775A9227E8DA7F00425734 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4775A9627E8DA7F00425734 /* Domain.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4775A9927E8DA8D00425734 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4775A9D27E8DA8D00425734 /* Data.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4775ABE27E8DB7700425734 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4775AC227E8DB7700425734 /* Common.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C1D1493B6941818B7A88DDB6 /* Frameworks */ = {
@@ -88,7 +184,6 @@
 				FB8C05D464D295819E7B5611 /* Pods-Sound-Anywhere.debug.xcconfig */,
 				89F9D2C91305C3EFF47AB391 /* Pods-Sound-Anywhere.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -104,6 +199,7 @@
 				B45164BD27E8C81100347409 /* Frameworks */,
 				B45164BE27E8C81100347409 /* Resources */,
 				B477588B27E8C8D700425734 /* ShellScript */,
+				B4775A6727E8D9BB00425734 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,12 +236,61 @@
 			mainGroup = B45164B727E8C81100347409;
 			productRefGroup = B45164C127E8C81100347409 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B4775ABE27E8DB7700425734 /* Products */;
+					ProjectRef = B4775ABD27E8DB7700425734 /* Common.xcodeproj */;
+				},
+				{
+					ProductGroup = B4775A9927E8DA8D00425734 /* Products */;
+					ProjectRef = B4775A9827E8DA8D00425734 /* Data.xcodeproj */;
+				},
+				{
+					ProductGroup = B4775A9227E8DA7F00425734 /* Products */;
+					ProjectRef = B4775A9127E8DA7F00425734 /* Domain.xcodeproj */;
+				},
+				{
+					ProductGroup = B4775A6027E8D9AE00425734 /* Products */;
+					ProjectRef = B4775A5F27E8D9AE00425734 /* Presentation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B45164BF27E8C81100347409 /* Sound-Anywhere */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B4775A6427E8D9AE00425734 /* Presentation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Presentation.framework;
+			remoteRef = B4775A6327E8D9AE00425734 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4775A9627E8DA7F00425734 /* Domain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Domain.framework;
+			remoteRef = B4775A9527E8DA7F00425734 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4775A9D27E8DA8D00425734 /* Data.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Data.framework;
+			remoteRef = B4775A9C27E8DA8D00425734 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4775AC227E8DB7700425734 /* Common.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Common.framework;
+			remoteRef = B4775AC127E8DB7700425734 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B45164BE27E8C81100347409 /* Resources */ = {
@@ -154,7 +299,6 @@
 			files = (
 				B45164D027E8C81300347409 /* LaunchScreen.storyboard in Resources */,
 				B45164CD27E8C81300347409 /* Assets.xcassets in Resources */,
-				B45164CB27E8C81100347409 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +351,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B45164C827E8C81100347409 /* ViewController.swift in Sources */,
 				B45164C427E8C81100347409 /* AppDelegate.swift in Sources */,
 				B45164C627E8C81100347409 /* SceneDelegate.swift in Sources */,
 			);
@@ -216,14 +359,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B45164C927E8C81100347409 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B45164CA27E8C81100347409 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B45164CE27E8C81300347409 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -357,7 +492,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "Sound-Anywhere/Sound-Anywhere.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: hyunsik Oh (Y9X9G3NJ3W)";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CD8LU925FT;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -374,6 +511,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Homunculus.Sound-Anywhere";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = dev_SoundAnywhere;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,7 +524,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "Sound-Anywhere/Sound-Anywhere.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: hyunsik Oh (CD8LU925FT)";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CD8LU925FT;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -403,6 +543,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Homunculus.Sound-Anywhere";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "adhoc_Sound-Anywhere";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
