@@ -8,11 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		B4775A7627E8DA2B00425734 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775A7527E8DA2B00425734 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4775AEA27E9E6B000425734 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775AE927E9E6B000425734 /* Common.framework */; };
+		B4775AEB27E9E6B000425734 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4775AE927E9E6B000425734 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B4775AEC27E9E6B000425734 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B4775AEB27E9E6B000425734 /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B4775A7227E8DA2B00425734 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775A7527E8DA2B00425734 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
+		B4775AE927E9E6B000425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -20,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4775AEA27E9E6B000425734 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -31,6 +49,7 @@
 			children = (
 				B4775A7427E8DA2B00425734 /* Domain */,
 				B4775A7327E8DA2B00425734 /* Products */,
+				B4775AE827E9E6B000425734 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,6 +67,14 @@
 				B4775A7527E8DA2B00425734 /* Domain.h */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		B4775AE827E9E6B000425734 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4775AE927E9E6B000425734 /* Common.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +99,7 @@
 				B4775A6E27E8DA2B00425734 /* Sources */,
 				B4775A6F27E8DA2B00425734 /* Frameworks */,
 				B4775A7027E8DA2B00425734 /* Resources */,
+				B4775AEC27E9E6B000425734 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

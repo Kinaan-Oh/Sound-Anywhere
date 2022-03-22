@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,14 +52,15 @@
                 <tabBarController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="7s8-OT-vlV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2vj-1M-HLp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="atz-hz-6G5" kind="relationship" relationship="viewControllers" id="9Yj-LY-Ugd"/>
-		       <segue destination="EAu-D1-hV1" kind="relationship" relationship="viewControllers" id="yB8-T5-OXW"/>
+                        <segue destination="EAu-D1-hV1" kind="relationship" relationship="viewControllers" id="yB8-T5-OXW"/>
                         <segue destination="mEq-Ye-eGw" kind="relationship" relationship="viewControllers" id="5pu-dp-yQI"/>
-		       <segue destination="HvD-Jy-fpO" kind="relationship" relationship="viewControllers" id="tY6-WR-Al6"/>
+                        <segue destination="HvD-Jy-fpO" kind="relationship" relationship="viewControllers" id="tY6-WR-Al6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ac1-0G-gsA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

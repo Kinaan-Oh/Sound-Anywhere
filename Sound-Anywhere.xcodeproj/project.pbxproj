@@ -20,6 +20,8 @@
 		B4775AA127E8DA9B00425734 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A9D27E8DA8D00425734 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4775AD427E8DC0A00425734 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775AC227E8DB7700425734 /* Common.framework */; };
 		B4775AD527E8DC0A00425734 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4775AC227E8DB7700425734 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4775B3227EA17C600425734 /* Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775B1727E9F5B900425734 /* Resource.framework */; };
+		B4775B3327EA17C600425734 /* Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4775B1727E9F5B900425734 /* Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,13 @@
 			remoteGlobalIDString = B4775AB027E8DB5A00425734;
 			remoteInfo = Common;
 		};
+		B4775B1627E9F5B900425734 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4775B0E27E9F5B900425734 /* Resource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4775AFC27E9F42900425734;
+			remoteInfo = Resource;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +73,7 @@
 				B4775AD527E8DC0A00425734 /* Common.framework in Embed Frameworks */,
 				B4775A9F27E8DA9600425734 /* Domain.framework in Embed Frameworks */,
 				B4775A6627E8D9BB00425734 /* Presentation.framework in Embed Frameworks */,
+				B4775B3327EA17C600425734 /* Resource.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +93,7 @@
 		B4775A9127E8DA7F00425734 /* Domain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Domain.xcodeproj; path = Domain/Domain.xcodeproj; sourceTree = "<group>"; };
 		B4775A9827E8DA8D00425734 /* Data.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Data.xcodeproj; path = Data/Data.xcodeproj; sourceTree = "<group>"; };
 		B4775ABD27E8DB7700425734 /* Common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Common.xcodeproj; path = Common/Common.xcodeproj; sourceTree = "<group>"; };
+		B4775B0E27E9F5B900425734 /* Resource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Resource.xcodeproj; path = Resource/Resource.xcodeproj; sourceTree = "<group>"; };
 		F5844E77307A1BB36C6D5AF8 /* Pods_Sound_Anywhere.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sound_Anywhere.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8C05D464D295819E7B5611 /* Pods-Sound-Anywhere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound-Anywhere.debug.xcconfig"; path = "Target Support Files/Pods-Sound-Anywhere/Pods-Sound-Anywhere.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +107,7 @@
 				B4775A9E27E8DA9600425734 /* Domain.framework in Frameworks */,
 				B4775AD427E8DC0A00425734 /* Common.framework in Frameworks */,
 				B4775A6527E8D9BB00425734 /* Presentation.framework in Frameworks */,
+				B4775B3227EA17C600425734 /* Resource.framework in Frameworks */,
 				7FB0BEC2BDF41BD08AF91954 /* Pods_Sound_Anywhere.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				B4775ABD27E8DB7700425734 /* Common.xcodeproj */,
+				B4775B0E27E9F5B900425734 /* Resource.xcodeproj */,
 				B4775A5F27E8D9AE00425734 /* Presentation.xcodeproj */,
 				B4775A9127E8DA7F00425734 /* Domain.xcodeproj */,
 				B4775A9827E8DA8D00425734 /* Data.xcodeproj */,
@@ -166,6 +179,14 @@
 			isa = PBXGroup;
 			children = (
 				B4775AC227E8DB7700425734 /* Common.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4775B0F27E9F5B900425734 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4775B1727E9F5B900425734 /* Resource.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,6 +274,10 @@
 					ProductGroup = B4775A6027E8D9AE00425734 /* Products */;
 					ProjectRef = B4775A5F27E8D9AE00425734 /* Presentation.xcodeproj */;
 				},
+				{
+					ProductGroup = B4775B0F27E9F5B900425734 /* Products */;
+					ProjectRef = B4775B0E27E9F5B900425734 /* Resource.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -288,6 +313,13 @@
 			fileType = wrapper.framework;
 			path = Common.framework;
 			remoteRef = B4775AC127E8DB7700425734 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4775B1727E9F5B900425734 /* Resource.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Resource.framework;
+			remoteRef = B4775B1627E9F5B900425734 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

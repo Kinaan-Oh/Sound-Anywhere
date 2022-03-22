@@ -8,15 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		B4775AB427E8DB5A00425734 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775AB327E8DB5A00425734 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4775ACC27E8DBEE00425734 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775ACB27E8DBEE00425734 /* Extension+String.swift */; };
-		B4775ACE27E8DBF700425734 /* Extension+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775ACD27E8DBF700425734 /* Extension+Storyboard.swift */; };
+		B4775AE227E9E58D00425734 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775AE127E9E58D00425734 /* Extension+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B4775AB027E8DB5A00425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775AB327E8DB5A00425734 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		B4775ACB27E8DBEE00425734 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
-		B4775ACD27E8DBF700425734 /* Extension+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+Storyboard.swift"; sourceTree = "<group>"; };
+		B4775AE127E9E58D00425734 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+String.swift"; path = "Common/Extensions/Extension+String.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +56,7 @@
 		B4775AC627E8DBAB00425734 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B4775ACB27E8DBEE00425734 /* Extension+String.swift */,
-				B4775ACD27E8DBF700425734 /* Extension+Storyboard.swift */,
+				B4775AE127E9E58D00425734 /* Extension+String.swift */,
 			);
 			name = Extensions;
 			path = ../../Presentation/Presentation/Extensions;
@@ -145,8 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4775ACE27E8DBF700425734 /* Extension+Storyboard.swift in Sources */,
-				B4775ACC27E8DBEE00425734 /* Extension+String.swift in Sources */,
+				B4775AE227E9E58D00425734 /* Extension+String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +274,7 @@
 		B4775AB827E8DB5A00425734 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -308,6 +305,7 @@
 		B4775AB927E8DB5A00425734 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

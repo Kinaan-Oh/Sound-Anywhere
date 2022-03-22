@@ -10,37 +10,44 @@
 		B47759A727E8D73C00425734 /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = B47759A627E8D73C00425734 /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B47759CD27E8D76C00425734 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759AF27E8D76C00425734 /* SearchViewModel.swift */; };
 		B47759CE27E8D76C00425734 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759B127E8D76C00425734 /* SearchViewController.swift */; };
-		B47759CF27E8D76C00425734 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47759B227E8D76C00425734 /* Search.storyboard */; };
 		B47759D027E8D76C00425734 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759B527E8D76C00425734 /* HomeViewModel.swift */; };
-		B47759D127E8D76C00425734 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47759B727E8D76C00425734 /* Home.storyboard */; };
 		B47759D227E8D76C00425734 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759B827E8D76C00425734 /* HomeViewController.swift */; };
-		B47759D327E8D76C00425734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47759BB27E8D76C00425734 /* Main.storyboard */; };
 		B47759D427E8D76C00425734 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759BE27E8D76C00425734 /* RecordViewModel.swift */; };
 		B47759D527E8D76C00425734 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C027E8D76C00425734 /* RecordViewController.swift */; };
-		B47759D627E8D76C00425734 /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47759C127E8D76C00425734 /* Record.storyboard */; };
 		B47759D727E8D76C00425734 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C427E8D76C00425734 /* MapViewModel.swift */; };
-		B47759D827E8D76C00425734 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47759C627E8D76C00425734 /* Map.storyboard */; };
 		B47759D927E8D76C00425734 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C727E8D76C00425734 /* MapViewController.swift */; };
 		B47759DA27E8D76C00425734 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C927E8D76C00425734 /* ViewModelType.swift */; };
+		B4775AE527E9E6A400425734 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775AE427E9E6A400425734 /* Common.framework */; };
+		B4775AE627E9E6A400425734 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4775AE427E9E6A400425734 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B4775AE727E9E6A400425734 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B4775AE627E9E6A400425734 /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B47759A327E8D73C00425734 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47759A627E8D73C00425734 /* Presentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Presentation.h; sourceTree = "<group>"; };
 		B47759AF27E8D76C00425734 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		B47759B127E8D76C00425734 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		B47759B227E8D76C00425734 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		B47759B527E8D76C00425734 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		B47759B727E8D76C00425734 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B47759B827E8D76C00425734 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B47759BB27E8D76C00425734 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B47759BE27E8D76C00425734 /* RecordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		B47759C027E8D76C00425734 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
-		B47759C127E8D76C00425734 /* Record.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
 		B47759C427E8D76C00425734 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		B47759C627E8D76C00425734 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		B47759C727E8D76C00425734 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B47759C927E8D76C00425734 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		B4775AE427E9E6A400425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4775AE527E9E6A400425734 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +67,7 @@
 			children = (
 				B47759A527E8D73C00425734 /* Presentation */,
 				B47759A427E8D73C00425734 /* Products */,
+				B4775AE327E9E6A400425734 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				B47759B127E8D76C00425734 /* SearchViewController.swift */,
-				B47759B227E8D76C00425734 /* Search.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -130,7 +138,6 @@
 		B47759B627E8D76C00425734 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B47759B727E8D76C00425734 /* Home.storyboard */,
 				B47759B827E8D76C00425734 /* HomeViewController.swift */,
 			);
 			path = UI;
@@ -147,7 +154,6 @@
 		B47759BA27E8D76C00425734 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B47759BB27E8D76C00425734 /* Main.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -173,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				B47759C027E8D76C00425734 /* RecordViewController.swift */,
-				B47759C127E8D76C00425734 /* Record.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -198,7 +203,6 @@
 		B47759C527E8D76C00425734 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B47759C627E8D76C00425734 /* Map.storyboard */,
 				B47759C727E8D76C00425734 /* MapViewController.swift */,
 			);
 			path = UI;
@@ -210,6 +214,14 @@
 				B47759C927E8D76C00425734 /* ViewModelType.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B4775AE327E9E6A400425734 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4775AE427E9E6A400425734 /* Common.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +246,7 @@
 				B477599F27E8D73C00425734 /* Sources */,
 				B47759A027E8D73C00425734 /* Frameworks */,
 				B47759A127E8D73C00425734 /* Resources */,
+				B4775AE727E9E6A400425734 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,11 +294,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B47759D327E8D76C00425734 /* Main.storyboard in Resources */,
-				B47759CF27E8D76C00425734 /* Search.storyboard in Resources */,
-				B47759D827E8D76C00425734 /* Map.storyboard in Resources */,
-				B47759D127E8D76C00425734 /* Home.storyboard in Resources */,
-				B47759D627E8D76C00425734 /* Record.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Resource
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,6 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions
     ) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        configureWindow(windowScene)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -32,4 +36,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
     }
 
+    // MARK: - Private Methods
+    
+    private func configureWindow(_ windowScene: UIWindowScene) {
+        let mainTabBarViewController = Resource.Storyboard.main.instance()
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = mainTabBarViewController
+        window?.makeKeyAndVisible()
+    }
 }
