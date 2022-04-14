@@ -17,6 +17,7 @@
 		B4775B2D27E9F82900425734 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4775B2C27E9F82900425734 /* Search.storyboard */; };
 		B4775B2F27E9F84F00425734 /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4775B2E27E9F84F00425734 /* Record.storyboard */; };
 		B4775B3127EA148300425734 /* Resource+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775B3027EA148300425734 /* Resource+Storyboard.swift */; };
+		B4775B4027EA296400425734 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B4775B3F27EA296400425734 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4775B1A27E9F5CE00425734 /* Common.framework in Frameworks */,
+				B4775B4027EA296400425734 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +137,9 @@
 			dependencies = (
 			);
 			name = Resource;
+			packageProductDependencies = (
+				B4775B3F27EA296400425734 /* SnapKit */,
+			);
 			productName = Resource;
 			productReference = B4775AFC27E9F42900425734 /* Resource.framework */;
 			productType = "com.apple.product-type.framework";
@@ -163,6 +168,9 @@
 				Base,
 			);
 			mainGroup = B4775AF227E9F42900425734;
+			packageReferences = (
+				B4775B3E27EA296400425734 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = B4775AFD27E9F42900425734 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -405,6 +413,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B4775B3E27EA296400425734 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4775B3F27EA296400425734 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4775B3E27EA296400425734 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B4775AF327E9F42900425734 /* Project object */;
 }

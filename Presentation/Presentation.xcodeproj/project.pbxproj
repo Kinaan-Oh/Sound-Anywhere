@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B42B79D22807DB4700DEE1D0 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B42B79D12807DB4700DEE1D0 /* Domain.framework */; };
+		B42B79D32807DB4700DEE1D0 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B42B79D12807DB4700DEE1D0 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B47759A727E8D73C00425734 /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = B47759A627E8D73C00425734 /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B47759CD27E8D76C00425734 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759AF27E8D76C00425734 /* SearchViewModel.swift */; };
 		B47759CE27E8D76C00425734 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759B127E8D76C00425734 /* SearchViewController.swift */; };
@@ -28,6 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B42B79D32807DB4700DEE1D0 /* Domain.framework in Embed Frameworks */,
 				B4775AE627E9E6A400425734 /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -36,6 +39,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B42B79D12807DB4700DEE1D0 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B42B79D42807DB5400DEE1D0 /* Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47759A327E8D73C00425734 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47759A627E8D73C00425734 /* Presentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Presentation.h; sourceTree = "<group>"; };
 		B47759AF27E8D76C00425734 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B42B79D22807DB4700DEE1D0 /* Domain.framework in Frameworks */,
 				B4775AE527E9E6A400425734 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +225,8 @@
 		B4775AE327E9E6A400425734 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B42B79D42807DB5400DEE1D0 /* Resource.framework */,
+				B42B79D12807DB4700DEE1D0 /* Domain.framework */,
 				B4775AE427E9E6A400425734 /* Common.framework */,
 			);
 			name = Frameworks;

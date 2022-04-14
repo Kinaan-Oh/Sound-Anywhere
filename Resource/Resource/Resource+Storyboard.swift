@@ -8,8 +8,6 @@
 import UIKit
 import Common
 
-// MARK: - Storyboard
-
 extension Resource.Storyboard {
     public typealias Storyboard = Resource.Storyboard
     
