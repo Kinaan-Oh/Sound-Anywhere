@@ -17,7 +17,7 @@
 		B4775B2D27E9F82900425734 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4775B2C27E9F82900425734 /* Search.storyboard */; };
 		B4775B2F27E9F84F00425734 /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4775B2E27E9F84F00425734 /* Record.storyboard */; };
 		B4775B3127EA148300425734 /* Resource+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775B3027EA148300425734 /* Resource+Storyboard.swift */; };
-		B4775B4027EA296400425734 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B4775B3F27EA296400425734 /* SnapKit */; };
+		B49F7FD22808615700BE5952 /* Resource+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FD12808615700BE5952 /* Resource+Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +45,8 @@
 		B4775B2C27E9F82900425734 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		B4775B2E27E9F84F00425734 /* Record.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
 		B4775B3027EA148300425734 /* Resource+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Storyboard.swift"; sourceTree = "<group>"; };
+		B49F7FD12808615700BE5952 /* Resource+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Image.swift"; sourceTree = "<group>"; };
+		B49F7FD3280865DE00BE5952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4775B1A27E9F5CE00425734 /* Common.framework in Frameworks */,
-				B4775B4027EA296400425734 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,8 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				B4775AFF27E9F42900425734 /* Resource.h */,
+				B49F7FD3280865DE00BE5952 /* Assets.xcassets */,
 				B4775B0627E9F44700425734 /* Resource.swift */,
 				B4775B3027EA148300425734 /* Resource+Storyboard.swift */,
+				B49F7FD12808615700BE5952 /* Resource+Image.swift */,
 				B4775B1D27E9F69B00425734 /* Storyboard */,
 			);
 			path = Resource;
@@ -138,7 +141,6 @@
 			);
 			name = Resource;
 			packageProductDependencies = (
-				B4775B3F27EA296400425734 /* SnapKit */,
 			);
 			productName = Resource;
 			productReference = B4775AFC27E9F42900425734 /* Resource.framework */;
@@ -202,6 +204,7 @@
 			files = (
 				B4775B3127EA148300425734 /* Resource+Storyboard.swift in Sources */,
 				B4775B0727E9F44700425734 /* Resource.swift in Sources */,
+				B49F7FD22808615700BE5952 /* Resource+Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,14 +427,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B4775B3F27EA296400425734 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B4775B3E27EA296400425734 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B4775AF327E9F42900425734 /* Project object */;
 }

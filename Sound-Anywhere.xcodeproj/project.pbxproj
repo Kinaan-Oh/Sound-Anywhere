@@ -10,7 +10,6 @@
 		7FB0BEC2BDF41BD08AF91954 /* Pods_Sound_Anywhere.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5844E77307A1BB36C6D5AF8 /* Pods_Sound_Anywhere.framework */; };
 		B45164C427E8C81100347409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C327E8C81100347409 /* AppDelegate.swift */; };
 		B45164C627E8C81100347409 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C527E8C81100347409 /* SceneDelegate.swift */; };
-		B45164CD27E8C81300347409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45164CC27E8C81300347409 /* Assets.xcassets */; };
 		B45164D027E8C81300347409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45164CE27E8C81300347409 /* LaunchScreen.storyboard */; };
 		B4775A6527E8D9BB00425734 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A6427E8D9AE00425734 /* Presentation.framework */; };
 		B4775A6627E8D9BB00425734 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A6427E8D9AE00425734 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -85,7 +84,6 @@
 		B45164C027E8C81100347409 /* Sound-Anywhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound-Anywhere.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45164C327E8C81100347409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B45164C527E8C81100347409 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B45164CC27E8C81300347409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B45164CF27E8C81300347409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B45164D127E8C81300347409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B47758A027E8D01700425734 /* Sound-Anywhere.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sound-Anywhere.entitlements"; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				B47758A027E8D01700425734 /* Sound-Anywhere.entitlements */,
 				B45164C327E8C81100347409 /* AppDelegate.swift */,
 				B45164C527E8C81100347409 /* SceneDelegate.swift */,
-				B45164CC27E8C81300347409 /* Assets.xcassets */,
 				B45164CE27E8C81300347409 /* LaunchScreen.storyboard */,
 				B45164D127E8C81300347409 /* Info.plist */,
 			);
@@ -330,7 +327,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B45164D027E8C81300347409 /* LaunchScreen.storyboard in Resources */,
-				B45164CD27E8C81300347409 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
