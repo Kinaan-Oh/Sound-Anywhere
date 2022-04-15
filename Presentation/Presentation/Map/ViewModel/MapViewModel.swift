@@ -6,7 +6,6 @@
 //
 
 final class MapViewModel: ViewModelType {
-    
     struct Input {
     }
     

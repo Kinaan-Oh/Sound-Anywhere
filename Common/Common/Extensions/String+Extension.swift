@@ -8,7 +8,6 @@
 import Foundation
 
 extension String {
-    
     public var firstCharCapitalized: String {
         return prefix(1).uppercased() + dropFirst()
     }
