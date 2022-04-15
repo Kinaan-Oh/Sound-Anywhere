@@ -21,6 +21,9 @@
 		B49F7FDA28086D4800BE5952 /* Resource+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FD928086D4800BE5952 /* Resource+Color.swift */; };
 		B49F7FDC28086D8600BE5952 /* Resource+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FDB28086D8600BE5952 /* Resource+Font.swift */; };
 		B49F7FDF2808849200BE5952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B49F7FD3280865DE00BE5952 /* Assets.xcassets */; };
+		B49F7FF0280925B900BE5952 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FEF280925B900BE5952 /* CALayer+Extension.swift */; };
+		B49F7FF2280925E700BE5952 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FF1280925E700BE5952 /* UIImage+Extension.swift */; };
+		B49F7FF4280925EF00BE5952 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FF3280925EF00BE5952 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +55,9 @@
 		B49F7FD3280865DE00BE5952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B49F7FD928086D4800BE5952 /* Resource+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Color.swift"; sourceTree = "<group>"; };
 		B49F7FDB28086D8600BE5952 /* Resource+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Font.swift"; sourceTree = "<group>"; };
+		B49F7FEF280925B900BE5952 /* CALayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		B49F7FF1280925E700BE5952 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		B49F7FF3280925EF00BE5952 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 		B4775AFE27E9F42900425734 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B49F7FEE280925A200BE5952 /* Extensions */,
 				B4775AFF27E9F42900425734 /* Resource.h */,
 				B49F7FD3280865DE00BE5952 /* Assets.xcassets */,
 				B4775B0627E9F44700425734 /* Resource.swift */,
@@ -116,6 +123,16 @@
 				B4775B2E27E9F84F00425734 /* Record.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B49F7FEE280925A200BE5952 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B49F7FEF280925B900BE5952 /* CALayer+Extension.swift */,
+				B49F7FF1280925E700BE5952 /* UIImage+Extension.swift */,
+				B49F7FF3280925EF00BE5952 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,10 +228,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4775B3127EA148300425734 /* Resource+Storyboard.swift in Sources */,
+				B49F7FF2280925E700BE5952 /* UIImage+Extension.swift in Sources */,
 				B49F7FDC28086D8600BE5952 /* Resource+Font.swift in Sources */,
 				B49F7FDA28086D4800BE5952 /* Resource+Color.swift in Sources */,
 				B4775B0727E9F44700425734 /* Resource.swift in Sources */,
 				B49F7FD22808615700BE5952 /* Resource+Image.swift in Sources */,
+				B49F7FF0280925B900BE5952 /* CALayer+Extension.swift in Sources */,
+				B49F7FF4280925EF00BE5952 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
