@@ -12,8 +12,3 @@ import UIKit
 public final class Resource {
     static let bundle = Bundle(for: Resource.self)
 }
-
-// MARK: - Resource Type
-
-public extension Resource {
-}

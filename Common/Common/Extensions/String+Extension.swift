@@ -1,5 +1,5 @@
 //
-//  Extension+String.swift
+//  String+Extension.swift
 //  Time Capsule
 //
 //  Created by 오현식 on 2022/03/14.

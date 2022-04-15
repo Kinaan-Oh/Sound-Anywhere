@@ -8,19 +8,6 @@
 import UIKit
 import Common
 
-extension Resource.Storyboard {
-    public typealias Storyboard = Resource.Storyboard
-    
-    public static var main: Storyboard { Storyboard(id: .main) }
-    public static var home: Storyboard { Storyboard(id: .home) }
-    public static var search: Storyboard { Storyboard(id: .search) }
-    public static var map: Storyboard { Storyboard(id: .map) }
-    public static var record: Storyboard { Storyboard(id: .record) }
-    public static var login: Storyboard { Storyboard(id: .login) }
-    public static var signUp: Storyboard { Storyboard(id: .signUp) }
-    public static var emailSignUp: Storyboard { Storyboard(id: .emailSignUp) }
-}
-
 extension Resource {
     public class Storyboard {
         enum ID: String {
@@ -50,4 +37,17 @@ extension Resource {
             storyboard.instantiateViewController(withIdentifier: id.stringValue) as! T
         }
     }
+}
+
+extension Resource.Storyboard {
+    public typealias Storyboard = Resource.Storyboard
+    
+    public static var main: Storyboard { Storyboard(id: .main) }
+    public static var home: Storyboard { Storyboard(id: .home) }
+    public static var search: Storyboard { Storyboard(id: .search) }
+    public static var map: Storyboard { Storyboard(id: .map) }
+    public static var record: Storyboard { Storyboard(id: .record) }
+    public static var login: Storyboard { Storyboard(id: .login) }
+    public static var signUp: Storyboard { Storyboard(id: .signUp) }
+    public static var emailSignUp: Storyboard { Storyboard(id: .emailSignUp) }
 }
