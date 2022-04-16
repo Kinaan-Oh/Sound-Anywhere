@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4535ED5280ABA240020018E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535ED4280ABA240020018E /* LocationService.swift */; };
+		B4535ED8280ABA810020018E /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = B4535ED7280ABA810020018E /* RxCoreLocation */; };
 		B4775AB427E8DB5A00425734 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775AB327E8DB5A00425734 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4775B3627EA184B00425734 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775B3527EA184B00425734 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4535ED4280ABA240020018E /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		B4775AB027E8DB5A00425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775AB327E8DB5A00425734 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		B4775B3527EA184B00425734 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -22,12 +25,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4535ED8280ABA810020018E /* RxCoreLocation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4535ED3280AB9FE0020018E /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				B4535ED4280ABA240020018E /* LocationService.swift */,
+			);
+			path = CoreLocation;
+			sourceTree = "<group>";
+		};
 		B4775AA627E8DB5A00425734 = {
 			isa = PBXGroup;
 			children = (
@@ -49,6 +61,7 @@
 			children = (
 				B4775AB327E8DB5A00425734 /* Common.h */,
 				B4775B3427EA184B00425734 /* Extensions */,
+				B4535ED3280AB9FE0020018E /* CoreLocation */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -89,6 +102,9 @@
 			dependencies = (
 			);
 			name = Common;
+			packageProductDependencies = (
+				B4535ED7280ABA810020018E /* RxCoreLocation */,
+			);
 			productName = Common;
 			productReference = B4775AB027E8DB5A00425734 /* Common.framework */;
 			productType = "com.apple.product-type.framework";
@@ -117,6 +133,9 @@
 				Base,
 			);
 			mainGroup = B4775AA627E8DB5A00425734;
+			packageReferences = (
+				B4535ED6280ABA810020018E /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
+			);
 			productRefGroup = B4775AB127E8DB5A00425734 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4535ED5280ABA240020018E /* LocationService.swift in Sources */,
 				B4775B3627EA184B00425734 /* String+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +373,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B4535ED6280ABA810020018E /* XCRemoteSwiftPackageReference "RxCoreLocation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxCoreLocation";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4535ED7280ABA810020018E /* RxCoreLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4535ED6280ABA810020018E /* XCRemoteSwiftPackageReference "RxCoreLocation" */;
+			productName = RxCoreLocation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B4775AA727E8DB5A00425734 /* Project object */;
 }
