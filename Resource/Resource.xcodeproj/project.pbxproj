@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B4535D0F2809D9880020018E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D0E2809D9840020018E /* Common.framework */; };
-		B4535D102809D9880020018E /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D0E2809D9840020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4775B0027E9F42900425734 /* Resource.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775AFF27E9F42900425734 /* Resource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4775B0727E9F44700425734 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775B0627E9F44700425734 /* Resource.swift */; };
 		B4775B2127E9F71B00425734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4775B2027E9F71B00425734 /* Main.storyboard */; };
@@ -24,6 +22,8 @@
 		B49F7FF0280925B900BE5952 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FEF280925B900BE5952 /* CALayer+Extension.swift */; };
 		B49F7FF2280925E700BE5952 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FF1280925E700BE5952 /* UIImage+Extension.swift */; };
 		B49F7FF4280925EF00BE5952 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FF3280925EF00BE5952 /* UIColor+Extension.swift */; };
+		B4E8D170280BE389003EEFFC /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D0E2809D9840020018E /* Common.framework */; };
+		B4E8D171280BE389003EEFFC /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D0E2809D9840020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B4535D112809D9880020018E /* Embed Frameworks */ = {
+		B4E8D172280BE389003EEFFC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B4535D102809D9880020018E /* Common.framework in Embed Frameworks */,
+				B4E8D171280BE389003EEFFC /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4535D0F2809D9880020018E /* Common.framework in Frameworks */,
+				B4E8D170280BE389003EEFFC /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +208,7 @@
 				B4775AF827E9F42900425734 /* Sources */,
 				B4775AF927E9F42900425734 /* Frameworks */,
 				B4775AFA27E9F42900425734 /* Resources */,
-				B4535D112809D9880020018E /* Embed Frameworks */,
+				B4E8D172280BE389003EEFFC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

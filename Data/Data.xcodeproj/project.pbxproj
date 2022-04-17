@@ -13,11 +13,16 @@
 		B4535CFF2809D90F0020018E /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CFA2809D9080020018E /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4535E952809EB910020018E /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535E942809EB910020018E /* DataTests.swift */; };
 		B4535E962809EB910020018E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A8627E8DA6500425734 /* Data.framework */; };
-		B4535EA52809EBC50020018E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4535EA42809EBC50020018E /* RxSwift */; };
 		B4535EA72809EBC50020018E /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B4535EA62809EBC50020018E /* RxTest */; };
 		B4535EAA2809EBDF0020018E /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B4535EA92809EBDF0020018E /* RxBlocking */; };
-		B4535EB32809ED5F0020018E /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B4535EB22809ED5F0020018E /* RxAlamofire */; };
 		B4775A8A27E8DA6500425734 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775A8927E8DA6500425734 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4E8D14B280BD9E2003EEFFC /* FIRCollectionReference+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8D14A280BD9E2003EEFFC /* FIRCollectionReference+Rx.swift */; };
+		B4E8D14D280BDA22003EEFFC /* FIRDocumentReference+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8D14C280BDA22003EEFFC /* FIRDocumentReference+Rx.swift */; };
+		B4E8D14F280BDAC3003EEFFC /* FIRQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8D14E280BDAC3003EEFFC /* FIRQuery+Rx.swift */; };
+		B4E8D151280BDC16003EEFFC /* FIRFirestore+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8D150280BDC16003EEFFC /* FIRFirestore+Rx.swift */; };
+		B4E8D153280BDC5F003EEFFC /* FIRWriteBatch+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8D152280BDC5F003EEFFC /* FIRWriteBatch+Rx.swift */; };
+		B4E8D18E280BE5F9003EEFFC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D18D280BE5F9003EEFFC /* RxSwift */; };
+		B4E8D1B8280BEC3E003EEFFC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D1B7280BEC3E003EEFFC /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +84,11 @@
 		B4775A8627E8DA6500425734 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775A8927E8DA6500425734 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		B4775AEE27E9E6B600425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4E8D14A280BD9E2003EEFFC /* FIRCollectionReference+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FIRCollectionReference+Rx.swift"; sourceTree = "<group>"; };
+		B4E8D14C280BDA22003EEFFC /* FIRDocumentReference+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FIRDocumentReference+Rx.swift"; sourceTree = "<group>"; };
+		B4E8D14E280BDAC3003EEFFC /* FIRQuery+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FIRQuery+Rx.swift"; sourceTree = "<group>"; };
+		B4E8D150280BDC16003EEFFC /* FIRFirestore+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FIRFirestore+Rx.swift"; sourceTree = "<group>"; };
+		B4E8D152280BDC5F003EEFFC /* FIRWriteBatch+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FIRWriteBatch+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +106,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E8D18E280BE5F9003EEFFC /* RxSwift in Frameworks */,
 				B4535CFE2809D90F0020018E /* Domain.framework in Frameworks */,
-				B4535EB32809ED5F0020018E /* RxAlamofire in Frameworks */,
-				B4535EA52809EBC50020018E /* RxSwift in Frameworks */,
+				B4E8D1B8280BEC3E003EEFFC /* FirebaseFirestore in Frameworks */,
 				B4535CFB2809D90C0020018E /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,7 +209,7 @@
 		B4775A8827E8DA6500425734 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B49F7FF52809298A00BE5952 /* Network */,
+				B4E8D147280BD8B8003EEFFC /* FireStore+Rx */,
 				B4775A8927E8DA6500425734 /* Data.h */,
 			);
 			path = Data;
@@ -216,11 +226,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B49F7FF52809298A00BE5952 /* Network */ = {
+		B4E8D147280BD8B8003EEFFC /* FireStore+Rx */ = {
 			isa = PBXGroup;
 			children = (
+				B4E8D150280BDC16003EEFFC /* FIRFirestore+Rx.swift */,
+				B4E8D14E280BDAC3003EEFFC /* FIRQuery+Rx.swift */,
+				B4E8D14A280BD9E2003EEFFC /* FIRCollectionReference+Rx.swift */,
+				B4E8D14C280BDA22003EEFFC /* FIRDocumentReference+Rx.swift */,
+				B4E8D152280BDC5F003EEFFC /* FIRWriteBatch+Rx.swift */,
 			);
-			path = Network;
+			path = "FireStore+Rx";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,8 +290,8 @@
 			);
 			name = Data;
 			packageProductDependencies = (
-				B4535EA42809EBC50020018E /* RxSwift */,
-				B4535EB22809ED5F0020018E /* RxAlamofire */,
+				B4E8D18D280BE5F9003EEFFC /* RxSwift */,
+				B4E8D1B7280BEC3E003EEFFC /* FirebaseFirestore */,
 			);
 			productName = Data;
 			productReference = B4775A8627E8DA6500425734 /* Data.framework */;
@@ -297,6 +312,7 @@
 					};
 					B4775A8527E8DA6500425734 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -317,6 +333,10 @@
 				B4535EAB2809EBEE0020018E /* XCRemoteSwiftPackageReference "RxAlamofire" */,
 				B4535EAE2809ECCC0020018E /* XCRemoteSwiftPackageReference "RxAlamofire" */,
 				B4535EB12809ED5F0020018E /* XCRemoteSwiftPackageReference "RxAlamofire" */,
+				B4E8D142280BD8AA003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B4E8D18C280BE5F9003EEFFC /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B4E8D18F280BE62B003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B4E8D1B4280BEC3E003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B4775A8727E8DA6500425734 /* Products */;
 			projectDirPath = "";
@@ -392,6 +412,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E8D14B280BD9E2003EEFFC /* FIRCollectionReference+Rx.swift in Sources */,
+				B4E8D151280BDC16003EEFFC /* FIRFirestore+Rx.swift in Sources */,
+				B4E8D14D280BDA22003EEFFC /* FIRDocumentReference+Rx.swift in Sources */,
+				B4E8D153280BDC5F003EEFFC /* FIRWriteBatch+Rx.swift in Sources */,
+				B4E8D14F280BDAC3003EEFFC /* FIRQuery+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +434,7 @@
 		B4535E992809EB910020018E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CD8LU925FT;
@@ -426,6 +452,7 @@
 		B4535E9A2809EB910020018E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CD8LU925FT;
@@ -565,6 +592,7 @@
 		B4775A8E27E8DA6500425734 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -585,6 +613,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -593,6 +622,7 @@
 		B4775A8F27E8DA6500425734 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -691,6 +721,38 @@
 				kind = branch;
 			};
 		};
+		B4E8D142280BD8AA003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B4E8D18C280BE5F9003EEFFC /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		B4E8D18F280BE62B003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B4E8D1B4280BEC3E003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		B4FB01B2280962D9008CFD76 /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire";
@@ -710,11 +772,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B4535EA42809EBC50020018E /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B4535EA12809EBC50020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
 		B4535EA62809EBC50020018E /* RxTest */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4535EA12809EBC50020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -725,10 +782,15 @@
 			package = B4535EA82809EBDF0020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxBlocking;
 		};
-		B4535EB22809ED5F0020018E /* RxAlamofire */ = {
+		B4E8D18D280BE5F9003EEFFC /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B4FB01B3280962FE008CFD76 /* XCRemoteSwiftPackageReference "RxAlamofire" */;
-			productName = RxAlamofire;
+			package = B4535EA82809EBDF0020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		B4E8D1B7280BEC3E003EEFFC /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4E8D142280BD8AA003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
