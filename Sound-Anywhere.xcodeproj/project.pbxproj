@@ -20,6 +20,9 @@
 		B4535D332809D9FB0020018E /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D312809D9F60020018E /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4535D602809DBAB0020018E /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C9B2809D7C50020018E /* Presentation.framework */; };
 		B4535D612809DBAB0020018E /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C9B2809D7C50020018E /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4E8D136280BCF6D003EEFFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4E8D135280BCF6D003EEFFC /* GoogleService-Info.plist */; };
+		B4E8D139280BD022003EEFFC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D138280BD022003EEFFC /* FirebaseAnalytics */; };
+		B4E8D13B280BD022003EEFFC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D13A280BD022003EEFFC /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = B4535DEC2809E0E20020018E;
 			remoteInfo = PresentationTests;
+		};
+		B4D768F1280BC7DE00E1E27A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4535D272809D9F50020018E /* Data.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4535E922809EB910020018E;
+			remoteInfo = DataTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -121,6 +131,7 @@
 		B4535D2D2809D9F50020018E /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		B4535D5F2809DBA60020018E /* Presentation.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = Presentation.xcworkspace; path = Presentation/Presentation.xcworkspace; sourceTree = "<group>"; };
 		B47758A027E8D01700425734 /* Sound-Anywhere.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sound-Anywhere.entitlements"; sourceTree = "<group>"; };
+		B4E8D135280BCF6D003EEFFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +141,11 @@
 			files = (
 				B4535D322809D9FB0020018E /* Data.framework in Frameworks */,
 				B4535D202809D9E40020018E /* Domain.framework in Frameworks */,
+				B4E8D139280BD022003EEFFC /* FirebaseAnalytics in Frameworks */,
 				B4535D602809DBAB0020018E /* Presentation.framework in Frameworks */,
 				B4535D222809D9EA0020018E /* Resource.framework in Frameworks */,
 				B4535D1C2809D9E00020018E /* Common.framework in Frameworks */,
+				B4E8D13B280BD022003EEFFC /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +177,7 @@
 				B45164C527E8C81100347409 /* SceneDelegate.swift */,
 				B45164CE27E8C81300347409 /* LaunchScreen.storyboard */,
 				B45164D127E8C81300347409 /* Info.plist */,
+				B4E8D135280BCF6D003EEFFC /* GoogleService-Info.plist */,
 			);
 			path = "Sound-Anywhere";
 			sourceTree = "<group>";
@@ -427,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				B4535D312809D9F60020018E /* Data.framework */,
+				B4D768F2280BC7DE00E1E27A /* DataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -478,6 +493,10 @@
 			dependencies = (
 			);
 			name = "Sound-Anywhere";
+			packageProductDependencies = (
+				B4E8D138280BD022003EEFFC /* FirebaseAnalytics */,
+				B4E8D13A280BD022003EEFFC /* FirebaseFirestore */,
+			);
 			productName = "Sound-Anywhere";
 			productReference = B45164C027E8C81100347409 /* Sound-Anywhere.app */;
 			productType = "com.apple.product-type.application";
@@ -508,6 +527,7 @@
 			mainGroup = B45164B727E8C81100347409;
 			packageReferences = (
 				B4D9CA0328095038006F2894 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B4E8D137280BD022003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B45164C127E8C81100347409 /* Products */;
 			projectDirPath = "";
@@ -572,6 +592,13 @@
 			remoteRef = B4535E792809E9EA0020018E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		B4D768F2280BC7DE00E1E27A /* DataTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DataTests.xctest;
+			remoteRef = B4D768F1280BC7DE00E1E27A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -580,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B45164D027E8C81300347409 /* LaunchScreen.storyboard in Resources */,
+				B4E8D136280BCF6D003EEFFC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +775,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Homunculus.Sound-Anywhere";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = dev_SoundAnywhere;
@@ -778,6 +807,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Homunculus.Sound-Anywhere";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "adhoc_Sound-Anywhere";
@@ -819,7 +849,28 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		B4E8D137280BD022003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4E8D138280BD022003EEFFC /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4E8D137280BD022003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		B4E8D13A280BD022003EEFFC /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4E8D137280BD022003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B45164B827E8C81100347409 /* Project object */;
 }
