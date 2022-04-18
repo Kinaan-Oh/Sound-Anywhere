@@ -14,6 +14,9 @@
 		B4775B3627EA184B00425734 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775B3527EA184B00425734 /* String+Extension.swift */; };
 		B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */; };
 		B4AA2DE7280DEB4D00FF176D /* CLLocation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DE6280DEB4D00FF176D /* CLLocation+Extension.swift */; };
+		B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */; };
+		B4AA2DFC280DEF3100FF176D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4AA2DFB280DEF3100FF176D /* RxCocoa */; };
+		B4AA2DFE280DEF3100FF176D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4AA2DFD280DEF3100FF176D /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +40,7 @@
 		B4775B3527EA184B00425734 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		B4AA2DE6280DEB4D00FF176D /* CLLocation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
+		B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4AA2DFE280DEF3100FF176D /* RxSwift in Frameworks */,
+				B4AA2DFC280DEF3100FF176D /* RxCocoa in Frameworks */,
 				B411B6FF280D351B00490694 /* RxCoreLocation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +106,7 @@
 			children = (
 				B4775B3527EA184B00425734 /* String+Extension.swift */,
 				B4AA2DE6280DEB4D00FF176D /* CLLocation+Extension.swift */,
+				B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +142,8 @@
 			name = Common;
 			packageProductDependencies = (
 				B411B6FE280D351B00490694 /* RxCoreLocation */,
+				B4AA2DFB280DEF3100FF176D /* RxCocoa */,
+				B4AA2DFD280DEF3100FF176D /* RxSwift */,
 			);
 			productName = Common;
 			productReference = B4775AB027E8DB5A00425734 /* Common.framework */;
@@ -171,6 +180,7 @@
 				B411B69E280C928B00490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B411B6A3280C99F300490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B411B6FD280D351B00490694 /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
+				B4AA2DFA280DEF3100FF176D /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B4775AB127E8DB5A00425734 /* Products */;
 			projectDirPath = "";
@@ -197,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */,
+				B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */,
 				B4535ED5280ABA240020018E /* LocationService.swift in Sources */,
 				B4775B3627EA184B00425734 /* String+Extension.swift in Sources */,
 				B4535EE8280ABC660020018E /* UserDefault.swift in Sources */,
@@ -458,6 +469,14 @@
 				kind = branch;
 			};
 		};
+		B4AA2DFA280DEF3100FF176D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		B4E8D16B280BE311003EEFFC /* XCRemoteSwiftPackageReference "RxCoreLocation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxCoreLocation";
@@ -473,6 +492,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B4535ED6280ABA810020018E /* XCRemoteSwiftPackageReference "RxCoreLocation" */;
 			productName = RxCoreLocation;
+		};
+		B4AA2DFB280DEF3100FF176D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B411B673280C8C5D00490694 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B4AA2DFD280DEF3100FF176D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B411B673280C8C5D00490694 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
