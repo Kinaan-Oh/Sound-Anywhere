@@ -10,33 +10,33 @@ import CoreLocation
 import RxCoreLocation
 import RxSwift
 
-final class LocationService: NSObject {
+final public class LocationService: NSObject {
     private let locationManager = CLLocationManager()
     
-    override init() {
+    public override init() {
         super.init()
         locationManager.delegate = self
         locationManager.distanceFilter = CLLocationDistance(3)
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
-    func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus> {
+    public func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus> {
         return locationManager.rx
             .didChangeAuthorization
             .asObservable()
             .map { $0.status }
     }
     
-    func observeLocation() -> Observable<CLLocation?> {
+    public func observeLocation() -> Observable<CLLocation?> {
         return locationManager.rx
             .location
     }
     
-    func requestWhenInUseAuthorization() {
+    public func requestWhenInUseAuthorization() {
         self.locationManager.requestWhenInUseAuthorization()
     }
     
-    func requestLocation() {
+    public func requestLocation() {
         locationManager.requestLocation()
     }
 }
@@ -45,7 +45,7 @@ final class LocationService: NSObject {
 // MARK: - CLLocationManagerDelegate
 
 extension LocationService: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     }
 }
 
