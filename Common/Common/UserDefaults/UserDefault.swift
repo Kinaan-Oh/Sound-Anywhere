@@ -10,12 +10,12 @@ import Foundation
 // Reference: https://zeddios.tistory.com/1221
 
 @propertyWrapper
-struct UserDefault<T> {
+public struct UserDefault<T> {
     let key: String
     let defaultValue: T
     let storage: UserDefaults
 
-    var wrappedValue: T {
+    public var wrappedValue: T {
         get { self.storage.object(forKey: self.key) as? T ?? self.defaultValue }
         set { self.storage.set(newValue, forKey: self.key) }
     }
