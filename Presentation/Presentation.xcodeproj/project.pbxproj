@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B4535CC52809D8860020018E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CC42809D8830020018E /* Domain.framework */; };
-		B4535CC62809D8860020018E /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CC42809D8830020018E /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B4535CD42809D8A90020018E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CD32809D8A50020018E /* Common.framework */; };
-		B4535CD52809D8A90020018E /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CD32809D8A50020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B411B736280D4A0100490694 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CD32809D8A50020018E /* Common.framework */; platformFilter = ios; };
+		B411B737280D4A0100490694 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CD32809D8A50020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B411B73B280D4A0500490694 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CC42809D8830020018E /* Domain.framework */; platformFilter = ios; };
+		B411B73C280D4A0500490694 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CC42809D8830020018E /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B411B73F280D4A1700490694 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B411B73E280D4A1700490694 /* RxCocoa */; };
+		B411B741280D4A1700490694 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B411B740280D4A1700490694 /* RxSwift */; };
 		B4535DF02809E0E20020018E /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47759A327E8D73C00425734 /* Presentation.framework */; };
 		B4535DF72809E0EC0020018E /* PresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535DF62809E0EC0020018E /* PresentationTests.swift */; };
 		B4535E3C2809E8DB0020018E /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B4535E3B2809E8DB0020018E /* RxBlocking */; };
@@ -27,8 +29,6 @@
 		B47759D727E8D76C00425734 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C427E8D76C00425734 /* MapViewModel.swift */; };
 		B47759D927E8D76C00425734 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C727E8D76C00425734 /* MapViewController.swift */; };
 		B47759DA27E8D76C00425734 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C927E8D76C00425734 /* ViewModelType.swift */; };
-		B4E8D17B280BE3E3003EEFFC /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D17A280BE3E3003EEFFC /* RxCocoa */; };
-		B4E8D17D280BE3E3003EEFFC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D17C280BE3E3003EEFFC /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,14 +63,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B4535CC72809D8860020018E /* Embed Frameworks */ = {
+		B411B738280D4A0100490694 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B4535CC62809D8860020018E /* Domain.framework in Embed Frameworks */,
-				B4535CD52809D8A90020018E /* Common.framework in Embed Frameworks */,
+				B411B73C280D4A0500490694 /* Domain.framework in Embed Frameworks */,
+				B411B737280D4A0100490694 /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,10 +119,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4E8D17B280BE3E3003EEFFC /* RxCocoa in Frameworks */,
-				B4535CC52809D8860020018E /* Domain.framework in Frameworks */,
-				B4E8D17D280BE3E3003EEFFC /* RxSwift in Frameworks */,
-				B4535CD42809D8A90020018E /* Common.framework in Frameworks */,
+				B411B73F280D4A1700490694 /* RxCocoa in Frameworks */,
+				B411B73B280D4A0500490694 /* Domain.framework in Frameworks */,
+				B411B741280D4A1700490694 /* RxSwift in Frameworks */,
+				B411B736280D4A0100490694 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +398,7 @@
 				B477599F27E8D73C00425734 /* Sources */,
 				B47759A027E8D73C00425734 /* Frameworks */,
 				B47759A127E8D73C00425734 /* Resources */,
-				B4535CC72809D8860020018E /* Embed Frameworks */,
+				B411B738280D4A0100490694 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -406,8 +406,8 @@
 			);
 			name = Presentation;
 			packageProductDependencies = (
-				B4E8D17A280BE3E3003EEFFC /* RxCocoa */,
-				B4E8D17C280BE3E3003EEFFC /* RxSwift */,
+				B411B73E280D4A1700490694 /* RxCocoa */,
+				B411B740280D4A1700490694 /* RxSwift */,
 			);
 			productName = Presentation;
 			productReference = B47759A327E8D73C00425734 /* Presentation.framework */;
@@ -458,6 +458,9 @@
 				B4535E3A2809E8DB0020018E /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B4535E3F2809E8FB0020018E /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B4E8D179280BE3E3003EEFFC /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B411B683280C8F6800490694 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B411B731280D494F00490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B411B73D280D4A1700490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B47759A427E8D73C00425734 /* Products */;
 			projectDirPath = "";
@@ -809,6 +812,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B411B683280C8F6800490694 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		B411B731280D494F00490694 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		B411B73D280D4A1700490694 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		B4535C3A2809C66B0020018E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -948,6 +975,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B411B73E280D4A1700490694 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4535D652809DC2E0020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B411B740280D4A1700490694 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4535D652809DC2E0020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
 		B4535E3B2809E8DB0020018E /* RxBlocking */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4535D652809DC2E0020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -967,16 +1004,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B4535D652809DC2E0020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxTest;
-		};
-		B4E8D17A280BE3E3003EEFFC /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B4535D652809DC2E0020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		B4E8D17C280BE3E3003EEFFC /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B4535D652809DC2E0020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

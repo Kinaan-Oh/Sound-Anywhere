@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B411B6F6280D2CF200490694 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B411B6F5280D2CF200490694 /* RxSwift */; };
+		B411B6F9280D2F4500490694 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B411B6F8280D2F4500490694 /* RxCocoa */; };
+		B41AF9C6280C683100D38503 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C6F2809D7040020018E /* Common.framework */; platformFilter = ios; };
+		B41AF9C7280C683100D38503 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C6F2809D7040020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B41AF9C9280C683600D38503 /* Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CB42809D7FF0020018E /* Resource.framework */; platformFilter = ios; };
+		B41AF9CA280C683600D38503 /* Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CB42809D7FF0020018E /* Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B41AF9CB280C684D00D38503 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C9B2809D7C50020018E /* Presentation.framework */; platformFilter = ios; };
+		B41AF9CC280C684D00D38503 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C9B2809D7C50020018E /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B41AF9CF280C685E00D38503 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D312809D9F60020018E /* Data.framework */; platformFilter = ios; };
+		B41AF9D0280C685E00D38503 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D312809D9F60020018E /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B41AF9E2280C689600D38503 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D1F2809D9E40020018E /* Domain.framework */; };
+		B41AF9E3280C689600D38503 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D1F2809D9E40020018E /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B45164C427E8C81100347409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C327E8C81100347409 /* AppDelegate.swift */; };
 		B45164C627E8C81100347409 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C527E8C81100347409 /* SceneDelegate.swift */; };
 		B45164D027E8C81300347409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45164CE27E8C81300347409 /* LaunchScreen.storyboard */; };
-		B4535D222809D9EA0020018E /* Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CB42809D7FF0020018E /* Resource.framework */; };
-		B4535D232809D9EA0020018E /* Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CB42809D7FF0020018E /* Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4E8D13B280BD022003EEFFC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D13A280BD022003EEFFC /* FirebaseFirestore */; };
 		B4E8D1AD280BEA8D003EEFFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4E8D1AC280BEA8D003EEFFC /* GoogleService-Info.plist */; };
-		B4F91B33280C548400C62FC2 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C6F2809D7040020018E /* Common.framework */; platformFilter = ios; };
-		B4F91B34280C548400C62FC2 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C6F2809D7040020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B4F91B3A280C548A00C62FC2 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C9B2809D7C50020018E /* Presentation.framework */; platformFilter = ios; };
-		B4F91B3B280C548A00C62FC2 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C9B2809D7C50020018E /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B4F91B3D280C548E00C62FC2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F91B3C280C548D00C62FC2 /* Domain.framework */; };
-		B4F91B3E280C548E00C62FC2 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4F91B3C280C548D00C62FC2 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B4F91B3F280C549200C62FC2 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D312809D9F60020018E /* Data.framework */; platformFilter = ios; };
-		B4F91B40280C549200C62FC2 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D312809D9F60020018E /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B4F91B56280C5C3400C62FC2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4F91B55280C5C3400C62FC2 /* RxCocoa */; };
-		B4F91B58280C5C3400C62FC2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4F91B57280C5C3400C62FC2 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,17 +72,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B4535D1E2809D9E10020018E /* Embed Frameworks */ = {
+		B41AF9C8280C683100D38503 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B4F91B3E280C548E00C62FC2 /* Domain.framework in Embed Frameworks */,
-				B4535D232809D9EA0020018E /* Resource.framework in Embed Frameworks */,
-				B4F91B34280C548400C62FC2 /* Common.framework in Embed Frameworks */,
-				B4F91B40280C549200C62FC2 /* Data.framework in Embed Frameworks */,
-				B4F91B3B280C548A00C62FC2 /* Presentation.framework in Embed Frameworks */,
+				B41AF9E3280C689600D38503 /* Domain.framework in Embed Frameworks */,
+				B41AF9CA280C683600D38503 /* Resource.framework in Embed Frameworks */,
+				B41AF9C7280C683100D38503 /* Common.framework in Embed Frameworks */,
+				B41AF9D0280C685E00D38503 /* Data.framework in Embed Frameworks */,
+				B41AF9CC280C684D00D38503 /* Presentation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,14 +141,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4F91B3F280C549200C62FC2 /* Data.framework in Frameworks */,
-				B4F91B3D280C548E00C62FC2 /* Domain.framework in Frameworks */,
-				B4F91B33280C548400C62FC2 /* Common.framework in Frameworks */,
-				B4F91B56280C5C3400C62FC2 /* RxCocoa in Frameworks */,
-				B4535D222809D9EA0020018E /* Resource.framework in Frameworks */,
-				B4F91B3A280C548A00C62FC2 /* Presentation.framework in Frameworks */,
-				B4F91B58280C5C3400C62FC2 /* RxSwift in Frameworks */,
+				B41AF9C6280C683100D38503 /* Common.framework in Frameworks */,
+				B41AF9CB280C684D00D38503 /* Presentation.framework in Frameworks */,
+				B41AF9E2280C689600D38503 /* Domain.framework in Frameworks */,
+				B41AF9CF280C685E00D38503 /* Data.framework in Frameworks */,
 				B4E8D13B280BD022003EEFFC /* FirebaseFirestore in Frameworks */,
+				B41AF9C9280C683600D38503 /* Resource.framework in Frameworks */,
+				B411B6F9280D2F4500490694 /* RxCocoa in Frameworks */,
+				B411B6F6280D2CF200490694 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +490,7 @@
 				B45164BC27E8C81100347409 /* Sources */,
 				B45164BD27E8C81100347409 /* Frameworks */,
 				B45164BE27E8C81100347409 /* Resources */,
-				B4535D1E2809D9E10020018E /* Embed Frameworks */,
+				B41AF9C8280C683100D38503 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -499,8 +499,8 @@
 			name = "Sound-Anywhere";
 			packageProductDependencies = (
 				B4E8D13A280BD022003EEFFC /* FirebaseFirestore */,
-				B4F91B55280C5C3400C62FC2 /* RxCocoa */,
-				B4F91B57280C5C3400C62FC2 /* RxSwift */,
+				B411B6F5280D2CF200490694 /* RxSwift */,
+				B411B6F8280D2F4500490694 /* RxCocoa */,
 			);
 			productName = "Sound-Anywhere";
 			productReference = B45164C027E8C81100347409 /* Sound-Anywhere.app */;
@@ -534,6 +534,9 @@
 				B4D9CA0328095038006F2894 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B4E8D137280BD022003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B4F91B54280C5C3400C62FC2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B411B6C4280D1CFD00490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B411B6F4280D2CF200490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B411B6F7280D2F4500490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B45164C127E8C81100347409 /* Products */;
 			projectDirPath = "";
@@ -849,6 +852,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B411B6C4280D1CFD00490694 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		B411B6F4280D2CF200490694 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		B411B6F7280D2F4500490694 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		B4D9CA0328095038006F2894 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -876,20 +903,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B4E8D13A280BD022003EEFFC /* FirebaseFirestore */ = {
+		B411B6F5280D2CF200490694 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B4E8D137280BD022003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
+			package = B4F91B54280C5C3400C62FC2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
-		B4F91B55280C5C3400C62FC2 /* RxCocoa */ = {
+		B411B6F8280D2F4500490694 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4F91B54280C5C3400C62FC2 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		B4F91B57280C5C3400C62FC2 /* RxSwift */ = {
+		B4E8D13A280BD022003EEFFC /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B4F91B54280C5C3400C62FC2 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
+			package = B4E8D137280BD022003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
