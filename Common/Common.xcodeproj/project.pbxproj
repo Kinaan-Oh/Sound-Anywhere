@@ -7,16 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B411B6FF280D351B00490694 /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = B411B6FE280D351B00490694 /* RxCoreLocation */; };
-		B4535ED5280ABA240020018E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535ED4280ABA240020018E /* LocationService.swift */; };
 		B4535EE8280ABC660020018E /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535EE7280ABC660020018E /* UserDefault.swift */; };
 		B4775AB427E8DB5A00425734 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775AB327E8DB5A00425734 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4775B3627EA184B00425734 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775B3527EA184B00425734 /* String+Extension.swift */; };
 		B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */; };
 		B4AA2DE7280DEB4D00FF176D /* CLLocation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DE6280DEB4D00FF176D /* CLLocation+Extension.swift */; };
 		B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */; };
-		B4AA2DFC280DEF3100FF176D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4AA2DFB280DEF3100FF176D /* RxCocoa */; };
-		B4AA2DFE280DEF3100FF176D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4AA2DFD280DEF3100FF176D /* RxSwift */; };
+		B4F1EA40280EE57A00F1BE4E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA3F280EE57A00F1BE4E /* RxCocoa */; };
+		B4F1EA42280EE57A00F1BE4E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA41280EE57A00F1BE4E /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +31,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B4535ED4280ABA240020018E /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		B4535EE7280ABC660020018E /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		B4775AB027E8DB5A00425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775AB327E8DB5A00425734 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -48,23 +45,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4AA2DFE280DEF3100FF176D /* RxSwift in Frameworks */,
-				B4AA2DFC280DEF3100FF176D /* RxCocoa in Frameworks */,
-				B411B6FF280D351B00490694 /* RxCoreLocation in Frameworks */,
+				B4F1EA42280EE57A00F1BE4E /* RxSwift in Frameworks */,
+				B4F1EA40280EE57A00F1BE4E /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B4535ED3280AB9FE0020018E /* CoreLocation */ = {
-			isa = PBXGroup;
-			children = (
-				B4535ED4280ABA240020018E /* LocationService.swift */,
-			);
-			path = CoreLocation;
-			sourceTree = "<group>";
-		};
 		B4535EE6280ABB990020018E /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +83,6 @@
 			children = (
 				B4775AB327E8DB5A00425734 /* Common.h */,
 				B4775B3427EA184B00425734 /* Extensions */,
-				B4535ED3280AB9FE0020018E /* CoreLocation */,
 				B4535EE6280ABB990020018E /* UserDefaults */,
 			);
 			path = Common;
@@ -141,9 +128,8 @@
 			);
 			name = Common;
 			packageProductDependencies = (
-				B411B6FE280D351B00490694 /* RxCoreLocation */,
-				B4AA2DFB280DEF3100FF176D /* RxCocoa */,
-				B4AA2DFD280DEF3100FF176D /* RxSwift */,
+				B4F1EA3F280EE57A00F1BE4E /* RxCocoa */,
+				B4F1EA41280EE57A00F1BE4E /* RxSwift */,
 			);
 			productName = Common;
 			productReference = B4775AB027E8DB5A00425734 /* Common.framework */;
@@ -181,6 +167,7 @@
 				B411B6A3280C99F300490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B411B6FD280D351B00490694 /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
 				B4AA2DFA280DEF3100FF176D /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B4F1EA3E280EE57A00F1BE4E /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B4775AB127E8DB5A00425734 /* Products */;
 			projectDirPath = "";
@@ -208,7 +195,6 @@
 			files = (
 				B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */,
 				B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */,
-				B4535ED5280ABA240020018E /* LocationService.swift in Sources */,
 				B4775B3627EA184B00425734 /* String+Extension.swift in Sources */,
 				B4535EE8280ABC660020018E /* UserDefault.swift in Sources */,
 				B4AA2DE7280DEB4D00FF176D /* CLLocation+Extension.swift in Sources */,
@@ -485,20 +471,23 @@
 				kind = branch;
 			};
 		};
+		B4F1EA3E280EE57A00F1BE4E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B411B6FE280D351B00490694 /* RxCoreLocation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B4535ED6280ABA810020018E /* XCRemoteSwiftPackageReference "RxCoreLocation" */;
-			productName = RxCoreLocation;
-		};
-		B4AA2DFB280DEF3100FF176D /* RxCocoa */ = {
+		B4F1EA3F280EE57A00F1BE4E /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B411B673280C8C5D00490694 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		B4AA2DFD280DEF3100FF176D /* RxSwift */ = {
+		B4F1EA41280EE57A00F1BE4E /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B411B673280C8C5D00490694 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;

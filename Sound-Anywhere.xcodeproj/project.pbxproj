@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B411B6F6280D2CF200490694 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B411B6F5280D2CF200490694 /* RxSwift */; };
-		B411B6F9280D2F4500490694 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B411B6F8280D2F4500490694 /* RxCocoa */; };
 		B41AF9C6280C683100D38503 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C6F2809D7040020018E /* Common.framework */; platformFilter = ios; };
 		B41AF9C7280C683100D38503 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535C6F2809D7040020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B41AF9C9280C683600D38503 /* Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CB42809D7FF0020018E /* Resource.framework */; platformFilter = ios; };
@@ -22,8 +20,10 @@
 		B45164C427E8C81100347409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C327E8C81100347409 /* AppDelegate.swift */; };
 		B45164C627E8C81100347409 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C527E8C81100347409 /* SceneDelegate.swift */; };
 		B45164D027E8C81300347409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45164CE27E8C81300347409 /* LaunchScreen.storyboard */; };
-		B4E8D13B280BD022003EEFFC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D13A280BD022003EEFFC /* FirebaseFirestore */; };
 		B4E8D1AD280BEA8D003EEFFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4E8D1AC280BEA8D003EEFFC /* GoogleService-Info.plist */; };
+		B4F1EA9B280EEB8200F1BE4E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA9A280EEB8200F1BE4E /* RxCocoa */; };
+		B4F1EA9D280EEB8200F1BE4E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA9C280EEB8200F1BE4E /* RxSwift */; };
+		B4F1EAAE280EEBD000F1BE4E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EAAD280EEBD000F1BE4E /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +65,62 @@
 		B4D768F1280BC7DE00E1E27A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B4535D272809D9F50020018E /* Data.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4535E922809EB910020018E;
+			remoteInfo = DataTests;
+		};
+		B4F0879C280E7FC900A901C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4F08797280E7FC900A901C1 /* Common.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4775AB027E8DB5A00425734;
+			remoteInfo = Common;
+		};
+		B4F087AD280E7FF300A901C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4F087A9280E7FF300A901C1 /* Resource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4775AFC27E9F42900425734;
+			remoteInfo = Resource;
+		};
+		B4F087B4280E800100A901C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4F087AF280E800100A901C1 /* Presentation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B47759A327E8D73C00425734;
+			remoteInfo = Presentation;
+		};
+		B4F087B6280E800100A901C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4F087AF280E800100A901C1 /* Presentation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4535DEC2809E0E20020018E;
+			remoteInfo = PresentationTests;
+		};
+		B4F087BD280E800600A901C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4F087B8280E800600A901C1 /* Domain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4775A7227E8DA2B00425734;
+			remoteInfo = Domain;
+		};
+		B4F087BF280E800600A901C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4F087B8280E800600A901C1 /* Domain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4535E562809E9690020018E;
+			remoteInfo = DomainTests;
+		};
+		B4F087C6280E800C00A901C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4F087C1280E800C00A901C1 /* Data.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4775A8627E8DA6500425734;
+			remoteInfo = Data;
+		};
+		B4F087C8280E800C00A901C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4F087C1280E800C00A901C1 /* Data.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = B4535E922809EB910020018E;
 			remoteInfo = DataTests;
@@ -133,6 +189,11 @@
 		B4535D5F2809DBA60020018E /* Presentation.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = Presentation.xcworkspace; path = Presentation/Presentation.xcworkspace; sourceTree = "<group>"; };
 		B47758A027E8D01700425734 /* Sound-Anywhere.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sound-Anywhere.entitlements"; sourceTree = "<group>"; };
 		B4E8D1AC280BEA8D003EEFFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B4F08797280E7FC900A901C1 /* Common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Common.xcodeproj; path = Common/Common.xcodeproj; sourceTree = "<group>"; };
+		B4F087A9280E7FF300A901C1 /* Resource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Resource.xcodeproj; path = Resource/Resource.xcodeproj; sourceTree = "<group>"; };
+		B4F087AF280E800100A901C1 /* Presentation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Presentation.xcodeproj; path = Presentation/Presentation.xcodeproj; sourceTree = "<group>"; };
+		B4F087B8280E800600A901C1 /* Domain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Domain.xcodeproj; path = Domain/Domain.xcodeproj; sourceTree = "<group>"; };
+		B4F087C1280E800C00A901C1 /* Data.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Data.xcodeproj; path = Data/Data.xcodeproj; sourceTree = "<group>"; };
 		B4F91B3C280C548D00C62FC2 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,14 +202,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F1EA9B280EEB8200F1BE4E /* RxCocoa in Frameworks */,
 				B41AF9C6280C683100D38503 /* Common.framework in Frameworks */,
 				B41AF9CB280C684D00D38503 /* Presentation.framework in Frameworks */,
 				B41AF9E2280C689600D38503 /* Domain.framework in Frameworks */,
 				B41AF9CF280C685E00D38503 /* Data.framework in Frameworks */,
-				B4E8D13B280BD022003EEFFC /* FirebaseFirestore in Frameworks */,
+				B4F1EAAE280EEBD000F1BE4E /* FirebaseFirestore in Frameworks */,
 				B41AF9C9280C683600D38503 /* Resource.framework in Frameworks */,
-				B411B6F9280D2F4500490694 /* RxCocoa in Frameworks */,
-				B411B6F6280D2CF200490694 /* RxSwift in Frameworks */,
+				B4F1EA9D280EEB8200F1BE4E /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +219,11 @@
 		B45164B727E8C81100347409 = {
 			isa = PBXGroup;
 			children = (
+				B4F087A9280E7FF300A901C1 /* Resource.xcodeproj */,
+				B4F08797280E7FC900A901C1 /* Common.xcodeproj */,
+				B4F087AF280E800100A901C1 /* Presentation.xcodeproj */,
+				B4F087B8280E800600A901C1 /* Domain.xcodeproj */,
+				B4F087C1280E800C00A901C1 /* Data.xcodeproj */,
 				B45164C227E8C81100347409 /* Sound-Anywhere */,
 				B45164C127E8C81100347409 /* Products */,
 				C1D1493B6941818B7A88DDB6 /* Frameworks */,
@@ -465,6 +531,49 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		B4F08798280E7FC900A901C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4F0879D280E7FC900A901C1 /* Common.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4F087AA280E7FF300A901C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4F087AE280E7FF300A901C1 /* Resource.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4F087B0280E800100A901C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4F087B5280E800100A901C1 /* Presentation.framework */,
+				B4F087B7280E800100A901C1 /* PresentationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4F087B9280E800600A901C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4F087BE280E800600A901C1 /* Domain.framework */,
+				B4F087C0280E800600A901C1 /* DomainTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4F087C2280E800C00A901C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4F087C7280E800C00A901C1 /* Data.framework */,
+				B4F087C9280E800C00A901C1 /* DataTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C1D1493B6941818B7A88DDB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,9 +607,9 @@
 			);
 			name = "Sound-Anywhere";
 			packageProductDependencies = (
-				B4E8D13A280BD022003EEFFC /* FirebaseFirestore */,
-				B411B6F5280D2CF200490694 /* RxSwift */,
-				B411B6F8280D2F4500490694 /* RxCocoa */,
+				B4F1EA9A280EEB8200F1BE4E /* RxCocoa */,
+				B4F1EA9C280EEB8200F1BE4E /* RxSwift */,
+				B4F1EAAD280EEBD000F1BE4E /* FirebaseFirestore */,
 			);
 			productName = "Sound-Anywhere";
 			productReference = B45164C027E8C81100347409 /* Sound-Anywhere.app */;
@@ -537,6 +646,8 @@
 				B411B6C4280D1CFD00490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B411B6F4280D2CF200490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B411B6F7280D2F4500490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B4F1EA99280EEB8200F1BE4E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B4F1EAAC280EEBD000F1BE4E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B45164C127E8C81100347409 /* Products */;
 			projectDirPath = "";
@@ -546,16 +657,36 @@
 					ProjectRef = B4535C6A2809D7040020018E /* Common.xcodeproj */;
 				},
 				{
+					ProductGroup = B4F08798280E7FC900A901C1 /* Products */;
+					ProjectRef = B4F08797280E7FC900A901C1 /* Common.xcodeproj */;
+				},
+				{
 					ProductGroup = B4535D282809D9F50020018E /* Products */;
 					ProjectRef = B4535D272809D9F50020018E /* Data.xcodeproj */;
+				},
+				{
+					ProductGroup = B4F087C2280E800C00A901C1 /* Products */;
+					ProjectRef = B4F087C1280E800C00A901C1 /* Data.xcodeproj */;
+				},
+				{
+					ProductGroup = B4F087B9280E800600A901C1 /* Products */;
+					ProjectRef = B4F087B8280E800600A901C1 /* Domain.xcodeproj */;
 				},
 				{
 					ProductGroup = B4535C7C2809D7C50020018E /* Products */;
 					ProjectRef = B4535C7B2809D7C50020018E /* Presentation.xcodeproj */;
 				},
 				{
+					ProductGroup = B4F087B0280E800100A901C1 /* Products */;
+					ProjectRef = B4F087AF280E800100A901C1 /* Presentation.xcodeproj */;
+				},
+				{
 					ProductGroup = B4535CB02809D7FF0020018E /* Products */;
 					ProjectRef = B4535CAF2809D7FF0020018E /* Resource.xcodeproj */;
+				},
+				{
+					ProductGroup = B4F087AA280E7FF300A901C1 /* Products */;
+					ProjectRef = B4F087A9280E7FF300A901C1 /* Resource.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -606,6 +737,62 @@
 			fileType = wrapper.cfbundle;
 			path = DataTests.xctest;
 			remoteRef = B4D768F1280BC7DE00E1E27A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4F0879D280E7FC900A901C1 /* Common.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Common.framework;
+			remoteRef = B4F0879C280E7FC900A901C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4F087AE280E7FF300A901C1 /* Resource.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Resource.framework;
+			remoteRef = B4F087AD280E7FF300A901C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4F087B5280E800100A901C1 /* Presentation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Presentation.framework;
+			remoteRef = B4F087B4280E800100A901C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4F087B7280E800100A901C1 /* PresentationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PresentationTests.xctest;
+			remoteRef = B4F087B6280E800100A901C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4F087BE280E800600A901C1 /* Domain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Domain.framework;
+			remoteRef = B4F087BD280E800600A901C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4F087C0280E800600A901C1 /* DomainTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DomainTests.xctest;
+			remoteRef = B4F087BF280E800600A901C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4F087C7280E800C00A901C1 /* Data.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Data.framework;
+			remoteRef = B4F087C6280E800C00A901C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4F087C9280E800C00A901C1 /* DataTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DataTests.xctest;
+			remoteRef = B4F087C8280E800C00A901C1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -892,6 +1079,22 @@
 				kind = branch;
 			};
 		};
+		B4F1EA99280EEB8200F1BE4E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		B4F1EAAC280EEBD000F1BE4E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		B4F91B54280C5C3400C62FC2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -903,17 +1106,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B411B6F5280D2CF200490694 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B4F91B54280C5C3400C62FC2 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		B411B6F8280D2F4500490694 /* RxCocoa */ = {
+		B4F1EA9A280EEB8200F1BE4E /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4F91B54280C5C3400C62FC2 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		B4E8D13A280BD022003EEFFC /* FirebaseFirestore */ = {
+		B4F1EA9C280EEB8200F1BE4E /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4F91B54280C5C3400C62FC2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		B4F1EAAD280EEBD000F1BE4E /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4E8D137280BD022003EEFFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;

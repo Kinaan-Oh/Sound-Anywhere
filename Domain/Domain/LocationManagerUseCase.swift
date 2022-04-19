@@ -1,8 +1,8 @@
 //
-//  LocationService.swift
-//  Common
+//  LocationManagerUseCase.swift
+//  Domain
 //
-//  Created by 오현식 on 2022/04/16.
+//  Created by 오현식 on 2022/04/19.
 //
 
 import CoreLocation
@@ -10,14 +10,20 @@ import CoreLocation
 import RxCoreLocation
 import RxSwift
 
-final public class LocationService: NSObject {
-    private let locationManager = CLLocationManager()
+public protocol LocationManagerUseCase {
+    func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus>
+    func observeLocation() -> Observable<CLLocation?>
+    func requestWhenInUseAuthorization()
+    func requestLocation()
+}
+
+public final class DefaultLocationManagerUseCase: NSObject, LocationManagerUseCase {
+    private let locationManager: CLLocationManager
     
-    public override init() {
+    public init(locationManager: CLLocationManager) {
+        self.locationManager = locationManager
         super.init()
         locationManager.delegate = self
-        locationManager.distanceFilter = CLLocationDistance(3)
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
     public func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus> {
@@ -33,7 +39,7 @@ final public class LocationService: NSObject {
     }
     
     public func requestWhenInUseAuthorization() {
-        self.locationManager.requestWhenInUseAuthorization()
+        locationManager.requestWhenInUseAuthorization()
     }
     
     public func requestLocation() {
@@ -41,11 +47,9 @@ final public class LocationService: NSObject {
     }
 }
 
-
 // MARK: - CLLocationManagerDelegate
 
-extension LocationService: CLLocationManagerDelegate {
+extension DefaultLocationManagerUseCase: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     }
 }
-
