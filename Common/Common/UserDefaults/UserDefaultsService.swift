@@ -7,8 +7,11 @@
 
 import CoreLocation
 
-final public class UserDefaultsService {
-    enum Keys: String {
-        case favoriteZones
+public final class UserDefaultsService {
+    enum Key: String {
+        case recentLocation
     }
+    
+    @UserDefault(key: Key.recentLocation.rawValue, defaultValue: nil)
+    public static var recentLocation: Data?
 }
