@@ -14,7 +14,8 @@ public protocol LocationManagerUseCase {
     func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus>
     func observeLocation() -> Observable<CLLocation?>
     func requestWhenInUseAuthorization()
-    func requestLocation()
+    func startUpdatingLocation()
+    func stopUpdatingLocation()
 }
 
 public final class DefaultLocationManagerUseCase: NSObject, LocationManagerUseCase {
@@ -42,8 +43,12 @@ public final class DefaultLocationManagerUseCase: NSObject, LocationManagerUseCa
         locationManager.requestWhenInUseAuthorization()
     }
     
-    public func requestLocation() {
-        locationManager.requestLocation()
+    public func startUpdatingLocation() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    public func stopUpdatingLocation() {
+        locationManager.stopUpdatingLocation()
     }
 }
 
