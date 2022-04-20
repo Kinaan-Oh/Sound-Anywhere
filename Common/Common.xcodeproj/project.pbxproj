@@ -15,6 +15,7 @@
 		B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */; };
 		B4F1EA40280EE57A00F1BE4E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA3F280EE57A00F1BE4E /* RxCocoa */; };
 		B4F1EA42280EE57A00F1BE4E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA41280EE57A00F1BE4E /* RxSwift */; };
+		B4F1EB2F280FF72800F1BE4E /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F1EB2E280FF72800F1BE4E /* UIViewController+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,7 @@
 		B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		B4AA2DE6280DEB4D00FF176D /* CLLocation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
 		B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
+		B4F1EB2E280FF72800F1BE4E /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				B4775B3527EA184B00425734 /* String+Extension.swift */,
 				B4AA2DE6280DEB4D00FF176D /* CLLocation+Extension.swift */,
 				B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */,
+				B4F1EB2E280FF72800F1BE4E /* UIViewController+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */,
 				B4775B3627EA184B00425734 /* String+Extension.swift in Sources */,
 				B4535EE8280ABC660020018E /* UserDefault.swift in Sources */,
+				B4F1EB2F280FF72800F1BE4E /* UIViewController+Rx.swift in Sources */,
 				B4AA2DE7280DEB4D00FF176D /* CLLocation+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
