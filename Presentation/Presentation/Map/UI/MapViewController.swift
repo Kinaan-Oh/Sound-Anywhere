@@ -5,30 +5,95 @@
 //  Created by 오현식 on 2022/03/11.
 //
 
+import MapKit
 import UIKit
 
-import RxSwift
+import Common
+import Domain
 import RxCocoa
+import RxSwift
 
 final class MapViewController: UIViewController {
+    
+    // MARK: - Subviews
+    
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var favoriteZoneButton: UIButton!
     @IBOutlet weak var currentLocationButton: UIButton!
     
+    // MARK: - Private Properties
+    
+    private lazy var viewModel: MapViewModel = {
+        let locationManager = CLLocationManager()
+        locationManager.distanceFilter = CLLocationDistance(3)
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        let viewModel = MapViewModel(
+            dependencies: .init(
+                defaultLocation: CLLocation(latitude: 37.54330366639085,
+                                            longitude: 127.04455548501139),
+                locationManagerUseCase: DefaultLocationManagerUseCase(locationManager: locationManager)
+            )
+        )
+        return viewModel
+    }()
+    
     private var disposeBag = DisposeBag()
+    
+    // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindUI()
+        configureLocation()
+        bindViewModel()
     }
     
-    func bindUI() {
-        favoriteZoneButton.rx
-            .tap
+    // MARK: - Helpers
+    
+    private func configureLocation() {
+        if let locationData = UserDefaultsService.recentLocation,
+           let recentLocation = try? NSKeyedUnarchiver.unarchivedObject(ofClass: CLLocation.self,
+                                                                        from: locationData) {
+            mapView.setRegion(recentLocation.toMKCoordinateRegion(), animated: true)
+        } else {
+            mapView.setRegion(viewModel.dependencies.defaultLocation.toMKCoordinateRegion(), animated: true)
+        }
+    }
+    
+    private func bindViewModel() {
+        let viewDidAppearEvent = self.rx.viewDidAppear
             .asDriver()
-            .drive { _ in
-                print("!!!!!!!!!!")
+        
+        let input = MapViewModel.Input(viewDidAppearEvent: viewDidAppearEvent)
+        let output = viewModel.transform(input: input)
+        
+        output.authorizationStatus
+            .drive { [weak self] authorizationStatus in
+                guard let self = self,
+                      authorizationStatus == .authorizedWhenInUse
+                else { return }
+                self.viewModel.dependencies.locationManagerUseCase.startUpdatingLocation()
+            }
+            .disposed(by: disposeBag)
+        
+        output.location
+            .drive { [weak self] location in
+                guard let self = self,
+                      let location = location
+                else { return }
+                self.saveRecentLocation(location: location)
             }
             .disposed(by: disposeBag)
     }
+    
+    private func bindUI() {
+    }
+    
+    // MARK: - Private Methods
+    
+    private func saveRecentLocation(location: CLLocation) {
+        let locationData = try? NSKeyedArchiver.archivedData(withRootObject: location,
+                                                             requiringSecureCoding: false)
+        UserDefaultsService.recentLocation = locationData
+    }
 }
-
