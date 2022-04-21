@@ -29,6 +29,9 @@
 		B47759DA27E8D76C00425734 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C927E8D76C00425734 /* ViewModelType.swift */; };
 		B4F1EA6A280EE9FC00F1BE4E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA69280EE9FC00F1BE4E /* RxCocoa */; };
 		B4F1EA6C280EE9FC00F1BE4E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA6B280EE9FC00F1BE4E /* RxSwift */; };
+		B4F1EBAA28104BF700F1BE4E /* LocationManagerUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F1EBA928104BF700F1BE4E /* LocationManagerUseCaseMock.swift */; };
+		B4F1EBB328108A6300F1BE4E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EBB228108A6300F1BE4E /* RxCocoa */; };
+		B4F1EBB528108A6300F1BE4E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EBB428108A6300F1BE4E /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,7 @@
 		B47759C727E8D76C00425734 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B47759C927E8D76C00425734 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		B4775AE427E9E6A400425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4F1EBA928104BF700F1BE4E /* LocationManagerUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerUseCaseMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +111,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F1EBB328108A6300F1BE4E /* RxCocoa in Frameworks */,
 				B4535E432809E8FB0020018E /* RxTest in Frameworks */,
 				B4535DF02809E0E20020018E /* Presentation.framework in Frameworks */,
 				B4535E412809E8FB0020018E /* RxBlocking in Frameworks */,
 				B4535E3E2809E8DB0020018E /* RxTest in Frameworks */,
 				B4535E3C2809E8DB0020018E /* RxBlocking in Frameworks */,
+				B4F1EBB528108A6300F1BE4E /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +201,7 @@
 		B4535DED2809E0E20020018E /* PresentationTests */ = {
 			isa = PBXGroup;
 			children = (
+				B4F1EBA528104BD000F1BE4E /* Mocks */,
 				B4535DF62809E0EC0020018E /* MapViewModelTests.swift */,
 			);
 			path = PresentationTests;
@@ -352,6 +359,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B4F1EBA528104BD000F1BE4E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B4F1EBA928104BF700F1BE4E /* LocationManagerUseCaseMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -385,6 +400,8 @@
 				B4535E3D2809E8DB0020018E /* RxTest */,
 				B4535E402809E8FB0020018E /* RxBlocking */,
 				B4535E422809E8FB0020018E /* RxTest */,
+				B4F1EBB228108A6300F1BE4E /* RxCocoa */,
+				B4F1EBB428108A6300F1BE4E /* RxSwift */,
 			);
 			productName = PresentationTests;
 			productReference = B4535DEC2809E0E20020018E /* PresentationTests.xctest */;
@@ -462,6 +479,7 @@
 				B411B731280D494F00490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B411B73D280D4A1700490694 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B4F1EA68280EE9FC00F1BE4E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B4F1EBB128108A6300F1BE4E /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B47759A427E8D73C00425734 /* Products */;
 			projectDirPath = "";
@@ -529,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F1EBAA28104BF700F1BE4E /* LocationManagerUseCaseMock.swift in Sources */,
 				B4535DF72809E0EC0020018E /* MapViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -981,6 +1000,14 @@
 				kind = branch;
 			};
 		};
+		B4F1EBB128108A6300F1BE4E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1010,6 +1037,16 @@
 			productName = RxCocoa;
 		};
 		B4F1EA6B280EE9FC00F1BE4E /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4535D652809DC2E0020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		B4F1EBB228108A6300F1BE4E /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4535D652809DC2E0020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B4F1EBB428108A6300F1BE4E /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4535D652809DC2E0020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
