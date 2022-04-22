@@ -13,16 +13,20 @@
 		B4535E5A2809E9690020018E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A7227E8DA2B00425734 /* Domain.framework */; };
 		B4535E6A2809E9A30020018E /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B4535E692809E9A30020018E /* RxTest */; };
 		B4775A7627E8DA2B00425734 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775A7527E8DA2B00425734 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4E12DDA281302B60064AA3E /* ZoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12DD9281302B60064AA3E /* ZoneRepository.swift */; };
+		B4E12DDD281303B10064AA3E /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12DDC281303B10064AA3E /* Zone.swift */; };
 		B4E12E3D281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E3C281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift */; };
 		B4E12E41281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E40281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift */; };
 		B4E12E45281327EE0064AA3E /* CLLocationManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E44281327EE0064AA3E /* CLLocationManagerMock.swift */; };
 		B4E12E47281327FF0064AA3E /* CLLocationManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */; };
+		B4E12E4D28132BE30064AA3E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4E12E4C28132BE30064AA3E /* RxSwift */; };
+		B4E12E4F28132BE30064AA3E /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B4E12E4E28132BE30064AA3E /* RxTest */; };
+		B4E12E5428132C150064AA3E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4E12E5328132C150064AA3E /* RxCocoa */; };
 		B4E8D182280BE478003EEFFC /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D181280BE478003EEFFC /* RxBlocking */; };
 		B4E8D185280BE489003EEFFC /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D184280BE489003EEFFC /* RxTest */; };
 		B4F087CB280E81B000A901C1 /* QueryLocationManagerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F087CA280E81B000A901C1 /* QueryLocationManagerUseCase.swift */; };
 		B4F1EA48280EE5EA00F1BE4E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA47280EE5EA00F1BE4E /* RxCocoa */; };
 		B4F1EA4A280EE5EA00F1BE4E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA49280EE5EA00F1BE4E /* RxSwift */; };
-		B4F1EA4D280EE61300F1BE4E /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA4C280EE61300F1BE4E /* RxCoreLocation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,8 @@
 		B4775A7227E8DA2B00425734 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775A7527E8DA2B00425734 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		B4775AE927E9E6B000425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4E12DD9281302B60064AA3E /* ZoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepository.swift; sourceTree = "<group>"; };
+		B4E12DDC281303B10064AA3E /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		B4E12E3C281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCommandLocationManagerUseCaseTests.swift; sourceTree = "<group>"; };
 		B4E12E40281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultQueryLocationManagerUseCaseTests.swift; sourceTree = "<group>"; };
 		B4E12E44281327EE0064AA3E /* CLLocationManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerMock.swift; sourceTree = "<group>"; };
@@ -87,7 +93,10 @@
 			files = (
 				B4E8D185280BE489003EEFFC /* RxTest in Frameworks */,
 				B4535E6A2809E9A30020018E /* RxTest in Frameworks */,
+				B4E12E4D28132BE30064AA3E /* RxSwift in Frameworks */,
+				B4E12E5428132C150064AA3E /* RxCocoa in Frameworks */,
 				B4E8D182280BE478003EEFFC /* RxBlocking in Frameworks */,
+				B4E12E4F28132BE30064AA3E /* RxTest in Frameworks */,
 				B4535E5A2809E9690020018E /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,7 +107,6 @@
 			files = (
 				B4F1EA4A280EE5EA00F1BE4E /* RxSwift in Frameworks */,
 				B4F1EA48280EE5EA00F1BE4E /* RxCocoa in Frameworks */,
-				B4F1EA4D280EE61300F1BE4E /* RxCoreLocation in Frameworks */,
 				B4535CE22809D8E20020018E /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,8 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				B4775A7527E8DA2B00425734 /* Domain.h */,
-				B4F087CA280E81B000A901C1 /* QueryLocationManagerUseCase.swift */,
-				B42BC3912812E77E00FC1486 /* CommandLocationManagerUseCase.swift */,
+				B4E12DDB2813038C0064AA3E /* Entities */,
+				B4E12DD5281302540064AA3E /* UseCases */,
+				B4E12DD82813027E0064AA3E /* RepositoryInterfaces */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -199,6 +208,22 @@
 				B4F087CA280E81B000A901C1 /* QueryLocationManagerUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		B4E12DD82813027E0064AA3E /* RepositoryInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				B4E12DD9281302B60064AA3E /* ZoneRepository.swift */,
+			);
+			path = RepositoryInterfaces;
+			sourceTree = "<group>";
+		};
+		B4E12DDB2813038C0064AA3E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B4E12DDC281303B10064AA3E /* Zone.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		B4E12E422813273A0064AA3E /* Mocks */ = {
@@ -249,6 +274,9 @@
 				B4535E692809E9A30020018E /* RxTest */,
 				B4E8D181280BE478003EEFFC /* RxBlocking */,
 				B4E8D184280BE489003EEFFC /* RxTest */,
+				B4E12E4C28132BE30064AA3E /* RxSwift */,
+				B4E12E4E28132BE30064AA3E /* RxTest */,
+				B4E12E5328132C150064AA3E /* RxCocoa */,
 			);
 			productName = DomainTests;
 			productReference = B4535E562809E9690020018E /* DomainTests.xctest */;
@@ -272,7 +300,6 @@
 			packageProductDependencies = (
 				B4F1EA47280EE5EA00F1BE4E /* RxCocoa */,
 				B4F1EA49280EE5EA00F1BE4E /* RxSwift */,
-				B4F1EA4C280EE61300F1BE4E /* RxCoreLocation */,
 			);
 			productName = Domain;
 			productReference = B4775A7227E8DA2B00425734 /* Domain.framework */;
@@ -290,6 +317,7 @@
 				TargetAttributes = {
 					B4535E552809E9690020018E = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 					B4775A7127E8DA2B00425734 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -313,6 +341,9 @@
 				B4E8D183280BE489003EEFFC /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B4F1EA46280EE5EA00F1BE4E /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B4F1EA4B280EE61300F1BE4E /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
+				B4E12E2128130E550064AA3E /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
+				B4E12E4B28132BE30064AA3E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B4E12E5228132C150064AA3E /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B4775A7327E8DA2B00425734 /* Products */;
 			projectDirPath = "";
@@ -381,6 +412,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B42BC3922812E77E00FC1486 /* CommandLocationManagerUseCase.swift in Sources */,
+				B4E12DDD281303B10064AA3E /* Zone.swift in Sources */,
+				B4E12DDA281302B60064AA3E /* ZoneRepository.swift in Sources */,
 				B4F087CB280E81B000A901C1 /* QueryLocationManagerUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,15 +433,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CD8LU925FT;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Homunculus.DomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -418,11 +458,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CD8LU925FT;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Homunculus.DomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -668,6 +714,30 @@
 				kind = branch;
 			};
 		};
+		B4E12E2128130E550064AA3E /* XCRemoteSwiftPackageReference "RxCoreLocation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxCoreLocation";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B4E12E4B28132BE30064AA3E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		B4E12E5228132C150064AA3E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		B4E8D180280BE478003EEFFC /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -708,6 +778,21 @@
 			package = B4535E612809E9880020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxTest;
 		};
+		B4E12E4C28132BE30064AA3E /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4535E612809E9880020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		B4E12E4E28132BE30064AA3E /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4535E612809E9880020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+		B4E12E5328132C150064AA3E /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4535E612809E9880020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
 		B4E8D181280BE478003EEFFC /* RxBlocking */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4535E612809E9880020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -727,11 +812,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B4535E612809E9880020018E /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
-		};
-		B4F1EA4C280EE61300F1BE4E /* RxCoreLocation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B4F1EA4B280EE61300F1BE4E /* XCRemoteSwiftPackageReference "RxCoreLocation" */;
-			productName = RxCoreLocation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
