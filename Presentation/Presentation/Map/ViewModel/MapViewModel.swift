@@ -56,18 +56,23 @@ final class MapViewModel: ViewModelType {
 }
 
 
-// MARK: - MapViewModelCommandable
+// MARK: - MapViewModelCommanding
 
-extension MapViewModel: MapViewModelCommandable {
-    func getDefaultLocation() -> CLLocation {
-        return dependencies.defaultLocation
-    }
-    
+extension MapViewModel: MapViewModelCommanding {
     func startUpdatingLocation() {
-        dependencies.locationManagerUseCase.startUpdatingLocation()
+        dependencies.commandLocationManagerUseCase.startUpdatingLocation()
     }
     
     func stopUpdatingLocation() {
-        dependencies.locationManagerUseCase.stopUpdatingLocation()
+        dependencies.commandLocationManagerUseCase.stopUpdatingLocation()
+    }
+}
+
+
+// MARK: - MapViewModelQuerying
+
+extension MapViewModel: MapViewModelQuerying {
+    func getDefaultLocation() -> CLLocation {
+        return dependencies.defaultLocation
     }
 }
