@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Reference: https://zeddios.tistory.com/1221
+// Reference: 1. https://zeddios.tistory.com/1221 2. https://codesquad-yoda.medium.com/codable-vs-nscoding-%EC%B0%A8%EC%9D%B4%EC%A0%90-4b47e240c0b8
 
 @propertyWrapper
 public struct UserDefault<T> {

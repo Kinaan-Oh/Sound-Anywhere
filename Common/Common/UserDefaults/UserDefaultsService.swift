@@ -8,10 +8,10 @@
 import CoreLocation
 
 public final class UserDefaultsService {
-    enum Key: String {
+    enum Keys: String {
         case recentLocation
     }
     
-    @UserDefault(key: Key.recentLocation.rawValue, defaultValue: nil)
-    public static var recentLocation: Data?
+    @UserDefaultOther(key: Keys.recentLocation.rawValue, defaultValue: nil)
+    public static var recentLocation: CLLocation?
 }

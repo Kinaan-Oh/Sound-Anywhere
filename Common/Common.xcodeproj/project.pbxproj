@@ -10,6 +10,7 @@
 		B4535EE8280ABC660020018E /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535EE7280ABC660020018E /* UserDefault.swift */; };
 		B4775AB427E8DB5A00425734 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775AB327E8DB5A00425734 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4775B3627EA184B00425734 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775B3527EA184B00425734 /* String+Extension.swift */; };
+		B491B1DB281299D6003E2F7F /* UserDefaultOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B1DA281299D6003E2F7F /* UserDefaultOther.swift */; };
 		B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */; };
 		B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */; };
 		B4F1EA40280EE57A00F1BE4E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA3F280EE57A00F1BE4E /* RxCocoa */; };
@@ -34,6 +35,7 @@
 		B4775AB027E8DB5A00425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775AB327E8DB5A00425734 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		B4775B3527EA184B00425734 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B491B1DA281299D6003E2F7F /* UserDefaultOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultOther.swift; sourceTree = "<group>"; };
 		B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				B4535EE7280ABC660020018E /* UserDefault.swift */,
+				B491B1DA281299D6003E2F7F /* UserDefaultOther.swift */,
 				B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */,
 			);
 			path = UserDefaults;
