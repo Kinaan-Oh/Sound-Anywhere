@@ -13,6 +13,8 @@
 		B4535E5A2809E9690020018E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A7227E8DA2B00425734 /* Domain.framework */; };
 		B4535E6A2809E9A30020018E /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B4535E692809E9A30020018E /* RxTest */; };
 		B4775A7627E8DA2B00425734 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775A7527E8DA2B00425734 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4E12E45281327EE0064AA3E /* CLLocationManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E44281327EE0064AA3E /* CLLocationManagerMock.swift */; };
+		B4E12E47281327FF0064AA3E /* CLLocationManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */; };
 		B4E8D182280BE478003EEFFC /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D181280BE478003EEFFC /* RxBlocking */; };
 		B4E8D185280BE489003EEFFC /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B4E8D184280BE489003EEFFC /* RxTest */; };
 		B4F087CB280E81B000A901C1 /* QueryLocationManagerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F087CA280E81B000A901C1 /* QueryLocationManagerUseCase.swift */; };
@@ -69,6 +71,8 @@
 		B4775A7227E8DA2B00425734 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775A7527E8DA2B00425734 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		B4775AE927E9E6B000425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4E12E44281327EE0064AA3E /* CLLocationManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerMock.swift; sourceTree = "<group>"; };
+		B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerStub.swift; sourceTree = "<group>"; };
 		B4F087CA280E81B000A901C1 /* QueryLocationManagerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryLocationManagerUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +142,8 @@
 		B4535E572809E9690020018E /* DomainTests */ = {
 			isa = PBXGroup;
 			children = (
+				B4E12E422813273A0064AA3E /* Mocks */,
+				B4E12E432813273E0064AA3E /* Stubs */,
 			);
 			path = DomainTests;
 			sourceTree = "<group>";
@@ -178,6 +184,22 @@
 				B4775AE927E9E6B000425734 /* Common.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4E12E422813273A0064AA3E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B4E12E44281327EE0064AA3E /* CLLocationManagerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B4E12E432813273E0064AA3E /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +354,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E12E45281327EE0064AA3E /* CLLocationManagerMock.swift in Sources */,
+				B4E12E47281327FF0064AA3E /* CLLocationManagerStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
