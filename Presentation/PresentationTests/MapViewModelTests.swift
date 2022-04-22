@@ -9,13 +9,15 @@ import CoreLocation
 import XCTest
 
 @testable import Presentation
+import Domain
 import RxCocoa
 import RxSwift
 import RxTest
 
 final class MapViewModelTests: XCTestCase {
     // Given
-    var locationManagerUseCaseMock: LocationManagerUseCaseMock!
+    var queryLocationManagerUseCaseStub: QueryLocationManagerUseCaseStub!
+    var commandLocationManagerUseCaseMock: CommandLocationManagerUseCaseMock!
     var viewModel: MapViewModel!
     var scheduler: TestScheduler!
     var disposeBag = DisposeBag()
@@ -23,12 +25,13 @@ final class MapViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        locationManagerUseCaseMock = LocationManagerUseCaseMock()
-        viewModel = MapViewModel(
-            dependencies: .init(
-                defaultLocation: CLLocation(),
-                locationManagerUseCase: locationManagerUseCaseMock
-            )
+        queryLocationManagerUseCaseStub = QueryLocationManagerUseCaseStub()
+        commandLocationManagerUseCaseMock = CommandLocationManagerUseCaseMock()
+        viewModel = MapViewModel(dependencies:
+                .init(defaultLocation: CLLocation(latitude: 37.54330366639085,
+                                                  longitude: 127.04455548501139),
+                      queryLocationManagerUseCase: queryLocationManagerUseCaseStub,
+                      commandLocationManagerUseCase: commandLocationManagerUseCaseMock)
         )
         scheduler = TestScheduler(initialClock: 0)
     }
@@ -43,7 +46,7 @@ final class MapViewModelTests: XCTestCase {
         scheduler.start()
         
         // Then
-        XCTAssertTrue(locationManagerUseCaseMock.requestWhenInUseAuthorization_Called)
+        XCTAssertTrue(commandLocationManagerUseCaseMock.requestWhenInUseAuthorization_Called)
     }
     
     func test_transform_authorizationStatus() {
@@ -63,7 +66,6 @@ final class MapViewModelTests: XCTestCase {
         scheduler.start()
         
         // Then
-        XCTAssertTrue(locationManagerUseCaseMock.requestWhenInUseAuthorization_Called)
         XCTAssertEqual(res.events, [.next(0, .notDetermined), .completed(0)])
     }
     
@@ -84,7 +86,6 @@ final class MapViewModelTests: XCTestCase {
         scheduler.start()
         
         // Then
-        XCTAssertTrue(locationManagerUseCaseMock.observeLocation_Called)
         XCTAssertEqual(res.events, [.next(0, nil), .completed(0)])
     }
     
