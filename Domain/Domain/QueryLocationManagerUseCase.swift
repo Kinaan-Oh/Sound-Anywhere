@@ -10,15 +10,12 @@ import CoreLocation
 import RxCoreLocation
 import RxSwift
 
-public protocol LocationManagerUseCase {
+public protocol QueryLocationManagerUseCase {
     func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus>
     func observeLocation() -> Observable<CLLocation?>
-    func requestWhenInUseAuthorization()
-    func startUpdatingLocation()
-    func stopUpdatingLocation()
 }
 
-public final class DefaultLocationManagerUseCase: NSObject, LocationManagerUseCase {
+public final class DefaultQueryLocationManagerUseCase: NSObject, QueryLocationManagerUseCase {
     private let locationManager: CLLocationManager
     
     public init(locationManager: CLLocationManager) {
@@ -38,23 +35,11 @@ public final class DefaultLocationManagerUseCase: NSObject, LocationManagerUseCa
         return locationManager.rx
             .location
     }
-    
-    public func requestWhenInUseAuthorization() {
-        locationManager.requestWhenInUseAuthorization()
-    }
-    
-    public func startUpdatingLocation() {
-        locationManager.startUpdatingLocation()
-    }
-    
-    public func stopUpdatingLocation() {
-        locationManager.stopUpdatingLocation()
-    }
 }
 
 // MARK: - CLLocationManagerDelegate
 
-extension DefaultLocationManagerUseCase: CLLocationManagerDelegate {
+extension DefaultQueryLocationManagerUseCase: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     }
 }
