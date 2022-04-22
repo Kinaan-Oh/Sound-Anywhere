@@ -7,6 +7,8 @@
 
 import CoreLocation
 
+import Common
+
 public protocol CommandLocationManagerUseCase {
     func requestWhenInUseAuthorization()
     func startUpdatingLocation()
@@ -14,9 +16,9 @@ public protocol CommandLocationManagerUseCase {
 }
 
 public final class DefaultCommandLocationManagerUseCase: NSObject, CommandLocationManagerUseCase {
-    private let locationManager: CLLocationManager
+    private let locationManager: CLLocationManagerCommanding
     
-    public init(locationManager: CLLocationManager) {
+    public init(locationManager: CLLocationManagerCommanding) {
         self.locationManager = locationManager
         super.init()
     }

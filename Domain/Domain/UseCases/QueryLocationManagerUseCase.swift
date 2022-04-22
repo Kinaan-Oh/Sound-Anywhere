@@ -7,6 +7,7 @@
 
 import CoreLocation
 
+import Common
 import RxCoreLocation
 import RxSwift
 
@@ -16,24 +17,20 @@ public protocol QueryLocationManagerUseCase {
 }
 
 public final class DefaultQueryLocationManagerUseCase: NSObject, QueryLocationManagerUseCase {
-    private let locationManager: CLLocationManager
+    private let locationManager: CLLocationManagerQuerying
     
-    public init(locationManager: CLLocationManager) {
+    public init(locationManager: CLLocationManagerQuerying) {
         self.locationManager = locationManager
         super.init()
-        locationManager.delegate = self
+        (locationManager as? CLLocationManager)?.delegate = self
     }
     
     public func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus> {
-        return locationManager.rx
-            .didChangeAuthorization
-            .asObservable()
-            .map { $0.status }
+        return locationManager.observeAuthorizationStatus()
     }
     
     public func observeLocation() -> Observable<CLLocation?> {
-        return locationManager.rx
-            .location
+        return locationManager.observeLocation()
     }
 }
 
