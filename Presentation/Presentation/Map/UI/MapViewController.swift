@@ -32,7 +32,8 @@ final class MapViewController: UIViewController {
             dependencies: .init(
                 defaultLocation: CLLocation(latitude: 37.54330366639085,
                                             longitude: 127.04455548501139),
-                locationManagerUseCase: DefaultLocationManagerUseCase(locationManager: locationManager)
+                queryLocationManagerUseCase: DefaultQueryLocationManagerUseCase(locationManager: locationManager) ,
+                commandLocationManagerUseCase: DefaultCommandLocationManagerUseCase(locationManager: locationManager)
             )
         )
         return viewModel

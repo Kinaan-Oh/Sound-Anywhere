@@ -25,7 +25,8 @@ final class MapViewModel: ViewModelType {
     
     struct Dependencies {
         let defaultLocation: CLLocation
-        let locationManagerUseCase: LocationManagerUseCase
+        let queryLocationManagerUseCase: QueryLocationManagerUseCase
+        let commandLocationManagerUseCase: CommandLocationManagerUseCase
     }
     
     let dependencies: Dependencies
@@ -38,15 +39,15 @@ final class MapViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         input.viewDidAppearEvent
             .drive { [weak self] _ in
-                self?.dependencies.locationManagerUseCase.requestWhenInUseAuthorization()
+                self?.dependencies.commandLocationManagerUseCase.requestWhenInUseAuthorization()
             }
             .disposed(by: disposeBag)
         
-        let authorizationStatus = dependencies.locationManagerUseCase
+        let authorizationStatus = dependencies.queryLocationManagerUseCase
             .observeAuthorizationStatus()
             .asDriverOnErrorJustComplete()
         
-        let location = dependencies.locationManagerUseCase
+        let location = dependencies.queryLocationManagerUseCase
             .observeLocation()
             .asDriverOnErrorJustComplete()
         
