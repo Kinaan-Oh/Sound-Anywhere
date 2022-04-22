@@ -36,6 +36,9 @@ final class MapViewModelTests: XCTestCase {
         scheduler = TestScheduler(initialClock: 0)
     }
     
+    
+    // MARK: - Transform
+    
     func test_transform_viewDidAppearEvent_requestWhenInUseAuthorization() {
         // When
         let viewDidAppearEvent = scheduler.createColdObservable([.next(100, true)])
@@ -89,7 +92,37 @@ final class MapViewModelTests: XCTestCase {
         XCTAssertEqual(res.events, [.next(0, nil), .completed(0)])
     }
     
-    // MARK: - Input
+    
+    // MARK: - Commanding
+    
+    func test_startUpdatingLocation() {
+        // When
+        viewModel.startUpdatingLocation()
+        
+        // Then
+        XCTAssertTrue(commandLocationManagerUseCaseMock.startUpdatingLocation_Called)
+    }
+    
+    func test_stopUpdatingLocation() {
+        // When
+        viewModel.stopUpdatingLocation()
+        
+        // Then
+        XCTAssertTrue(commandLocationManagerUseCaseMock.stopUpdatingLocation_Called)
+    }
+    
+    // MARK: - Querying
+    
+    func test_getDefaultLocation() {
+        // When
+        let res = viewModel.getDefaultLocation()
+        
+        // Then
+        XCTAssertEqual(res.coordinate.latitude, 37.54330366639085)
+        XCTAssertEqual(res.coordinate.longitude, 127.04455548501139)
+    }
+    
+    // MARK: - Private Methods
     
     private func createInput(viewDidAppearEvent: Driver<Bool> = Driver.never()) -> MapViewModel.Input {
         return MapViewModel.Input(viewDidAppearEvent: viewDidAppearEvent)
