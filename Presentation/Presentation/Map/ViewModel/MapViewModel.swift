@@ -13,6 +13,15 @@ import Domain
 import RxCocoa
 import RxSwift
 
+protocol MapViewModelQuerying {
+    func getDefaultLocation() -> CLLocation
+}
+
+protocol MapViewModelCommanding {
+    func startUpdatingLocation()
+    func stopUpdatingLocation()
+}
+
 final class MapViewModel: ViewModelType {
     struct Input {
         let viewDidAppearEvent: Driver<Bool>

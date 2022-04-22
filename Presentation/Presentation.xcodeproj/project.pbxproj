@@ -12,7 +12,6 @@
 		B411B73B280D4A0500490694 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CC42809D8830020018E /* Domain.framework */; platformFilter = ios; };
 		B411B73C280D4A0500490694 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CC42809D8830020018E /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B42BC38B2812E58100FC1486 /* QueryLocationManagerUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC38A2812E58100FC1486 /* QueryLocationManagerUseCaseStub.swift */; };
-		B42BC39B2812E91B00FC1486 /* MapViewModelQuerying.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC39A2812E91B00FC1486 /* MapViewModelQuerying.swift */; };
 		B4535DF02809E0E20020018E /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47759A327E8D73C00425734 /* Presentation.framework */; };
 		B4535DF72809E0EC0020018E /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535DF62809E0EC0020018E /* MapViewModelTests.swift */; };
 		B4535E3C2809E8DB0020018E /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B4535E3B2809E8DB0020018E /* RxBlocking */; };
@@ -29,7 +28,6 @@
 		B47759D727E8D76C00425734 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C427E8D76C00425734 /* MapViewModel.swift */; };
 		B47759D927E8D76C00425734 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C727E8D76C00425734 /* MapViewController.swift */; };
 		B47759DA27E8D76C00425734 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C927E8D76C00425734 /* ViewModelType.swift */; };
-		B491B1CC2811E56E003E2F7F /* MapViewModelCommanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B1CB2811E56E003E2F7F /* MapViewModelCommanding.swift */; };
 		B491B1EF2812A220003E2F7F /* MKMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B1EE2812A220003E2F7F /* MKMapView+Extension.swift */; };
 		B491B1F12812A356003E2F7F /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B1F02812A356003E2F7F /* UIViewController+Rx.swift */; };
 		B4F1EA6A280EE9FC00F1BE4E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4F1EA69280EE9FC00F1BE4E /* RxCocoa */; };
@@ -96,7 +94,6 @@
 		B42B79D12807DB4700DEE1D0 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42B79D42807DB5400DEE1D0 /* Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42BC38A2812E58100FC1486 /* QueryLocationManagerUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryLocationManagerUseCaseStub.swift; sourceTree = "<group>"; };
-		B42BC39A2812E91B00FC1486 /* MapViewModelQuerying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelQuerying.swift; sourceTree = "<group>"; };
 		B4535CBE2809D8830020018E /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		B4535CBF2809D8830020018E /* Domain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Domain.xcodeproj; sourceTree = "<group>"; };
 		B4535CC92809D8A50020018E /* Common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Common.xcodeproj; sourceTree = "<group>"; };
@@ -117,7 +114,6 @@
 		B47759C727E8D76C00425734 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B47759C927E8D76C00425734 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		B4775AE427E9E6A400425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B491B1CB2811E56E003E2F7F /* MapViewModelCommanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelCommanding.swift; sourceTree = "<group>"; };
 		B491B1EE2812A220003E2F7F /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
 		B491B1F02812A356003E2F7F /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		B4F1EBA928104BF700F1BE4E /* CommandLocationManagerUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLocationManagerUseCaseMock.swift; sourceTree = "<group>"; };
@@ -354,8 +350,6 @@
 		B47759C327E8D76C00425734 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B42BC39A2812E91B00FC1486 /* MapViewModelQuerying.swift */,
-				B491B1CB2811E56E003E2F7F /* MapViewModelCommanding.swift */,
 				B47759C427E8D76C00425734 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
@@ -605,7 +599,6 @@
 			files = (
 				B47759CE27E8D76C00425734 /* SearchViewController.swift in Sources */,
 				B47759D027E8D76C00425734 /* HomeViewModel.swift in Sources */,
-				B491B1CC2811E56E003E2F7F /* MapViewModelCommanding.swift in Sources */,
 				B47759CD27E8D76C00425734 /* SearchViewModel.swift in Sources */,
 				B47759D527E8D76C00425734 /* RecordViewController.swift in Sources */,
 				B47759D727E8D76C00425734 /* MapViewModel.swift in Sources */,
@@ -613,7 +606,6 @@
 				B47759D227E8D76C00425734 /* HomeViewController.swift in Sources */,
 				B491B1EF2812A220003E2F7F /* MKMapView+Extension.swift in Sources */,
 				B47759D927E8D76C00425734 /* MapViewController.swift in Sources */,
-				B42BC39B2812E91B00FC1486 /* MapViewModelQuerying.swift in Sources */,
 				B491B1F12812A356003E2F7F /* UIViewController+Rx.swift in Sources */,
 				B47759DA27E8D76C00425734 /* ViewModelType.swift in Sources */,
 			);
