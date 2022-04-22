@@ -1,8 +1,8 @@
 //
 //  UIViewController+Rx.swift
-//  Common
+//  Presentation
 //
-//  Created by 오현식 on 2022/04/20.
+//  Created by 오현식 on 2022/04/22.
 //
 
 // Reference: https://github.com/devxoul/RxViewController/blob/master/Sources/RxViewController/UIViewController%2BRx.swift
