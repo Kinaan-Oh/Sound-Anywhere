@@ -51,12 +51,11 @@ final class MapViewController: UIViewController {
     // MARK: - Helpers
     
     private func configureLocation() {
-        if let locationData = UserDefaultsService.recentLocation,
-           let recentLocation = try? NSKeyedUnarchiver.unarchivedObject(ofClass: CLLocation.self,
-                                                                        from: locationData) {
-            mapView.setRegion(recentLocation.toMKCoordinateRegion(), animated: true)
+        if let recentLocation = UserDefaultsService.recentLocation {
+            mapView.setRegion(location: recentLocation)
         } else {
-            mapView.setRegion(viewModel.dependencies.defaultLocation.toMKCoordinateRegion(), animated: true)
+            let defaultLocation = viewModel.getDefaultLocation()
+            mapView.setRegion(location: defaultLocation)
         }
     }
     
@@ -72,7 +71,7 @@ final class MapViewController: UIViewController {
                 guard let self = self,
                       authorizationStatus == .authorizedWhenInUse
                 else { return }
-                self.viewModel.dependencies.locationManagerUseCase.startUpdatingLocation()
+                self.viewModel.startUpdatingLocation()
             }
             .disposed(by: disposeBag)
         
@@ -81,19 +80,11 @@ final class MapViewController: UIViewController {
                 guard let self = self,
                       let location = location
                 else { return }
-                self.saveRecentLocation(location: location)
+                UserDefaultsService.recentLocation = location
             }
             .disposed(by: disposeBag)
     }
     
     private func bindUI() {
-    }
-    
-    // MARK: - Private Methods
-    
-    private func saveRecentLocation(location: CLLocation) {
-        let locationData = try? NSKeyedArchiver.archivedData(withRootObject: location,
-                                                             requiringSecureCoding: false)
-        UserDefaultsService.recentLocation = locationData
     }
 }
