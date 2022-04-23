@@ -16,6 +16,8 @@
 		B4535EA72809EBC50020018E /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B4535EA62809EBC50020018E /* RxTest */; };
 		B4535EAA2809EBDF0020018E /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B4535EA92809EBDF0020018E /* RxBlocking */; };
 		B4775A8A27E8DA6500425734 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775A8927E8DA6500425734 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4ACBE592814494B00E09E5C /* ZoneDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE582814494B00E09E5C /* ZoneDTO.swift */; };
+		B4ACBE5B2814495300E09E5C /* TrackDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE5A2814495300E09E5C /* TrackDTO.swift */; };
 		B4E12DF42813068E0064AA3E /* ZoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12DF32813068E0064AA3E /* ZoneRepository.swift */; };
 		B4E12E0E281307EF0064AA3E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CF02809D8FE0020018E /* Common.framework */; platformFilter = ios; };
 		B4E12E0F281307EF0064AA3E /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CF02809D8FE0020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -85,6 +87,8 @@
 		B4775A8627E8DA6500425734 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775A8927E8DA6500425734 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		B4775AEE27E9E6B600425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4ACBE582814494B00E09E5C /* ZoneDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneDTO.swift; sourceTree = "<group>"; };
+		B4ACBE5A2814495300E09E5C /* TrackDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDTO.swift; sourceTree = "<group>"; };
 		B4E12DF32813068E0064AA3E /* ZoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepository.swift; sourceTree = "<group>"; };
 		B4E12E2A28130F270064AA3E /* FireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,9 +229,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B4E8D147280BD8B8003EEFFC /* FireStore+Rx */ = {
+		B4ACBE532814493500E09E5C /* DataTransferObjects */ = {
 			isa = PBXGroup;
 			children = (
+				B4ACBE582814494B00E09E5C /* ZoneDTO.swift */,
+				B4ACBE5A2814495300E09E5C /* TrackDTO.swift */,
+			);
+			path = DataTransferObjects;
+			sourceTree = "<group>";
+		};
 				B4E12DF32813068E0064AA3E /* ZoneRepository.swift */,
 			);
 			path = "FireStore+Rx";
@@ -414,6 +424,8 @@
 			files = (
 				B4E12DF42813068E0064AA3E /* ZoneRepository.swift in Sources */,
 				B4E12E2B28130F270064AA3E /* FireStoreService.swift in Sources */,
+				B4ACBE5B2814495300E09E5C /* TrackDTO.swift in Sources */,
+				B4ACBE592814494B00E09E5C /* ZoneDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
