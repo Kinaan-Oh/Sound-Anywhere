@@ -41,3 +41,16 @@ public struct TrackDTO {
               description: description)
     }
 }
+
+extension TrackDTO: Equatable {
+    public static func == (lhs: TrackDTO, rhs: TrackDTO) -> Bool {
+        return
+            lhs.id == rhs.id &&
+            lhs.imageURLString == rhs.imageURLString &&
+            lhs.genres == rhs.genres &&
+            lhs.album == rhs.album &&
+            lhs.artist == rhs.artist &&
+            lhs.title == rhs.title &&
+            lhs.description == rhs.description
+    }
+}

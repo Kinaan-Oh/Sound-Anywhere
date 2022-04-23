@@ -33,3 +33,13 @@ public struct ZoneDTO {
              coordinate: coordinate)
     }
 }
+
+extension ZoneDTO: Equatable {
+    public static func == (lhs: ZoneDTO, rhs: ZoneDTO) -> Bool {
+        return
+            lhs.id == rhs.id &&
+            lhs.name == rhs.name &&
+            lhs.trackList == rhs.trackList &&
+            lhs.coordinate == rhs.coordinate
+    }
+}
