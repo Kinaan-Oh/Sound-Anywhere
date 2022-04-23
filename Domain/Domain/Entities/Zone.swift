@@ -10,5 +10,6 @@ import CoreLocation
 public struct Zone {
     let id: String
     let name: String
+    let trackList: [Track]
     let coordinate: CLLocationCoordinate2D
 }

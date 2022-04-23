@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4218D222813968E00604436 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4218D212813968E00604436 /* Track.swift */; };
 		B42BC3922812E77E00FC1486 /* CommandLocationManagerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC3912812E77E00FC1486 /* CommandLocationManagerUseCase.swift */; };
 		B4535CE22809D8E20020018E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CE12809D8DF0020018E /* Common.framework */; };
 		B4535CE32809D8E20020018E /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CE12809D8DF0020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B4218D212813968E00604436 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		B42BC3912812E77E00FC1486 /* CommandLocationManagerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLocationManagerUseCase.swift; sourceTree = "<group>"; };
 		B4535CD72809D8DF0020018E /* Common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Common.xcodeproj; sourceTree = "<group>"; };
 		B4535CDC2809D8DF0020018E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				B4E12DDC281303B10064AA3E /* Zone.swift */,
+				B4218D212813968E00604436 /* Track.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B42BC3922812E77E00FC1486 /* CommandLocationManagerUseCase.swift in Sources */,
+				B4218D222813968E00604436 /* Track.swift in Sources */,
 				B4E12DDD281303B10064AA3E /* Zone.swift in Sources */,
 				B4E12DDA281302B60064AA3E /* ZoneRepository.swift in Sources */,
 				B4F087CB280E81B000A901C1 /* QueryLocationManagerUseCase.swift in Sources */,
