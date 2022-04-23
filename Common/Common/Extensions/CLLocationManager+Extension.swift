@@ -10,11 +10,19 @@ import CoreLocation
 import RxCoreLocation
 import RxSwift
 
+
+// MARK: - CLLocationManagerCommanding
+
 public protocol CLLocationManagerCommanding {
     func requestWhenInUseAuthorization()
     func startUpdatingLocation()
     func stopUpdatingLocation()
 }
+
+extension CLLocationManager: CLLocationManagerCommanding {}
+
+
+// MARK: - CLLocationManagerQuerying
 
 public protocol CLLocationManagerQuerying {
     func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus>
