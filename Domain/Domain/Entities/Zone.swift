@@ -8,8 +8,19 @@
 import CoreLocation
 
 public struct Zone {
-    let id: String
-    let name: String
-    let trackList: [Track]
-    let coordinate: CLLocationCoordinate2D
+    public let id: String
+    public let name: String
+    public let trackList: [Track]
+    public let coordinate: CLLocationCoordinate2D
+    
+    public init(id: String,
+         name: String,
+         trackList: [Track],
+         coordinate: CLLocationCoordinate2D
+    ) {
+        self.id = id
+        self.name = name
+        self.trackList = trackList
+        self.coordinate = coordinate
+    }
 }

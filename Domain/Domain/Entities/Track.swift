@@ -6,9 +6,22 @@
 //
 
 public struct Track {
-    let id: String
-    let imageURL: URL
-    let artist: String
-    let title: String
-    let description: String
+    public let id: String
+    public let imageURL: URL?
+    public let artist: String
+    public let title: String
+    public let description: String
+    
+    public init(id: String,
+         imageURL: URL?,
+         artist: String,
+         title: String,
+         description: String
+    ) {
+        self.id = id
+        self.imageURL = imageURL
+        self.artist = artist
+        self.title = title
+        self.description = description
+    }
 }
