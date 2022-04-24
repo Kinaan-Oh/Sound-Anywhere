@@ -7,7 +7,7 @@
 
 import Domain
 
-public struct TrackDTO {
+public struct TrackDTO: Codable {
     let id: String
     let imageURLString: String
     let genres: [String]

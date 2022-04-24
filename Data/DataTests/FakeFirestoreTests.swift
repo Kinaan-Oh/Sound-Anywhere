@@ -27,8 +27,7 @@ final class FakeFirestoreTests: XCTestCase {
                              artist: "Seinabo Sey",
                              title: "Younger",
                              description: "")
-        let coordinate = CLLocationCoordinate2D(latitude: 77, longitude: 77)
-        input = ZoneDTO(id: "001", name: "서울숲", trackList: [track], coordinate: coordinate)
+        input = ZoneDTO(id: "001", name: "서울숲", latitude: 77, longitude: 77, trackList: [track])
     }
     
     func test_setData() {

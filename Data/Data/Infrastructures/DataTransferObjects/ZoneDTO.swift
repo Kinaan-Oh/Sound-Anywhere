@@ -9,28 +9,31 @@ import CoreLocation
 
 import Domain
 
-public struct ZoneDTO {
+public struct ZoneDTO: Codable {
     let id: String
     let name: String
+    let latitude: CLLocationDegrees
+    let longitude: CLLocationDegrees
     let trackList: [TrackDTO]
-    let coordinate: CLLocationCoordinate2D
     
     init(id: String,
          name: String,
-         trackList: [TrackDTO],
-         coordinate: CLLocationCoordinate2D
+         latitude: CLLocationDegrees,
+         longitude: CLLocationDegrees,
+         trackList: [TrackDTO]
     ) {
         self.id = id
         self.name = name
+        self.latitude = latitude
+        self.longitude = longitude
         self.trackList = trackList
-        self.coordinate = coordinate
     }
     
     func toEntity() -> Zone {
         Zone(id: id,
              name: name,
              trackList: trackList.map { $0.toEntity() },
-             coordinate: coordinate)
+             coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
     }
 }
 
@@ -40,6 +43,7 @@ extension ZoneDTO: Equatable {
             lhs.id == rhs.id &&
             lhs.name == rhs.name &&
             lhs.trackList == rhs.trackList &&
-            lhs.coordinate == rhs.coordinate
+            lhs.latitude == rhs.latitude &&
+            lhs.longitude == rhs.longitude
     }
 }
