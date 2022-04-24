@@ -59,12 +59,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kr-LJ-paO" userLabel="CurrentLocationButton">
-                                <rect key="frame" x="335" y="749" width="44" height="44"/>
+                                <rect key="frame" x="350" y="729" width="44" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="SP7-Q2-zso"/>
                                     <constraint firstAttribute="width" constant="44" id="fgh-Bj-O9N"/>
                                 </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="current_btn"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowUIColor">
@@ -91,20 +92,20 @@
                         <constraints>
                             <constraint firstItem="rTQ-oG-RdR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="0Tl-Hi-0us"/>
                             <constraint firstItem="rTQ-oG-RdR" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="60" id="LFn-Wt-u5n"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="2kr-LJ-paO" secondAttribute="bottom" constant="20" id="LcG-5w-rMd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2kr-LJ-paO" secondAttribute="trailing" constant="20" id="PIy-GU-VvR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Fox-rR-60Z" secondAttribute="trailing" id="QzD-Sn-IA3"/>
                             <constraint firstItem="Fox-rR-60Z" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Y86-ab-e2t"/>
-                            <constraint firstItem="2kr-LJ-paO" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="315" id="bky-eM-Hnc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Fox-rR-60Z" secondAttribute="bottom" id="k6J-Bf-RvF"/>
                             <constraint firstItem="Fox-rR-60Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sJk-ib-ZvT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="2kr-LJ-paO" secondAttribute="bottom" constant="40" id="xtc-8V-Rbv"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="지도" image="map" catalog="system" selectedImage="map.fill" id="2O0-Ed-hJY"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="currentLocationButton" destination="2kr-LJ-paO" id="HD9-tt-h39"/>
-                        <outlet property="favoriteZoneButton" destination="rTQ-oG-RdR" id="wL8-gv-AIL"/>
-                        <outlet property="mapView" destination="Fox-rR-60Z" id="xv5-Tg-05J"/>
+                        <outlet property="currentLocationButton" destination="2kr-LJ-paO" id="ayW-SS-YwW"/>
+                        <outlet property="favoriteZoneButton" destination="rTQ-oG-RdR" id="gJM-qm-xvi"/>
+                        <outlet property="mapView" destination="Fox-rR-60Z" id="mt1-CO-CKW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
