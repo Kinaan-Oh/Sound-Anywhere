@@ -12,18 +12,18 @@ public protocol QueryZoneUseCase {
     func query(name: String) -> Single<Zone>
 }
 
-final class DefaultQueryZoneUseCase: QueryZoneUseCase {
+public final class DefaultQueryZoneUseCase: QueryZoneUseCase {
     private let zoneRepository: ZoneRepositoryQuerying
     
-    init(zoneRepository: ZoneRepositoryQuerying) {
+    public init(zoneRepository: ZoneRepositoryQuerying) {
         self.zoneRepository = zoneRepository
     }
     
-    func query() -> Single<[Zone]> {
+    public func query() -> Single<[Zone]> {
         return zoneRepository.query()
     }
     
-    func query(name: String) -> Single<Zone> {
+    public func query(name: String) -> Single<Zone> {
         return zoneRepository.query(name: name)
     }
 }
