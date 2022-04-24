@@ -22,6 +22,8 @@
 		B49F7FF0280925B900BE5952 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FEF280925B900BE5952 /* CALayer+Extension.swift */; };
 		B49F7FF2280925E700BE5952 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FF1280925E700BE5952 /* UIImage+Extension.swift */; };
 		B49F7FF4280925EF00BE5952 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FF3280925EF00BE5952 /* UIColor+Extension.swift */; };
+		B4ACBEB828155B8F00E09E5C /* Zone.json in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBEB728155B8F00E09E5C /* Zone.json */; };
+		B4ACBEC52815694E00E09E5C /* Resource+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBEC42815694E00E09E5C /* Resource+Dummy.swift */; };
 		B4E8D170280BE389003EEFFC /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D0E2809D9840020018E /* Common.framework */; };
 		B4E8D171280BE389003EEFFC /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D0E2809D9840020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -33,6 +35,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = B4775AB027E8DB5A00425734;
 			remoteInfo = Common;
+		};
+		B4ACBEB32815595C00E09E5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4535D042809D9840020018E /* Common.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B491B20B2812B08A003E2F7F;
+			remoteInfo = CommonTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -72,6 +81,8 @@
 		B49F7FEF280925B900BE5952 /* CALayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		B49F7FF1280925E700BE5952 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		B49F7FF3280925EF00BE5952 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		B4ACBEB728155B8F00E09E5C /* Zone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Zone.json; sourceTree = "<group>"; };
+		B4ACBEC42815694E00E09E5C /* Resource+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Dummy.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				B4535D0E2809D9840020018E /* Common.framework */,
+				B4ACBEB42815595C00E09E5C /* CommonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,14 +154,10 @@
 		B4775AFE27E9F42900425734 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				B49F7FEE280925A200BE5952 /* Extensions */,
 				B4775AFF27E9F42900425734 /* Resource.h */,
 				B49F7FD3280865DE00BE5952 /* Assets.xcassets */,
-				B4775B0627E9F44700425734 /* Resource.swift */,
-				B4775B3027EA148300425734 /* Resource+Storyboard.swift */,
-				B49F7FD12808615700BE5952 /* Resource+Image.swift */,
-				B49F7FD928086D4800BE5952 /* Resource+Color.swift */,
-				B49F7FDB28086D8600BE5952 /* Resource+Font.swift */,
+				B4ACBEB6281559A200E09E5C /* Dummies */,
+				B49F7FEE280925A200BE5952 /* Extensions */,
 				B4775B1D27E9F69B00425734 /* Storyboard */,
 			);
 			path = Resource;
@@ -179,11 +187,33 @@
 		B49F7FEE280925A200BE5952 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B4ACBEB52815597900E09E5C /* Resource+Extension */,
 				B49F7FEF280925B900BE5952 /* CALayer+Extension.swift */,
 				B49F7FF1280925E700BE5952 /* UIImage+Extension.swift */,
 				B49F7FF3280925EF00BE5952 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B4ACBEB52815597900E09E5C /* Resource+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B4775B0627E9F44700425734 /* Resource.swift */,
+				B4775B3027EA148300425734 /* Resource+Storyboard.swift */,
+				B49F7FD928086D4800BE5952 /* Resource+Color.swift */,
+				B49F7FDB28086D8600BE5952 /* Resource+Font.swift */,
+				B49F7FD12808615700BE5952 /* Resource+Image.swift */,
+				B4ACBEC42815694E00E09E5C /* Resource+Dummy.swift */,
+			);
+			path = "Resource+Extension";
+			sourceTree = "<group>";
+		};
+		B4ACBEB6281559A200E09E5C /* Dummies */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACBEB728155B8F00E09E5C /* Zone.json */,
+			);
+			path = Dummies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +276,6 @@
 			);
 			mainGroup = B4775AF227E9F42900425734;
 			packageReferences = (
-				B4775B3E27EA296400425734 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = B4775AFD27E9F42900425734 /* Products */;
 			projectDirPath = "";
@@ -269,6 +298,13 @@
 			fileType = wrapper.framework;
 			path = Common.framework;
 			remoteRef = B4535D0D2809D9840020018E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B4ACBEB42815595C00E09E5C /* CommonTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CommonTests.xctest;
+			remoteRef = B4ACBEB32815595C00E09E5C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -295,6 +331,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4775B3127EA148300425734 /* Resource+Storyboard.swift in Sources */,
+				B4ACBEB828155B8F00E09E5C /* Zone.json in Sources */,
+				B4ACBEC52815694E00E09E5C /* Resource+Dummy.swift in Sources */,
 				B49F7FF2280925E700BE5952 /* UIImage+Extension.swift in Sources */,
 				B49F7FDC28086D8600BE5952 /* Resource+Font.swift in Sources */,
 				B49F7FDA28086D4800BE5952 /* Resource+Color.swift in Sources */,
@@ -517,17 +555,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B4775B3E27EA296400425734 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = B4775AF327E9F42900425734 /* Project object */;
 }

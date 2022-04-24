@@ -121,9 +121,6 @@ final class DefaultZoneRepositoryTests: XCTestCase {
             .subscribe { result in
             } onFailure: { error in
                 // Then
-                print("-------------------------------------------------------------------------")
-                print(error)
-                print("-------------------------------------------------------------------------")
                 let error = error as? FakeFirestore<ZoneDTO>.FirestoreError
                 XCTAssertNotNil(error)
                 XCTAssertEqual(error!, FakeFirestore<ZoneDTO>.FirestoreError.documentNotExist)
