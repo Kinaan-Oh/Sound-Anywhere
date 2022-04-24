@@ -24,3 +24,13 @@ public struct Zone {
         self.coordinate = coordinate
     }
 }
+
+extension Zone: Equatable {
+    public static func == (lhs: Zone, rhs: Zone) -> Bool {
+        return
+            lhs.id == rhs.id &&
+            lhs.name == rhs.name &&
+            lhs.trackList == rhs.trackList &&
+            lhs.coordinate == rhs.coordinate
+    }
+}

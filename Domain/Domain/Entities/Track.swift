@@ -25,3 +25,14 @@ public struct Track {
         self.description = description
     }
 }
+
+extension Track: Equatable {
+    public static func == (lhs: Track, rhs: Track) -> Bool {
+        return
+            lhs.id == rhs.id &&
+            lhs.imageURL == rhs.imageURL &&
+            lhs.artist == rhs.artist &&
+            lhs.title == rhs.title &&
+            lhs.description == rhs.description
+    }
+}
