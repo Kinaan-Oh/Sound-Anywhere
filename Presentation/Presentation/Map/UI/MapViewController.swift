@@ -9,6 +9,7 @@ import MapKit
 import UIKit
 
 import Common
+import DIContainer
 import Domain
 import RxCocoa
 import RxSwift
@@ -23,22 +24,7 @@ final class MapViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private lazy var viewModel: MapViewModel = {
-        let locationManager = CLLocationManager()
-        locationManager.distanceFilter = CLLocationDistance(3)
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        let viewModel = MapViewModel(
-            dependencies: .init(
-                defaultLocation: CLLocation(latitude: 37.54330366639085,
-                                            longitude: 127.04455548501139),
-                queryLocationManagerUseCase: DefaultQueryLocationManagerUseCase(locationManager: locationManager) ,
-                commandLocationManagerUseCase: DefaultCommandLocationManagerUseCase(locationManager: locationManager)
-            )
-        )
-        return viewModel
-    }()
-    
+    private lazy var viewModel: MapViewModel = DIContainer.shared.resolve()
     private var disposeBag = DisposeBag()
     
     // MARK: - Lifecycle Methods

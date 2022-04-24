@@ -7,7 +7,7 @@
 
 import RxSwift
 
-protocol ViewModelType {
+public protocol ViewModelType {
     associatedtype Input
     associatedtype Output
     associatedtype Dependencies

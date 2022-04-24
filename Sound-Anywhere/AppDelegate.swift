@@ -5,9 +5,14 @@
 //  Created by 오현식 on 2022/03/21.
 //
 
+import CoreLocation
 import UIKit
 
-import Firebase
+import Data
+import DIContainer
+import Domain
+import Presentation
+import Resource
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        FirebaseApp.configure()
+        registerDependencies()
         return true
     }
 
@@ -32,5 +37,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didDiscardSceneSessions sceneSessions: Set<UISceneSession>
     ) {
+    }
+    
+    private func registerDependencies() {
+        let locationManager = CLLocationManager()
+        
+        let queryLocationManagerUseCase = DefaultQueryLocationManagerUseCase(locationManager: locationManager)
+        let commandLocationManagerUseCase = DefaultCommandLocationManagerUseCase(locationManager: locationManager)
+        
+        let firestore = FakeFirestore<ZoneDTO>()
+        let zoneRepository = DefaultZoneRepository<FakeFirestore<ZoneDTO>>(firestore: firestore)
+        if let data = Resource.Dummy.zone,
+           let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data) {
+            zoneRepository.setDummy(dummy: dummy)
+        }
+        
+        let queryZoneUseCase = DefaultQueryZoneUseCase(zoneRepository: zoneRepository)
+    
+        let mapViewModel = MapViewModel(dependencies: .init(
+            defaultLocation: CLLocation(latitude: 37.54330366639085,
+                                        longitude: 127.04455548501139),
+            queryLocationManagerUseCase: queryLocationManagerUseCase,
+            commandLocationManagerUseCase: commandLocationManagerUseCase,
+            queryZoneUseCase: queryZoneUseCase))
+        
+        DIContainer.shared.register(dependency: mapViewModel)
     }
 }

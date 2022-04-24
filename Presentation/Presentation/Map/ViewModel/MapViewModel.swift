@@ -22,30 +22,42 @@ protocol MapViewModelCommanding {
     func stopUpdatingLocation()
 }
 
-final class MapViewModel: ViewModelType {
-    struct Input {
+public final class MapViewModel: ViewModelType {
+    public struct Input {
         let viewDidAppearEvent: Driver<Bool>
     }
     
-    struct Output {
+    public struct Output {
         let authorizationStatus: Driver<CLAuthorizationStatus>
         let location: Driver<CLLocation?>
     }
     
-    struct Dependencies {
-        let defaultLocation: CLLocation
-        let queryLocationManagerUseCase: QueryLocationManagerUseCase
-        let commandLocationManagerUseCase: CommandLocationManagerUseCase
+    public struct Dependencies {
+        var defaultLocation: CLLocation
+        var queryLocationManagerUseCase: QueryLocationManagerUseCase
+        var commandLocationManagerUseCase: CommandLocationManagerUseCase
+        var queryZoneUseCase: QueryZoneUseCase
+        
+        public init(defaultLocation: CLLocation,
+                    queryLocationManagerUseCase: QueryLocationManagerUseCase,
+                    commandLocationManagerUseCase: CommandLocationManagerUseCase,
+                    queryZoneUseCase: QueryZoneUseCase
+        ) {
+            self.defaultLocation = defaultLocation
+            self.queryLocationManagerUseCase = queryLocationManagerUseCase
+            self.commandLocationManagerUseCase = commandLocationManagerUseCase
+            self.queryZoneUseCase = queryZoneUseCase
+        }
     }
     
-    let dependencies: Dependencies
-    var disposeBag = DisposeBag()
+    public let dependencies: Dependencies
+    public var disposeBag = DisposeBag()
     
-    init(dependencies: Dependencies) {
+    public init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
     
-    func transform(input: Input) -> Output {
+    public func transform(input: Input) -> Output {
         input.viewDidAppearEvent
             .drive { [weak self] _ in
                 self?.dependencies.commandLocationManagerUseCase.requestWhenInUseAuthorization()
