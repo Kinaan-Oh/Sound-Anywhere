@@ -33,6 +33,16 @@ public struct TrackDTO: Codable {
         self.description = description
     }
     
+    init(track: Track) {
+        self.id = track.id
+        self.imageURLString = ""
+        self.genres = []
+        self.album = ""
+        self.artist = track.artist
+        self.title = track.title
+        self.description = track.description
+    }
+    
     func toEntity() -> Track {
         Track(id: id,
               imageURL: URL(string: imageURLString),

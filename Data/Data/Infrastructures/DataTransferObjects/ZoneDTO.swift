@@ -29,6 +29,14 @@ public struct ZoneDTO: Codable {
         self.trackList = trackList
     }
     
+    init(zone: Zone) {
+        self.id = zone.id
+        self.name = zone.name
+        self.latitude = zone.coordinate.latitude
+        self.longitude = zone.coordinate.longitude
+        self.trackList = zone.trackList.map { TrackDTO(track: $0) }
+    }
+    
     func toEntity() -> Zone {
         Zone(id: id,
              name: name,
