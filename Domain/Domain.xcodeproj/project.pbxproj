@@ -14,7 +14,7 @@
 		B4535E5A2809E9690020018E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A7227E8DA2B00425734 /* Domain.framework */; };
 		B4535E6A2809E9A30020018E /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B4535E692809E9A30020018E /* RxTest */; };
 		B4775A7627E8DA2B00425734 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775A7527E8DA2B00425734 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4E12DDA281302B60064AA3E /* ZoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12DD9281302B60064AA3E /* ZoneRepository.swift */; };
+		B4ACBE3028140B6E00E09E5C /* ZoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE2F28140B6E00E09E5C /* ZoneRepository.swift */; };
 		B4E12DDD281303B10064AA3E /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12DDC281303B10064AA3E /* Zone.swift */; };
 		B4E12E3D281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E3C281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift */; };
 		B4E12E41281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E40281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift */; };
@@ -79,7 +79,7 @@
 		B4775A7227E8DA2B00425734 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775A7527E8DA2B00425734 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		B4775AE927E9E6B000425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4E12DD9281302B60064AA3E /* ZoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepository.swift; sourceTree = "<group>"; };
+		B4ACBE2F28140B6E00E09E5C /* ZoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepository.swift; sourceTree = "<group>"; };
 		B4E12DDC281303B10064AA3E /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		B4E12E3C281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCommandLocationManagerUseCaseTests.swift; sourceTree = "<group>"; };
 		B4E12E40281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultQueryLocationManagerUseCaseTests.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 				B4775A7527E8DA2B00425734 /* Domain.h */,
 				B4E12DDB2813038C0064AA3E /* Entities */,
 				B4E12DD5281302540064AA3E /* UseCases */,
-				B4E12DD82813027E0064AA3E /* RepositoryInterfaces */,
+				B4E12DD82813027E0064AA3E /* RepositoryInterface */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -212,12 +212,12 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
-		B4E12DD82813027E0064AA3E /* RepositoryInterfaces */ = {
+		B4E12DD82813027E0064AA3E /* RepositoryInterface */ = {
 			isa = PBXGroup;
 			children = (
-				B4E12DD9281302B60064AA3E /* ZoneRepository.swift */,
+				B4ACBE2F28140B6E00E09E5C /* ZoneRepository.swift */,
 			);
-			path = RepositoryInterfaces;
+			path = RepositoryInterface;
 			sourceTree = "<group>";
 		};
 		B4E12DDB2813038C0064AA3E /* Entities */ = {
@@ -415,9 +415,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B42BC3922812E77E00FC1486 /* CommandLocationManagerUseCase.swift in Sources */,
+				B4ACBE3028140B6E00E09E5C /* ZoneRepository.swift in Sources */,
 				B4218D222813968E00604436 /* Track.swift in Sources */,
 				B4E12DDD281303B10064AA3E /* Zone.swift in Sources */,
-				B4E12DDA281302B60064AA3E /* ZoneRepository.swift in Sources */,
 				B4F087CB280E81B000A901C1 /* QueryLocationManagerUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
