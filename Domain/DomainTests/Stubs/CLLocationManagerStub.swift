@@ -11,8 +11,13 @@ import Common
 import RxSwift
 
 final class CLLocationManagerStub: CLLocationManagerQuerying {
-    var observeAuthorizationStatus_ReturnValue: Observable<CLAuthorizationStatus> = Observable.just(.notDetermined)
-    var observeLocation_ReturnValue: Observable<CLLocation?> = Observable.just(nil)
+    private let observeAuthorizationStatus_ReturnValue: Observable<CLAuthorizationStatus>
+    private let  observeLocation_ReturnValue: Observable<CLLocation?>
+    
+    init() {
+        observeAuthorizationStatus_ReturnValue = Observable.just(.notDetermined)
+        observeLocation_ReturnValue = Observable<CLLocation?>.just(nil)
+    }
     
     func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus> {
         return observeAuthorizationStatus_ReturnValue
