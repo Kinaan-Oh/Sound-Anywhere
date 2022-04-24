@@ -7,10 +7,17 @@
 
 import RxSwift
 
-protocol FirestoreType {
+protocol FirestoreCommanding {
+    associatedtype T
+
+    func setData(collection: String, document: String, data: T) -> Completable
+}
+
+protocol FirestoreQuerying {
     associatedtype T
     
     func getDocument(collection: String, document: String) -> Single<T>
     func getDocuments(collection: String) -> Single<[T]>
-    func setData(collection: String, document: String, data: T) -> Completable
 }
+
+typealias FirestoreType = FirestoreCommanding & FirestoreQuerying

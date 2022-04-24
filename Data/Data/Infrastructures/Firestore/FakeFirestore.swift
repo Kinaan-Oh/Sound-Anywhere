@@ -6,19 +6,19 @@
 //
 
 import RxSwift
-import Foundation
 
 final class FakeFirestore<T> {
     enum FirestoreError: Error {
         case documentNotExist
         case documentsNotExist
         case documentAleadyExist
+        case dummyNotExist
     }
     
     final class Collection {
         final class Document {
             // MARK: - Document Properties, Methods
-        
+            
             var data: T?
             
             func setData(from data: T, completion: @escaping (Result<T, FirestoreError>) -> Void) {
@@ -78,9 +78,9 @@ final class FakeFirestore<T> {
 }
 
 
-// MARK: - FirestoreType
+// MARK: - FirestoreCommanding
 
-extension FakeFirestore: FirestoreType {
+extension FakeFirestore: FirestoreCommanding {
     func setData(collection: String, document: String, data: T) -> Completable {
         Completable.create { observer in
             self.collection(name: collection)
@@ -97,7 +97,11 @@ extension FakeFirestore: FirestoreType {
             return Disposables.create()
         }
     }
-    
+}
+
+// MARK: - FirestoreQuerying
+
+extension FakeFirestore: FirestoreQuerying {
     func getDocument(collection: String, document: String) -> Single<T> {
         return Single<T>.create { observer in
             self.collection(name: collection)

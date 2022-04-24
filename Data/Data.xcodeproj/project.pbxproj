@@ -15,8 +15,13 @@
 		B4ACBE4628142C3300E09E5C /* FakeFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE4528142C3300E09E5C /* FakeFirestore.swift */; };
 		B4ACBE592814494B00E09E5C /* ZoneDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE582814494B00E09E5C /* ZoneDTO.swift */; };
 		B4ACBE5B2814495300E09E5C /* TrackDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE5A2814495300E09E5C /* TrackDTO.swift */; };
-		B4ACBE872814803800E09E5C /* FirestoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE862814803800E09E5C /* FirestoreType.swift */; };
-		B4E12DF42813068E0064AA3E /* ZoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12DF32813068E0064AA3E /* ZoneRepository.swift */; };
+		B4ACBE872814803800E09E5C /* FirestoreInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE862814803800E09E5C /* FirestoreInterfaces.swift */; };
+		B4ACBEF02815742B00E09E5C /* Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4ACBEEF2815742700E09E5C /* Resource.framework */; platformFilter = ios; };
+		B4ACBEF12815742B00E09E5C /* Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4ACBEEF2815742700E09E5C /* Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4ACBF02281584F100E09E5C /* DefaultFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBF01281584F100E09E5C /* DefaultFirestore.swift */; };
+		B4ACBF102815A34600E09E5C /* DefaultZoneRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBF0F2815A34600E09E5C /* DefaultZoneRepositoryTests.swift */; };
+		B4ACBF562815BB9700E09E5C /* Zone.json in Resources */ = {isa = PBXBuildFile; fileRef = B4ACBF502815BB9600E09E5C /* Zone.json */; };
+		B4E12DF42813068E0064AA3E /* DefaultZoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12DF32813068E0064AA3E /* DefaultZoneRepository.swift */; };
 		B4E12E0E281307EF0064AA3E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CF02809D8FE0020018E /* Common.framework */; platformFilter = ios; };
 		B4E12E0F281307EF0064AA3E /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CF02809D8FE0020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4E12E13281307F20064AA3E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CFA2809D9080020018E /* Domain.framework */; platformFilter = ios; };
@@ -54,6 +59,13 @@
 			remoteGlobalIDString = B4535E562809E9690020018E;
 			remoteInfo = DomainTests;
 		};
+		B4ACBEEE2815742700E09E5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4ACBEE52815742700E09E5C /* Resource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B4775AFC27E9F42900425734;
+			remoteInfo = Resource;
+		};
 		B4E12DEE2813064A0064AA3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B4535CE62809D8FE0020018E /* Common.xcodeproj */;
@@ -71,6 +83,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B4E12E14281307F20064AA3E /* Domain.framework in Embed Frameworks */,
+				B4ACBEF12815742B00E09E5C /* Resource.framework in Embed Frameworks */,
 				B4E12E0F281307EF0064AA3E /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -94,8 +107,29 @@
 		B4ACBE4528142C3300E09E5C /* FakeFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeFirestore.swift; sourceTree = "<group>"; };
 		B4ACBE582814494B00E09E5C /* ZoneDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneDTO.swift; sourceTree = "<group>"; };
 		B4ACBE5A2814495300E09E5C /* TrackDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDTO.swift; sourceTree = "<group>"; };
-		B4ACBE862814803800E09E5C /* FirestoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreType.swift; sourceTree = "<group>"; };
-		B4E12DF32813068E0064AA3E /* ZoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepository.swift; sourceTree = "<group>"; };
+		B4ACBE862814803800E09E5C /* FirestoreInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreInterfaces.swift; sourceTree = "<group>"; };
+		B4ACBED12815742700E09E5C /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		B4ACBED22815742700E09E5C /* Record.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
+		B4ACBED32815742700E09E5C /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		B4ACBED42815742700E09E5C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B4ACBED52815742700E09E5C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B4ACBED62815742700E09E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4ACBED82815742700E09E5C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		B4ACBED92815742700E09E5C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		B4ACBEDB2815742700E09E5C /* Resource+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Color.swift"; sourceTree = "<group>"; };
+		B4ACBEDC2815742700E09E5C /* Resource+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Dummy.swift"; sourceTree = "<group>"; };
+		B4ACBEDD2815742700E09E5C /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		B4ACBEDE2815742700E09E5C /* Resource+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Font.swift"; sourceTree = "<group>"; };
+		B4ACBEDF2815742700E09E5C /* Resource+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Image.swift"; sourceTree = "<group>"; };
+		B4ACBEE02815742700E09E5C /* Resource+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Storyboard.swift"; sourceTree = "<group>"; };
+		B4ACBEE12815742700E09E5C /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		B4ACBEE22815742700E09E5C /* Resource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
+		B4ACBEE42815742700E09E5C /* Zone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Zone.json; sourceTree = "<group>"; };
+		B4ACBEE52815742700E09E5C /* Resource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Resource.xcodeproj; sourceTree = "<group>"; };
+		B4ACBF01281584F100E09E5C /* DefaultFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFirestore.swift; sourceTree = "<group>"; };
+		B4ACBF0F2815A34600E09E5C /* DefaultZoneRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultZoneRepositoryTests.swift; sourceTree = "<group>"; };
+		B4ACBF502815BB9600E09E5C /* Zone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Zone.json; path = ../../Resource/Resource/Dummies/Zone.json; sourceTree = "<group>"; };
+		B4E12DF32813068E0064AA3E /* DefaultZoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultZoneRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +151,7 @@
 				B4E12E13281307F20064AA3E /* Domain.framework in Frameworks */,
 				B4E12E19281309100064AA3E /* RxSwift in Frameworks */,
 				B4E12E0E281307EF0064AA3E /* Common.framework in Frameworks */,
+				B4ACBEF02815742B00E09E5C /* Resource.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +225,9 @@
 		B4535E932809EB910020018E /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				B4ACBF502815BB9600E09E5C /* Zone.json */,
 				B4535E942809EB910020018E /* FakeFirestoreTests.swift */,
+				B4ACBF0F2815A34600E09E5C /* DefaultZoneRepositoryTests.swift */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -227,6 +264,7 @@
 		B4775AED27E9E6B600425734 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B4ACBECE2815742700E09E5C /* Resource */,
 				B4535CF12809D9080020018E /* Domain */,
 				B4535CE52809D8FE0020018E /* Common */,
 				B42B79D72807DB7300DEE1D0 /* Domain.framework */,
@@ -247,16 +285,99 @@
 		B4ACBE9A2815448E00E09E5C /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
-				B4ACBE862814803800E09E5C /* FirestoreType.swift */,
+				B4ACBE9B2815469B00E09E5C /* Common */,
 				B4ACBE4528142C3300E09E5C /* FakeFirestore.swift */,
+				B4ACBF01281584F100E09E5C /* DefaultFirestore.swift */,
 			);
 			path = Firestore;
+			sourceTree = "<group>";
+		};
+		B4ACBE9B2815469B00E09E5C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACBE862814803800E09E5C /* FirestoreInterfaces.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B4ACBECE2815742700E09E5C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACBECF2815742700E09E5C /* Resource */,
+				B4ACBEE52815742700E09E5C /* Resource.xcodeproj */,
+			);
+			name = Resource;
+			path = ../Resource;
+			sourceTree = "<group>";
+		};
+		B4ACBECF2815742700E09E5C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACBED02815742700E09E5C /* Storyboard */,
+				B4ACBED62815742700E09E5C /* Assets.xcassets */,
+				B4ACBED72815742700E09E5C /* Extensions */,
+				B4ACBEE22815742700E09E5C /* Resource.h */,
+				B4ACBEE32815742700E09E5C /* Dummies */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B4ACBED02815742700E09E5C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACBED12815742700E09E5C /* Search.storyboard */,
+				B4ACBED22815742700E09E5C /* Record.storyboard */,
+				B4ACBED32815742700E09E5C /* Map.storyboard */,
+				B4ACBED42815742700E09E5C /* Home.storyboard */,
+				B4ACBED52815742700E09E5C /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B4ACBED72815742700E09E5C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACBED82815742700E09E5C /* UIColor+Extension.swift */,
+				B4ACBED92815742700E09E5C /* UIImage+Extension.swift */,
+				B4ACBEDA2815742700E09E5C /* Resource+Extension */,
+				B4ACBEE12815742700E09E5C /* CALayer+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B4ACBEDA2815742700E09E5C /* Resource+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACBEDB2815742700E09E5C /* Resource+Color.swift */,
+				B4ACBEDC2815742700E09E5C /* Resource+Dummy.swift */,
+				B4ACBEDD2815742700E09E5C /* Resource.swift */,
+				B4ACBEDE2815742700E09E5C /* Resource+Font.swift */,
+				B4ACBEDF2815742700E09E5C /* Resource+Image.swift */,
+				B4ACBEE02815742700E09E5C /* Resource+Storyboard.swift */,
+			);
+			path = "Resource+Extension";
+			sourceTree = "<group>";
+		};
+		B4ACBEE32815742700E09E5C /* Dummies */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACBEE42815742700E09E5C /* Zone.json */,
+			);
+			path = Dummies;
+			sourceTree = "<group>";
+		};
+		B4ACBEE62815742700E09E5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACBEEF2815742700E09E5C /* Resource.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B4E12DEB2813064A0064AA3E /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				B4E12DF32813068E0064AA3E /* ZoneRepository.swift */,
+				B4E12DF32813068E0064AA3E /* DefaultZoneRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -386,6 +507,10 @@
 					ProductGroup = B4535CF52809D9080020018E /* Products */;
 					ProjectRef = B4535CF42809D9080020018E /* Domain.xcodeproj */;
 				},
+				{
+					ProductGroup = B4ACBEE62815742700E09E5C /* Products */;
+					ProjectRef = B4ACBEE52815742700E09E5C /* Resource.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -417,6 +542,13 @@
 			remoteRef = B4535E9E2809EB910020018E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		B4ACBEEF2815742700E09E5C /* Resource.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Resource.framework;
+			remoteRef = B4ACBEEE2815742700E09E5C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		B4E12DEF2813064A0064AA3E /* CommonTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -431,6 +563,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4ACBF562815BB9700E09E5C /* Zone.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4ACBF102815A34600E09E5C /* DefaultZoneRepositoryTests.swift in Sources */,
 				B4535E952809EB910020018E /* FakeFirestoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,9 +590,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4E12DF42813068E0064AA3E /* ZoneRepository.swift in Sources */,
+				B4E12DF42813068E0064AA3E /* DefaultZoneRepository.swift in Sources */,
+				B4ACBF02281584F100E09E5C /* DefaultFirestore.swift in Sources */,
 				B4ACBE4628142C3300E09E5C /* FakeFirestore.swift in Sources */,
-				B4ACBE872814803800E09E5C /* FirestoreType.swift in Sources */,
+				B4ACBE872814803800E09E5C /* FirestoreInterfaces.swift in Sources */,
 				B4ACBE5B2814495300E09E5C /* TrackDTO.swift in Sources */,
 				B4ACBE592814494B00E09E5C /* ZoneDTO.swift in Sources */,
 			);
