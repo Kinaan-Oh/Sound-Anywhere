@@ -16,6 +16,7 @@
 		B4775A7627E8DA2B00425734 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775A7527E8DA2B00425734 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4ACBE3028140B6E00E09E5C /* ZoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE2F28140B6E00E09E5C /* ZoneRepository.swift */; };
 		B4ACBEA02815530200E09E5C /* QueryZoneUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE9F2815530200E09E5C /* QueryZoneUseCase.swift */; };
+		B4ACBEA42815547000E09E5C /* ZoneRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBEA32815547000E09E5C /* ZoneRepositoryStub.swift */; };
 		B4E12DDD281303B10064AA3E /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12DDC281303B10064AA3E /* Zone.swift */; };
 		B4E12E3D281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E3C281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift */; };
 		B4E12E41281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E40281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift */; };
@@ -82,6 +83,7 @@
 		B4775AE927E9E6B000425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4ACBE2F28140B6E00E09E5C /* ZoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepository.swift; sourceTree = "<group>"; };
 		B4ACBE9F2815530200E09E5C /* QueryZoneUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryZoneUseCase.swift; sourceTree = "<group>"; };
+		B4ACBEA32815547000E09E5C /* ZoneRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepositoryStub.swift; sourceTree = "<group>"; };
 		B4E12DDC281303B10064AA3E /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		B4E12E3C281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCommandLocationManagerUseCaseTests.swift; sourceTree = "<group>"; };
 		B4E12E40281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultQueryLocationManagerUseCaseTests.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */,
+				B4ACBEA32815547000E09E5C /* ZoneRepositoryStub.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			files = (
 				B4E12E45281327EE0064AA3E /* CLLocationManagerMock.swift in Sources */,
 				B4E12E3D281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift in Sources */,
+				B4ACBEA42815547000E09E5C /* ZoneRepositoryStub.swift in Sources */,
 				B4E12E41281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift in Sources */,
 				B4E12E47281327FF0064AA3E /* CLLocationManagerStub.swift in Sources */,
 			);
