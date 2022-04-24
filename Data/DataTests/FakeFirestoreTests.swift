@@ -14,15 +14,12 @@ import Domain
 final class FakeFirestoreTests: XCTestCase {
     // Given
     var fakeFirestore: FakeFirestore<ZoneDTO>!
+    var input: ZoneDTO!
     
     override func setUp() {
         super.setUp()
         
         fakeFirestore = FakeFirestore<ZoneDTO>()
-    }
-    
-    func test_setData_getDocument() {
-        // Given
         let track = TrackDTO(id: "001",
                              imageURLString: "https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228",
                              genres: [],
@@ -30,19 +27,26 @@ final class FakeFirestoreTests: XCTestCase {
                              artist: "Seinabo Sey",
                              title: "Younger",
                              description: "")
-        let trackList = [track]
-        let coordinate = CLLocationCoordinate2D(latitude: 77,
-                                                longitude: 77)
-        let input = ZoneDTO(id: "001", name: "서울숲", trackList: trackList, coordinate: coordinate)
-        
+        let coordinate = CLLocationCoordinate2D(latitude: 77, longitude: 77)
+        input = ZoneDTO(id: "001", name: "서울숲", trackList: [track], coordinate: coordinate)
+    }
+    
+    func test_setData() {
         // When
         fakeFirestore.collection(name: "zone")
             .document(name: "서울숲")
-            .setData(from: input)
+            .setData(from: input) { [weak self] result in
+                guard let self = self else { return }
+                // Then
+                switch result {
+                case.success(let ret):
+                    XCTAssertEqual(ret, self.input)
+                case.failure(let error):
+                    XCTAssertEqual(error, .documentAleadyExist)
+                }
+            }
         
         // Then
-        
-        // 1. setData Test
         let collection = fakeFirestore.db["zone"]
         XCTAssertNotNil(collection)
         
@@ -51,13 +55,52 @@ final class FakeFirestoreTests: XCTestCase {
         
         let data = document!.data
         XCTAssertEqual(input, data)
+    }
+    
+    func test_getDocument() {
+        // Given
+        setInput()
         
-        // 2. getDocument Test
+        // When
         fakeFirestore
             .collection(name: "zone")
             .document(name: "서울숲")
-            .getDocument { output in
-                XCTAssertEqual(output, .success(input))
+            .getDocument { [weak self] result in
+                guard let self = self else { return }
+                // Then
+                switch result {
+                case .success(let ret):
+                    XCTAssertEqual(ret, self.input)
+                case .failure(let error):
+                    XCTAssertEqual(error, .documentNotExist)
+                }
             }
+    }
+    
+    func test_getDocuments() {
+        // Given
+        setInput()
+        
+        // When
+        fakeFirestore
+            .collection(name: "zone")
+            .getDocuments { [weak self] result in
+                guard let self = self else { return }
+                // Then
+                switch result {
+                case .success(let ret):
+                    XCTAssertEqual(ret, [self.input])
+                case .failure(let error):
+                    XCTAssertEqual(error, .documentsNotExist)
+                }
+            }
+    }
+    
+    // MARK: - set input
+    
+    private func setInput() {
+        fakeFirestore.db["zone"] = FakeFirestore.Collection()
+        fakeFirestore.db["zone"]!.collection[input.name] = FakeFirestore.Collection.Document()
+        fakeFirestore.db["zone"]!.collection[input.name]!.data = input
     }
 }
