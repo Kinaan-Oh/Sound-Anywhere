@@ -30,6 +30,7 @@ public final class MapViewModel: ViewModelType {
     public struct Output {
         let authorizationStatus: Driver<CLAuthorizationStatus>
         let location: Driver<CLLocation?>
+        let zone: Driver<[Zone]>
     }
     
     public struct Dependencies {
@@ -60,9 +61,17 @@ public final class MapViewModel: ViewModelType {
     public func transform(input: Input) -> Output {
         input.viewDidAppearEvent
             .drive { [weak self] _ in
-                self?.dependencies.commandLocationManagerUseCase.requestWhenInUseAuthorization()
+                guard let self = self else { return }
+                self.dependencies.commandLocationManagerUseCase.requestWhenInUseAuthorization()
             }
             .disposed(by: disposeBag)
+        
+        let zone: Driver<[Zone]> = input.viewDidAppearEvent
+            .flatMapLatest { [weak self] _ in
+                guard let self = self else { return Driver<[Zone]>.just([]) }
+                return self.dependencies.queryZoneUseCase.query()
+                    .asDriverOnErrorJustComplete()
+            }
         
         let authorizationStatus = dependencies.queryLocationManagerUseCase
             .observeAuthorizationStatus()
@@ -73,7 +82,8 @@ public final class MapViewModel: ViewModelType {
             .asDriverOnErrorJustComplete()
         
         return Output(authorizationStatus: authorizationStatus,
-                      location: location)
+                      location: location,
+                      zone: zone)
     }
 }
 

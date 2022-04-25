@@ -65,10 +65,16 @@ final class MapViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.location
-            .throttle(.milliseconds(300), latest: true)
+            .throttle(.seconds(1), latest: true)
             .drive { location in
                 guard let location = location else { return }
                 UserDefaultsService.recentLocation = location
+            }
+            .disposed(by: disposeBag)
+        
+        output.zone
+            .drive { [weak self] zone in
+                guard let self = self else { return }
             }
             .disposed(by: disposeBag)
     }
