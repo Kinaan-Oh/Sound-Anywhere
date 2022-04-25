@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B419A0CE2816A05900EB19CF /* Zone.json in Resources */ = {isa = PBXBuildFile; fileRef = B419A0CD2816A05900EB19CF /* Zone.json */; };
 		B4535E952809EB910020018E /* FakeFirestoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535E942809EB910020018E /* FakeFirestoreTests.swift */; };
 		B4535E962809EB910020018E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A8627E8DA6500425734 /* Data.framework */; };
 		B4775A8A27E8DA6500425734 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775A8927E8DA6500425734 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,7 +19,6 @@
 		B4ACBEF12815742B00E09E5C /* Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4ACBEEF2815742700E09E5C /* Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4ACBF02281584F100E09E5C /* DefaultFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBF01281584F100E09E5C /* DefaultFirestore.swift */; };
 		B4ACBF102815A34600E09E5C /* DefaultZoneRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBF0F2815A34600E09E5C /* DefaultZoneRepositoryTests.swift */; };
-		B4ACBF562815BB9700E09E5C /* Zone.json in Resources */ = {isa = PBXBuildFile; fileRef = B4ACBF502815BB9600E09E5C /* Zone.json */; };
 		B4E12DF42813068E0064AA3E /* DefaultZoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12DF32813068E0064AA3E /* DefaultZoneRepository.swift */; };
 		B4E12E0E281307EF0064AA3E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CF02809D8FE0020018E /* Common.framework */; platformFilter = ios; };
 		B4E12E0F281307EF0064AA3E /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CF02809D8FE0020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -88,6 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B419A0CD2816A05900EB19CF /* Zone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Zone.json; sourceTree = "<group>"; };
 		B42B79D72807DB7300DEE1D0 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4535CE62809D8FE0020018E /* Common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Common.xcodeproj; sourceTree = "<group>"; };
 		B4535CEB2809D8FE0020018E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -124,7 +125,6 @@
 		B4ACBEE52815742700E09E5C /* Resource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Resource.xcodeproj; sourceTree = "<group>"; };
 		B4ACBF01281584F100E09E5C /* DefaultFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFirestore.swift; sourceTree = "<group>"; };
 		B4ACBF0F2815A34600E09E5C /* DefaultZoneRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultZoneRepositoryTests.swift; sourceTree = "<group>"; };
-		B4ACBF502815BB9600E09E5C /* Zone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Zone.json; path = ../../Resource/Resource/Dummies/Zone.json; sourceTree = "<group>"; };
 		B4E12DF32813068E0064AA3E /* DefaultZoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultZoneRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +150,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B419A0CF2816A06000EB19CF /* Dummies */ = {
+			isa = PBXGroup;
+			children = (
+				B419A0CD2816A05900EB19CF /* Zone.json */,
+			);
+			path = Dummies;
+			sourceTree = "<group>";
+		};
 		B4535CE52809D8FE0020018E /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +225,7 @@
 		B4535E932809EB910020018E /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				B4ACBF502815BB9600E09E5C /* Zone.json */,
+				B419A0CF2816A06000EB19CF /* Dummies */,
 				B4535E942809EB910020018E /* FakeFirestoreTests.swift */,
 				B4ACBF0F2815A34600E09E5C /* DefaultZoneRepositoryTests.swift */,
 			);
@@ -535,7 +543,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4ACBF562815BB9700E09E5C /* Zone.json in Resources */,
+				B419A0CE2816A05900EB19CF /* Zone.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

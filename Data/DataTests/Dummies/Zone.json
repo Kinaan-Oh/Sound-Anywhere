@@ -1,0 +1,87 @@
+[
+    {
+        "id": "001",
+        "name": "서울숲01",
+        "latitude": 37.54330366639085,
+        "longitude": 127.04455548501139,
+        "trackList": [
+            {
+                "id": "",
+                "imageURLString": "",
+                "genres": ["RnB"],
+                "album": "XXX",
+                "artist": "Seinabo Sey",
+                "title": "Younger",
+                "description": ""
+            }
+        ]
+    },
+    {
+        "id": "002",
+        "name": "서울숲02",
+        "latitude": 37.55330366639085,
+        "longitude": 127.04455548501139,
+        "trackList": [
+            {
+                "id": "",
+                "imageURLString": "",
+                "genres": ["House"],
+                "album": "Disk11",
+                "artist": "DiSKOP",
+                "title": "Beaton",
+                "description": ""
+            }
+        ]
+    },
+    {
+        "id": "003",
+        "name": "서울숲03",
+        "latitude": 37.53330366639085,
+        "longitude": 127.04455548501139,
+        "trackList": [
+            {
+                "id": "",
+                "imageURLString": "",
+                "genres": ["House"],
+                "album": "White Journey EP",
+                "artist": "Dj Steaw",
+                "title": "Sky Hunt",
+                "description": ""
+            }
+        ]
+    },
+    {
+        "id": "004",
+        "name": "서울숲04",
+        "latitude": 37.54330366639085,
+        "longitude": 127.04555548501139,
+        "trackList": [
+            {
+                "id": "",
+                "imageURLString": "",
+                "genres": ["RnB"],
+                "album": "Remember",
+                "artist": "Cafe 432, Simon King",
+                "title": "Remember - Radio Edit",
+                "description": ""
+            }
+        ]
+    },
+    {
+        "id": "005",
+        "name": "서울숲05",
+        "latitude": 37.54330366639085,
+        "longitude": 127.04355548501139,
+        "trackList": [
+            {
+                "id": "",
+                "imageURLString": "",
+                "genres": ["House"],
+                "album": "Modern Bliss",
+                "artist": "Roza Terenzi",
+                "title": "That Track - Rewired Mix",
+                "description": ""
+            }
+        ]
+    }
+]
