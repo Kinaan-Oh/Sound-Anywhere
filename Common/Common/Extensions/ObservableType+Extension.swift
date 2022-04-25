@@ -14,4 +14,8 @@ extension ObservableType {
             return Driver.empty()
         }
     }
+    
+    public func mapToVoid() -> Observable<Void> {
+        return map { _ in }
+    }
 }
