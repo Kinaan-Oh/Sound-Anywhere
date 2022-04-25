@@ -11,12 +11,12 @@ import Domain
 import RxSwift
 
 final class CommandLocationManagerUseCaseMock: CommandLocationManagerUseCase {
-    var requestWhenInUseAuthorization_Called = false
+    var requestWhenInUseAuthorization_Called_Count = 0
     var startUpdatingLocation_Called = false
     var stopUpdatingLocation_Called = false
     
     func requestWhenInUseAuthorization() {
-        requestWhenInUseAuthorization_Called = true
+        requestWhenInUseAuthorization_Called_Count += 1
     }
     
     func startUpdatingLocation() {

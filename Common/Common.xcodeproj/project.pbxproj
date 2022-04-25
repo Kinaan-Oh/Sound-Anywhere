@@ -11,10 +11,10 @@
 		B4535EE8280ABC660020018E /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535EE7280ABC660020018E /* UserDefault.swift */; };
 		B4775AB427E8DB5A00425734 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775AB327E8DB5A00425734 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4775B3627EA184B00425734 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775B3527EA184B00425734 /* String+Extension.swift */; };
+		B481ECE2281705E7001C8CD8 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B481ECE1281705E7001C8CD8 /* CALayer+Extension.swift */; };
 		B491B1DB281299D6003E2F7F /* UserDefaultOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B1DA281299D6003E2F7F /* UserDefaultOther.swift */; };
 		B491B20E2812B08A003E2F7F /* UserDefaultsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B20D2812B08A003E2F7F /* UserDefaultsServiceTests.swift */; };
 		B491B20F2812B08A003E2F7F /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775AB027E8DB5A00425734 /* Common.framework */; platformFilter = ios; };
-		B49487BC2816E61B0059F29A /* SharedSequenceConvertibleType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49487BB2816E61B0059F29A /* SharedSequenceConvertibleType+Extension.swift */; };
 		B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */; };
 		B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */; };
 		B4ACBE7428146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */; };
@@ -52,10 +52,10 @@
 		B4775AB027E8DB5A00425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775AB327E8DB5A00425734 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		B4775B3527EA184B00425734 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B481ECE1281705E7001C8CD8 /* CALayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		B491B1DA281299D6003E2F7F /* UserDefaultOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultOther.swift; sourceTree = "<group>"; };
 		B491B20B2812B08A003E2F7F /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B491B20D2812B08A003E2F7F /* UserDefaultsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsServiceTests.swift; sourceTree = "<group>"; };
-		B49487BB2816E61B0059F29A /* SharedSequenceConvertibleType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharedSequenceConvertibleType+Extension.swift"; sourceTree = "<group>"; };
 		B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
@@ -127,9 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				B4775B3527EA184B00425734 /* String+Extension.swift */,
+				B481ECE1281705E7001C8CD8 /* CALayer+Extension.swift */,
 				B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */,
 				B4199FE028168C9200EB19CF /* ObservableConvertibleType+Extension.swift */,
-				B49487BB2816E61B0059F29A /* SharedSequenceConvertibleType+Extension.swift */,
 				B4E12E312813231B0064AA3E /* CLLocationManager+Extension.swift */,
 				B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */,
 			);
@@ -279,11 +279,11 @@
 				B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */,
 				B4E12E322813231B0064AA3E /* CLLocationManager+Extension.swift in Sources */,
 				B4199FE128168C9200EB19CF /* ObservableConvertibleType+Extension.swift in Sources */,
+				B481ECE2281705E7001C8CD8 /* CALayer+Extension.swift in Sources */,
 				B4ACBE7428146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */,
 				B4DE25572816783A00A1D3C0 /* DIContainer.swift in Sources */,
 				B4775B3627EA184B00425734 /* String+Extension.swift in Sources */,
-				B49487BC2816E61B0059F29A /* SharedSequenceConvertibleType+Extension.swift in Sources */,
 				B4535EE8280ABC660020018E /* UserDefault.swift in Sources */,
 				B491B1DB281299D6003E2F7F /* UserDefaultOther.swift in Sources */,
 			);

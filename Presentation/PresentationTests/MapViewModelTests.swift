@@ -18,6 +18,7 @@ final class MapViewModelTests: XCTestCase {
     // Given
     var queryLocationManagerUseCaseStub: QueryLocationManagerUseCaseStub!
     var commandLocationManagerUseCaseMock: CommandLocationManagerUseCaseMock!
+    var queryZoneUseCaseStub: QueryZoneUseCaseStub!
     var viewModel: MapViewModel!
     var scheduler: TestScheduler!
     var disposeBag = DisposeBag()
@@ -27,29 +28,37 @@ final class MapViewModelTests: XCTestCase {
         
         queryLocationManagerUseCaseStub = QueryLocationManagerUseCaseStub()
         commandLocationManagerUseCaseMock = CommandLocationManagerUseCaseMock()
+        queryZoneUseCaseStub = QueryZoneUseCaseStub()
         viewModel = MapViewModel(dependencies:
                 .init(defaultLocation: CLLocation(latitude: 37.54330366639085,
                                                   longitude: 127.04455548501139),
                       queryLocationManagerUseCase: queryLocationManagerUseCaseStub,
-                      commandLocationManagerUseCase: commandLocationManagerUseCaseMock)
+                      commandLocationManagerUseCase: commandLocationManagerUseCaseMock,
+                      queryZoneUseCase: queryZoneUseCaseStub)
         )
         scheduler = TestScheduler(initialClock: 0)
     }
-    
     
     // MARK: - Transform
     
     func test_transform_viewDidAppearEvent_requestWhenInUseAuthorization() {
         // When
         let viewDidAppearEvent = scheduler.createColdObservable([.next(100, true)])
+            .mapToVoid()
             .asDriverOnErrorJustComplete()
-        let input = createInput(viewDidAppearEvent: viewDidAppearEvent)
+        let sceneDidActivateNotificationEvent = scheduler.createColdObservable([.next(200, true)])
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
+        
+        let input = createInput(viewDidAppearEvent: viewDidAppearEvent,
+                                sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
         let output = viewModel.transform(input: input)
         
         scheduler.start()
         
         // Then
-        XCTAssertTrue(commandLocationManagerUseCaseMock.requestWhenInUseAuthorization_Called)
+        XCTAssertEqual(commandLocationManagerUseCaseMock.requestWhenInUseAuthorization_Called_Count,
+                       2)
     }
     
     func test_transform_authorizationStatus() {
@@ -58,8 +67,14 @@ final class MapViewModelTests: XCTestCase {
         
         // When
         let viewDidAppearEvent = scheduler.createColdObservable([.next(100, true)])
+            .mapToVoid()
             .asDriverOnErrorJustComplete()
-        let input = createInput(viewDidAppearEvent: viewDidAppearEvent)
+        let sceneDidActivateNotificationEvent = scheduler.createColdObservable([.next(200, true)])
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
+        
+        let input = createInput(viewDidAppearEvent: viewDidAppearEvent,
+                                sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
         let output = viewModel.transform(input: input)
         
         output.authorizationStatus
@@ -78,8 +93,14 @@ final class MapViewModelTests: XCTestCase {
         
         // When
         let viewDidAppearEvent = scheduler.createColdObservable([.next(100, true)])
+            .mapToVoid()
             .asDriverOnErrorJustComplete()
-        let input = createInput(viewDidAppearEvent: viewDidAppearEvent)
+        let sceneDidActivateNotificationEvent = scheduler.createColdObservable([.next(200, true)])
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
+        
+        let input = createInput(viewDidAppearEvent: viewDidAppearEvent,
+                                sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
         let output = viewModel.transform(input: input)
         
         output.location
@@ -92,6 +113,31 @@ final class MapViewModelTests: XCTestCase {
         XCTAssertEqual(res.events, [.next(0, nil), .completed(0)])
     }
     
+    func test_transform_zone() {
+        // Given
+        let res = scheduler.createObserver([Zone].self)
+        
+        // When
+        let viewDidAppearEvent = scheduler.createColdObservable([.next(100, true)])
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
+        let sceneDidActivateNotificationEvent = scheduler.createColdObservable([.next(200, true)])
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
+        
+        let input = createInput(viewDidAppearEvent: viewDidAppearEvent,
+                                sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
+        let output = viewModel.transform(input: input)
+        
+        output.zone
+            .drive(res)
+            .disposed(by: disposeBag)
+        
+        scheduler.start()
+        
+        // Then
+        XCTAssertEqual(res.events, [.next(100, []), .next(200, []), .completed(200)])
+    }
     
     // MARK: - Commanding
     
@@ -124,7 +170,11 @@ final class MapViewModelTests: XCTestCase {
     
     // MARK: - Private Methods
     
-    private func createInput(viewDidAppearEvent: Driver<Bool> = Driver.never()) -> MapViewModel.Input {
-        return MapViewModel.Input(viewDidAppearEvent: viewDidAppearEvent)
+    private func createInput(
+        viewDidAppearEvent: Driver<Void> = Driver.never(),
+        sceneDidActivateNotificationEvent: Driver<Void> = Driver.never()
+    ) -> MapViewModel.Input {
+        return MapViewModel.Input(viewDidAppearEvent: viewDidAppearEvent,
+                                  sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
     }
 }
