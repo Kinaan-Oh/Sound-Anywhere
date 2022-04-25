@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4199FE128168C9200EB19CF /* ObservableConvertibleType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4199FE028168C9200EB19CF /* ObservableConvertibleType+Extension.swift */; };
 		B4535EE8280ABC660020018E /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535EE7280ABC660020018E /* UserDefault.swift */; };
 		B4775AB427E8DB5A00425734 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775AB327E8DB5A00425734 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4775B3627EA184B00425734 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775B3527EA184B00425734 /* String+Extension.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B4199FE028168C9200EB19CF /* ObservableConvertibleType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableConvertibleType+Extension.swift"; sourceTree = "<group>"; };
 		B4535EE7280ABC660020018E /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		B4775AB027E8DB5A00425734 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775AB327E8DB5A00425734 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				B4775B3527EA184B00425734 /* String+Extension.swift */,
 				B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */,
+				B4199FE028168C9200EB19CF /* ObservableConvertibleType+Extension.swift */,
 				B4E12E312813231B0064AA3E /* CLLocationManager+Extension.swift */,
 				B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */,
 			);
@@ -272,6 +275,7 @@
 			files = (
 				B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */,
 				B4E12E322813231B0064AA3E /* CLLocationManager+Extension.swift in Sources */,
+				B4199FE128168C9200EB19CF /* ObservableConvertibleType+Extension.swift in Sources */,
 				B4ACBE7428146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */,
 				B4DE25572816783A00A1D3C0 /* DIContainer.swift in Sources */,
