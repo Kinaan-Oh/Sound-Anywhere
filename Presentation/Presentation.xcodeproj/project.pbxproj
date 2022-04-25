@@ -26,8 +26,6 @@
 		B4C064752815EBA400C23D79 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CC42809D8830020018E /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4C064772815EBA700C23D79 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CD32809D8A50020018E /* Common.framework */; platformFilter = ios; };
 		B4C064782815EBA700C23D79 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CD32809D8A50020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B4C067942816085700C23D79 /* DIContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C067912816085200C23D79 /* DIContainer.framework */; };
-		B4C067952816085700C23D79 /* DIContainer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4C067912816085200C23D79 /* DIContainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4F1EBAA28104BF700F1BE4E /* CommandLocationManagerUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F1EBA928104BF700F1BE4E /* CommandLocationManagerUseCaseMock.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,7 +97,6 @@
 			files = (
 				B4C064752815EBA400C23D79 /* Domain.framework in Embed Frameworks */,
 				B4C064782815EBA700C23D79 /* Common.framework in Embed Frameworks */,
-				B4C067952816085700C23D79 /* DIContainer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,7 +160,6 @@
 			files = (
 				B4C064742815EBA400C23D79 /* Domain.framework in Frameworks */,
 				B4C064772815EBA700C23D79 /* Common.framework in Frameworks */,
-				B4C067942816085700C23D79 /* DIContainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
