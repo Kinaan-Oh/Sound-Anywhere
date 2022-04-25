@@ -8,8 +8,8 @@
 import CoreLocation
 import UIKit
 
+import Common
 import Data
-import DIContainer
 import Domain
 import Presentation
 import Resource
@@ -47,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let firestore = FakeFirestore<ZoneDTO>()
         let zoneRepository = DefaultZoneRepository<FakeFirestore<ZoneDTO>>(firestore: firestore)
+
         if let data = Resource.Dummy.zone,
            let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data) {
             zoneRepository.setDummy(dummy: dummy)
