@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B419A09828169D8600EB19CF /* Zone.json in Resources */ = {isa = PBXBuildFile; fileRef = B419A09728169D8600EB19CF /* Zone.json */; };
 		B4775B0027E9F42900425734 /* Resource.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775AFF27E9F42900425734 /* Resource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4775B0727E9F44700425734 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775B0627E9F44700425734 /* Resource.swift */; };
 		B4775B2127E9F71B00425734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4775B2027E9F71B00425734 /* Main.storyboard */; };
@@ -22,7 +23,6 @@
 		B49F7FF0280925B900BE5952 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FEF280925B900BE5952 /* CALayer+Extension.swift */; };
 		B49F7FF2280925E700BE5952 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FF1280925E700BE5952 /* UIImage+Extension.swift */; };
 		B49F7FF4280925EF00BE5952 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F7FF3280925EF00BE5952 /* UIColor+Extension.swift */; };
-		B4ACBEB828155B8F00E09E5C /* Zone.json in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBEB728155B8F00E09E5C /* Zone.json */; };
 		B4ACBEC52815694E00E09E5C /* Resource+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBEC42815694E00E09E5C /* Resource+Dummy.swift */; };
 		B4E8D170280BE389003EEFFC /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D0E2809D9840020018E /* Common.framework */; };
 		B4E8D171280BE389003EEFFC /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535D0E2809D9840020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -60,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B419A09728169D8600EB19CF /* Zone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Zone.json; sourceTree = "<group>"; };
 		B4535D042809D9840020018E /* Common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Common.xcodeproj; sourceTree = "<group>"; };
 		B4535D092809D9840020018E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		B4535D0A2809D9840020018E /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		B49F7FEF280925B900BE5952 /* CALayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		B49F7FF1280925E700BE5952 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		B49F7FF3280925EF00BE5952 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		B4ACBEB728155B8F00E09E5C /* Zone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Zone.json; sourceTree = "<group>"; };
 		B4ACBEC42815694E00E09E5C /* Resource+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+Dummy.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B419A0AD28169DFE00EB19CF /* Dummies */ = {
+			isa = PBXGroup;
+			children = (
+				B419A09728169D8600EB19CF /* Zone.json */,
+			);
+			path = Dummies;
+			sourceTree = "<group>";
+		};
 		B4535D032809D9840020018E /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +164,7 @@
 			children = (
 				B4775AFF27E9F42900425734 /* Resource.h */,
 				B49F7FD3280865DE00BE5952 /* Assets.xcassets */,
-				B4ACBEB6281559A200E09E5C /* Dummies */,
+				B419A0AD28169DFE00EB19CF /* Dummies */,
 				B49F7FEE280925A200BE5952 /* Extensions */,
 				B4775B1D27E9F69B00425734 /* Storyboard */,
 			);
@@ -206,14 +214,6 @@
 				B4ACBEC42815694E00E09E5C /* Resource+Dummy.swift */,
 			);
 			path = "Resource+Extension";
-			sourceTree = "<group>";
-		};
-		B4ACBEB6281559A200E09E5C /* Dummies */ = {
-			isa = PBXGroup;
-			children = (
-				B4ACBEB728155B8F00E09E5C /* Zone.json */,
-			);
-			path = Dummies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +316,7 @@
 			files = (
 				B4775B2127E9F71B00425734 /* Main.storyboard in Resources */,
 				B4775B2527E9F79900425734 /* Home.storyboard in Resources */,
+				B419A09828169D8600EB19CF /* Zone.json in Resources */,
 				B4775B2927E9F7E200425734 /* Map.storyboard in Resources */,
 				B4775B2D27E9F82900425734 /* Search.storyboard in Resources */,
 				B49F7FDF2808849200BE5952 /* Assets.xcassets in Resources */,
@@ -331,7 +332,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4775B3127EA148300425734 /* Resource+Storyboard.swift in Sources */,
-				B4ACBEB828155B8F00E09E5C /* Zone.json in Sources */,
 				B4ACBEC52815694E00E09E5C /* Resource+Dummy.swift in Sources */,
 				B49F7FF2280925E700BE5952 /* UIImage+Extension.swift in Sources */,
 				B49F7FDC28086D8600BE5952 /* Resource+Font.swift in Sources */,

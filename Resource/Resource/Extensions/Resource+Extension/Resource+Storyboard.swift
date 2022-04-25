@@ -9,7 +9,7 @@ import UIKit
 import Common
 
 extension Resource {
-    public class Storyboard {
+    public final class Storyboard {
         enum ID: String {
             case main
             case home
