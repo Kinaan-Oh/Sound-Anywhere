@@ -16,4 +16,5 @@ public extension Resource.Image {
     static var currentBtn: UIImage { .load(name: "current_btn", in: Resource.bundle) }
     static var favoriteBlack: UIImage { .load(name: "favorite_black", in: Resource.bundle) }
     static var favoriteBlue: UIImage { .load(name: "favorite_blue", in: Resource.bundle) }
+    static var zoneShadow: UIImage { .load(name: "zone_shadow", in: Resource.bundle) }
 }
