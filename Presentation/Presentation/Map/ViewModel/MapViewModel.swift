@@ -25,6 +25,7 @@ protocol MapViewModelCommanding {
 public final class MapViewModel: ViewModelType {
     public struct Input {
         let viewDidAppearEvent: Driver<Void>
+        let sceneDidActivateNotificationEvent: Driver<Void>
     }
     
     public struct Output {
@@ -59,7 +60,7 @@ public final class MapViewModel: ViewModelType {
     }
     
     public func transform(input: Input) -> Output {
-        input.viewDidAppearEvent
+        Driver.merge(input.viewDidAppearEvent, input.sceneDidActivateNotificationEvent)
             .drive { [weak self] _ in
                 guard let self = self else { return }
                 self.dependencies.commandLocationManagerUseCase.requestWhenInUseAuthorization()

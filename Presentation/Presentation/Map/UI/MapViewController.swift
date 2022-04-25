@@ -51,7 +51,13 @@ final class MapViewController: UIViewController {
             .mapToVoid()
             .asDriverOnErrorJustComplete()
         
-        let input = MapViewModel.Input(viewDidAppearEvent: viewDidAppearEvent)
+        let sceneDidActivateNotificationEvent = NotificationCenter.default.rx
+            .notification(UIScene.didActivateNotification)
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
+        
+        let input = MapViewModel.Input(viewDidAppearEvent: viewDidAppearEvent,
+                                       sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
         let output = viewModel.transform(input: input)
         
         output.authorizationStatus
