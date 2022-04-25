@@ -24,7 +24,7 @@ protocol MapViewModelCommanding {
 
 public final class MapViewModel: ViewModelType {
     public struct Input {
-        let viewDidAppearEvent: Driver<Bool>
+        let viewDidAppearEvent: Driver<Void>
     }
     
     public struct Output {

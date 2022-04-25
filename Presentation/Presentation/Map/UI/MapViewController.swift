@@ -47,7 +47,9 @@ final class MapViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        let viewDidAppearEvent = rx.viewDidAppear.asDriver()
+        let viewDidAppearEvent = rx.viewDidAppear
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
         
         let input = MapViewModel.Input(viewDidAppearEvent: viewDidAppearEvent)
         let output = viewModel.transform(input: input)
