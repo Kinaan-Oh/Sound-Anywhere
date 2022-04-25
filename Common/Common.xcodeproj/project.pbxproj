@@ -17,6 +17,7 @@
 		B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */; };
 		B4ACBE7428146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */; };
 		B4C065612815F4AC00C23D79 /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = B4C065602815F4AC00C23D79 /* RxCoreLocation */; };
+		B4DE25572816783A00A1D3C0 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE25562816783A00A1D3C0 /* DIContainer.swift */; };
 		B4E12E322813231B0064AA3E /* CLLocationManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E312813231B0064AA3E /* CLLocationManager+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
+		B4DE25562816783A00A1D3C0 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		B4E12E312813231B0064AA3E /* CLLocationManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 				B4775AB327E8DB5A00425734 /* Common.h */,
 				B4775B3427EA184B00425734 /* Extensions */,
 				B4535EE6280ABB990020018E /* UserDefaults */,
+				B4DE25552816781700A1D3C0 /* DIContainer */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -140,6 +143,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4DE25552816781700A1D3C0 /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				B4DE25562816783A00A1D3C0 /* DIContainer.swift */,
+			);
+			path = DIContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +274,7 @@
 				B4E12E322813231B0064AA3E /* CLLocationManager+Extension.swift in Sources */,
 				B4ACBE7428146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */,
+				B4DE25572816783A00A1D3C0 /* DIContainer.swift in Sources */,
 				B4775B3627EA184B00425734 /* String+Extension.swift in Sources */,
 				B4535EE8280ABC660020018E /* UserDefault.swift in Sources */,
 				B491B1DB281299D6003E2F7F /* UserDefaultOther.swift in Sources */,
