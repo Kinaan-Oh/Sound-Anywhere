@@ -23,13 +23,16 @@ final class MapViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private lazy var viewModel: MapViewModel = DIContainer.shared.resolve()
+    private let viewModel: MapViewModel = DIContainer.shared.resolve()
     private var disposeBag = DisposeBag()
+    private var currentLocationAnnotation = AnnotationFactory.create(of: .currentLocation,
+                                                                     coordinate: .init())
     
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureMapView()
         configureLocation()
         bindViewModel()
         bindUI()
@@ -37,12 +40,34 @@ final class MapViewController: UIViewController {
     
     // MARK: - Helpers
     
+    private func configureMapView() {
+        mapView.delegate = self
+        mapView.register(ZoneAnnotationView.self,
+                         forAnnotationViewWithReuseIdentifier: ZoneAnnotationView.identifier)
+        mapView.register(CurrentLocationAnnotationView.self,
+                         forAnnotationViewWithReuseIdentifier: CurrentLocationAnnotationView.identifier)
+    }
+    
+    private func configureCurrentLocationAnnotation(location: CLLocation) {
+        mapView.removeAnnotation(currentLocationAnnotation)
+        currentLocationAnnotation = AnnotationFactory.create(of: .currentLocation,
+                                                             coordinate: location.coordinate)
+        mapView.addAnnotation(currentLocationAnnotation)
+    }
+    
+    private func configureZoneAnnotations(zone: [Zone]) {
+        let annotations = zone.map { AnnotationFactory.create(of: .zone, coordinate: $0.coordinate)}
+        mapView.addAnnotations(annotations)
+    }
+    
     private func configureLocation() {
         if let recentLocation = UserDefaultsService.recentLocation {
             mapView.setRegion(location: recentLocation)
+            configureCurrentLocationAnnotation(location: recentLocation)
         } else {
             let defaultLocation = viewModel.getDefaultLocation()
             mapView.setRegion(location: defaultLocation)
+            configureCurrentLocationAnnotation(location: defaultLocation)
         }
     }
     
@@ -66,8 +91,12 @@ final class MapViewController: UIViewController {
                 switch authorizationStatus {
                 case .authorizedWhenInUse:
                     self.viewModel.startUpdatingLocation()
+                    self.currentLocationButton.isEnabled = true
+                    self.mapView.addAnnotation(self.currentLocationAnnotation)
                 default:
                     self.viewModel.stopUpdatingLocation()
+                    self.currentLocationButton.isEnabled = false
+                    self.mapView.removeAnnotation(self.currentLocationAnnotation)
                 }
             }
             .disposed(by: disposeBag)
@@ -83,6 +112,7 @@ final class MapViewController: UIViewController {
         output.zone
             .drive { [weak self] zone in
                 guard let self = self else { return }
+                self.configureZoneAnnotations(zone: zone)
             }
             .disposed(by: disposeBag)
     }
@@ -94,5 +124,32 @@ final class MapViewController: UIViewController {
                 self?.configureLocation()
             })
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - MKMapViewDelegate
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        switch annotation {
+        case is CurrentLocationAnnotation:
+            let identifier = CurrentLocationAnnotationView.identifier
+            guard let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) else {
+                return AnnotationViewFactory.create(of: .currentLocation,
+                                                    annotation: annotation,
+                                                    reuseIdentifier: identifier)
+            }
+            return annotationView
+        case is ZoneAnnotation:
+            let identifier = ZoneAnnotationView.identifier
+            guard let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) else {
+                return AnnotationViewFactory.create(of: .zone,
+                                                    annotation: annotation,
+                                                    reuseIdentifier: identifier)
+            }
+            return annotationView
+        default:
+            return nil
+        }
     }
 }
