@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B419A1232816A35400EB19CF /* AnnotationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419A1222816A35400EB19CF /* AnnotationFactory.swift */; };
+		B419A1252816A3D600EB19CF /* AnnotationViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */; };
+		B419A1582816A6ED00EB19CF /* Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B419A1572816A6ED00EB19CF /* Resource.framework */; };
+		B419A1592816A6ED00EB19CF /* Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B419A1572816A6ED00EB19CF /* Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B42BC38B2812E58100FC1486 /* QueryLocationManagerUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC38A2812E58100FC1486 /* QueryLocationManagerUseCaseStub.swift */; };
 		B4535DF02809E0E20020018E /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47759A327E8D73C00425734 /* Presentation.framework */; };
 		B4535DF72809E0EC0020018E /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535DF62809E0EC0020018E /* MapViewModelTests.swift */; };
@@ -96,6 +100,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B4C064752815EBA400C23D79 /* Domain.framework in Embed Frameworks */,
+				B419A1592816A6ED00EB19CF /* Resource.framework in Embed Frameworks */,
 				B4C064782815EBA700C23D79 /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -104,6 +109,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B419A1222816A35400EB19CF /* AnnotationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationFactory.swift; sourceTree = "<group>"; };
+		B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationViewFactory.swift; sourceTree = "<group>"; };
+		B419A1572816A6ED00EB19CF /* Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42B79D12807DB4700DEE1D0 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42B79D42807DB5400DEE1D0 /* Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42BC38A2812E58100FC1486 /* QueryLocationManagerUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryLocationManagerUseCaseStub.swift; sourceTree = "<group>"; };
@@ -159,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4C064742815EBA400C23D79 /* Domain.framework in Frameworks */,
+				B419A1582816A6ED00EB19CF /* Resource.framework in Frameworks */,
 				B4C064772815EBA700C23D79 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +175,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B419A11B2816A33F00EB19CF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B419A1222816A35400EB19CF /* AnnotationFactory.swift */,
+				B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		B42BC3832812E55F00FC1486 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +377,7 @@
 		B47759C227E8D76C00425734 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				B419A11B2816A33F00EB19CF /* Common */,
 				B47759C527E8D76C00425734 /* UI */,
 				B47759C327E8D76C00425734 /* ViewModel */,
 			);
@@ -392,6 +411,7 @@
 		B4775AE327E9E6A400425734 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B419A1572816A6ED00EB19CF /* Resource.framework */,
 				B4C067842816085200C23D79 /* DIContainer */,
 				B4C062EC2815DE3200C23D79 /* Data */,
 				B4535CC82809D8A50020018E /* Common */,
@@ -727,6 +747,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B47759CE27E8D76C00425734 /* SearchViewController.swift in Sources */,
+				B419A1232816A35400EB19CF /* AnnotationFactory.swift in Sources */,
 				B47759D027E8D76C00425734 /* HomeViewModel.swift in Sources */,
 				B47759CD27E8D76C00425734 /* SearchViewModel.swift in Sources */,
 				B47759D527E8D76C00425734 /* RecordViewController.swift in Sources */,
@@ -736,6 +757,7 @@
 				B491B1EF2812A220003E2F7F /* MKMapView+Extension.swift in Sources */,
 				B47759D927E8D76C00425734 /* MapViewController.swift in Sources */,
 				B491B1F12812A356003E2F7F /* UIViewController+Rx.swift in Sources */,
+				B419A1252816A3D600EB19CF /* AnnotationViewFactory.swift in Sources */,
 				B47759DA27E8D76C00425734 /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
