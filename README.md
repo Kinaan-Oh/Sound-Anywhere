@@ -45,6 +45,6 @@
 ### Testablity
 - Concrete Type 대신 Interface에 의존하여 Testability를 개선하였습니다.
 - 인터페이스를 Command, Query 인터페이스로 분리하여 Mock, Stub의 활용성을 높였습니다.
-- Firestore 대신 HashTable로 구현한 FakeFirestore(모든 Operation의 Time Complexity는 O(1) 보장)를 Debug/Unit Test에 이용하여 Firestore에 대한 Side Effect와 Unit Test 시간을 줄였습니다.
+- Firestore 대신 HashTable로 구현한 FakeFirestore를 Debug/Unit Test에 이용하여 Firestore에 대한 Side Effect와 Unit Test 시간을 줄였습니다.
 
 ---
