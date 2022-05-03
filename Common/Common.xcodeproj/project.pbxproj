@@ -18,9 +18,10 @@
 		B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */; };
 		B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */; };
 		B4ACBE7428146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */; };
-		B4C065612815F4AC00C23D79 /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = B4C065602815F4AC00C23D79 /* RxCoreLocation */; };
 		B4DE25572816783A00A1D3C0 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE25562816783A00A1D3C0 /* DIContainer.swift */; };
-		B4E12E322813231B0064AA3E /* CLLocationManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E312813231B0064AA3E /* CLLocationManager+Extension.swift */; };
+		B4EEA88A281FCD440065B1B1 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4EEA889281FCD440065B1B1 /* RxCocoa */; };
+		B4EEA88C281FCD440065B1B1 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B4EEA88B281FCD440065B1B1 /* RxRelay */; };
+		B4EEA88E281FCD450065B1B1 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4EEA88D281FCD450065B1B1 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,6 @@
 		B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 		B4DE25562816783A00A1D3C0 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
-		B4E12E312813231B0064AA3E /* CLLocationManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4C065612815F4AC00C23D79 /* RxCoreLocation in Frameworks */,
+				B4EEA88E281FCD450065B1B1 /* RxSwift in Frameworks */,
+				B4EEA88C281FCD440065B1B1 /* RxRelay in Frameworks */,
+				B4EEA88A281FCD440065B1B1 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +132,6 @@
 				B481ECE1281705E7001C8CD8 /* CALayer+Extension.swift */,
 				B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */,
 				B4199FE028168C9200EB19CF /* ObservableConvertibleType+Extension.swift */,
-				B4E12E312813231B0064AA3E /* CLLocationManager+Extension.swift */,
 				B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */,
 			);
 			path = Extensions;
@@ -189,7 +190,9 @@
 			);
 			name = Common;
 			packageProductDependencies = (
-				B4C065602815F4AC00C23D79 /* RxCoreLocation */,
+				B4EEA889281FCD440065B1B1 /* RxCocoa */,
+				B4EEA88B281FCD440065B1B1 /* RxRelay */,
+				B4EEA88D281FCD450065B1B1 /* RxSwift */,
 			);
 			productName = Common;
 			productReference = B4775AB027E8DB5A00425734 /* Common.framework */;
@@ -242,7 +245,7 @@
 			);
 			mainGroup = B4775AA627E8DB5A00425734;
 			packageReferences = (
-				B4C065522815F3DE00C23D79 /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
+				B4EEA888281FCD440065B1B1 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B4775AB127E8DB5A00425734 /* Products */;
 			projectDirPath = "";
@@ -277,7 +280,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */,
-				B4E12E322813231B0064AA3E /* CLLocationManager+Extension.swift in Sources */,
 				B4199FE128168C9200EB19CF /* ObservableConvertibleType+Extension.swift in Sources */,
 				B481ECE2281705E7001C8CD8 /* CALayer+Extension.swift in Sources */,
 				B4ACBE7428146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift in Sources */,
@@ -563,21 +565,31 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B4C065522815F3DE00C23D79 /* XCRemoteSwiftPackageReference "RxCoreLocation" */ = {
+		B4EEA888281FCD440065B1B1 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxCoreLocation";
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
-				branch = master;
+				branch = main;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B4C065602815F4AC00C23D79 /* RxCoreLocation */ = {
+		B4EEA889281FCD440065B1B1 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B4C065522815F3DE00C23D79 /* XCRemoteSwiftPackageReference "RxCoreLocation" */;
-			productName = RxCoreLocation;
+			package = B4EEA888281FCD440065B1B1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B4EEA88B281FCD440065B1B1 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4EEA888281FCD440065B1B1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		B4EEA88D281FCD450065B1B1 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4EEA888281FCD440065B1B1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
