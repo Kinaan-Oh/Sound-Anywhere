@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B4218D222813968E00604436 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4218D212813968E00604436 /* Track.swift */; };
-		B42BC3922812E77E00FC1486 /* CommandLocationManagerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC3912812E77E00FC1486 /* CommandLocationManagerUseCase.swift */; };
+		B42BC3922812E77E00FC1486 /* CommandCLLocationServiceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC3912812E77E00FC1486 /* CommandCLLocationServiceUseCase.swift */; };
 		B4535CE22809D8E20020018E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CE12809D8DF0020018E /* Common.framework */; };
 		B4535CE32809D8E20020018E /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CE12809D8DF0020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4535E5A2809E9690020018E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A7227E8DA2B00425734 /* Domain.framework */; };
@@ -24,6 +24,7 @@
 		B4E12E47281327FF0064AA3E /* CLLocationManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */; };
 		B4EEA884281FCCF00065B1B1 /* CLLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EEA883281FCCF00065B1B1 /* CLLocationService.swift */; };
 		B4EEA8ED281FE0BA0065B1B1 /* CLLocationService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EEA8EC281FE0BA0065B1B1 /* CLLocationService+Rx.swift */; };
+		B4F087CB280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F087CA280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +67,7 @@
 
 /* Begin PBXFileReference section */
 		B4218D212813968E00604436 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		B42BC3912812E77E00FC1486 /* CommandLocationManagerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLocationManagerUseCase.swift; sourceTree = "<group>"; };
+		B42BC3912812E77E00FC1486 /* CommandCLLocationServiceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCLLocationServiceUseCase.swift; sourceTree = "<group>"; };
 		B4535CD72809D8DF0020018E /* Common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Common.xcodeproj; sourceTree = "<group>"; };
 		B4535CDC2809D8DF0020018E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		B4535CDD2809D8DF0020018E /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 		B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerStub.swift; sourceTree = "<group>"; };
 		B4EEA883281FCCF00065B1B1 /* CLLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationService.swift; sourceTree = "<group>"; };
 		B4EEA8EC281FE0BA0065B1B1 /* CLLocationService+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationService+Rx.swift"; sourceTree = "<group>"; };
+		B4F087CA280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCLLocationServiceUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				B4775A7527E8DA2B00425734 /* Domain.h */,
+				B4EEA880281FCCDC0065B1B1 /* Common */,
 				B4E12DDB2813038C0064AA3E /* Entities */,
 				B4E12DD5281302540064AA3E /* UseCases */,
 				B4E12DD82813027E0064AA3E /* RepositoryInterface */,
@@ -199,8 +202,8 @@
 		B4E12DD5281302540064AA3E /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				B42BC3912812E77E00FC1486 /* CommandLocationManagerUseCase.swift */,
-				B4F087CA280E81B000A901C1 /* QueryLocationManagerUseCase.swift */,
+				B42BC3912812E77E00FC1486 /* CommandCLLocationServiceUseCase.swift */,
+				B4F087CA280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift */,
 				B4ACBE9F2815530200E09E5C /* QueryZoneUseCase.swift */,
 			);
 			path = UseCases;
@@ -404,13 +407,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4ACBEA02815530200E09E5C /* QueryZoneUseCase.swift in Sources */,
-				B42BC3922812E77E00FC1486 /* CommandLocationManagerUseCase.swift in Sources */,
+				B42BC3922812E77E00FC1486 /* CommandCLLocationServiceUseCase.swift in Sources */,
 				B4ACBE3028140B6E00E09E5C /* ZoneRepository.swift in Sources */,
 				B4EEA8ED281FE0BA0065B1B1 /* CLLocationService+Rx.swift in Sources */,
 				B4218D222813968E00604436 /* Track.swift in Sources */,
 				B4EEA884281FCCF00065B1B1 /* CLLocationService.swift in Sources */,
 				B4E12DDD281303B10064AA3E /* Zone.swift in Sources */,
-				B4F087CB280E81B000A901C1 /* QueryLocationManagerUseCase.swift in Sources */,
+				B4F087CB280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
