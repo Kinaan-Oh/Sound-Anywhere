@@ -36,18 +36,18 @@ public final class MapViewModel: ViewModelType {
     
     public struct Dependencies {
         var defaultLocation: CLLocation
-        var queryLocationManagerUseCase: QueryLocationManagerUseCase
-        var commandLocationManagerUseCase: CommandLocationManagerUseCase
+        var queryCLLocationServiceUseCase: QueryCLLocationServiceUseCase
+        var commandCLLocationServiceUseCase: CommandCLLocationServiceUseCase
         var queryZoneUseCase: QueryZoneUseCase
         
         public init(defaultLocation: CLLocation,
-                    queryLocationManagerUseCase: QueryLocationManagerUseCase,
-                    commandLocationManagerUseCase: CommandLocationManagerUseCase,
+                    queryCLLocationServiceUseCase: QueryCLLocationServiceUseCase,
+                    commandCLLocationServiceUseCase: CommandCLLocationServiceUseCase,
                     queryZoneUseCase: QueryZoneUseCase
         ) {
             self.defaultLocation = defaultLocation
-            self.queryLocationManagerUseCase = queryLocationManagerUseCase
-            self.commandLocationManagerUseCase = commandLocationManagerUseCase
+            self.queryCLLocationServiceUseCase = queryCLLocationServiceUseCase
+            self.commandCLLocationServiceUseCase = commandCLLocationServiceUseCase
             self.queryZoneUseCase = queryZoneUseCase
         }
     }
@@ -63,7 +63,7 @@ public final class MapViewModel: ViewModelType {
         Driver.merge(input.viewDidAppearEvent, input.sceneDidActivateNotificationEvent)
             .drive { [weak self] _ in
                 guard let self = self else { return }
-                self.dependencies.commandLocationManagerUseCase.requestWhenInUseAuthorization()
+                self.dependencies.commandCLLocationServiceUseCase.requestWhenInUseAuthorization()
             }
             .disposed(by: disposeBag)
         
@@ -74,11 +74,11 @@ public final class MapViewModel: ViewModelType {
                     .asDriverOnErrorJustComplete()
             }
         
-        let authorizationStatus = dependencies.queryLocationManagerUseCase
+        let authorizationStatus = dependencies.queryCLLocationServiceUseCase
             .observeAuthorizationStatus()
             .asDriverOnErrorJustComplete()
         
-        let location = dependencies.queryLocationManagerUseCase
+        let location = dependencies.queryCLLocationServiceUseCase
             .observeLocation()
             .asDriverOnErrorJustComplete()
         
@@ -93,11 +93,11 @@ public final class MapViewModel: ViewModelType {
 
 extension MapViewModel: MapViewModelCommanding {
     func startUpdatingLocation() {
-        dependencies.commandLocationManagerUseCase.startUpdatingLocation()
+        dependencies.commandCLLocationServiceUseCase.startUpdatingLocation()
     }
     
     func stopUpdatingLocation() {
-        dependencies.commandLocationManagerUseCase.stopUpdatingLocation()
+        dependencies.commandCLLocationServiceUseCase.stopUpdatingLocation()
     }
 }
 

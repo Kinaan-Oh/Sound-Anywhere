@@ -67,7 +67,6 @@ final class MapViewController: UIViewController {
         } else {
             let defaultLocation = viewModel.getDefaultLocation()
             mapView.setRegion(location: defaultLocation)
-            configureCurrentLocationAnnotation(location: defaultLocation)
         }
     }
     
