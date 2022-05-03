@@ -40,10 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func registerDependencies() {
-        let locationManager = CLLocationManager()
+        let locationService = CLLocationService()
         
-        let queryLocationManagerUseCase = DefaultQueryLocationManagerUseCase(locationManager: locationManager)
-        let commandLocationManagerUseCase = DefaultCommandLocationManagerUseCase(locationManager: locationManager)
+        let queryCLLocationServiceUseCase = DefaultQueryCLLocationServiceUseCase(locationService: locationService)
+        let commandCLLocationServiceUseCase = DefaultCommandCLLocationServiceUseCase(locationService: locationService)
         
         let firestore = FakeFirestore<ZoneDTO>()
         let zoneRepository = DefaultZoneRepository<FakeFirestore<ZoneDTO>>(firestore: firestore)
@@ -58,8 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mapViewModel = MapViewModel(dependencies: .init(
             defaultLocation: CLLocation(latitude: 37.54330366639085,
                                         longitude: 127.04455548501139),
-            queryLocationManagerUseCase: queryLocationManagerUseCase,
-            commandLocationManagerUseCase: commandLocationManagerUseCase,
+            queryCLLocationServiceUseCase: queryCLLocationServiceUseCase,
+            commandCLLocationServiceUseCase: commandCLLocationServiceUseCase,
             queryZoneUseCase: queryZoneUseCase))
         
         DIContainer.shared.register(dependency: mapViewModel)
