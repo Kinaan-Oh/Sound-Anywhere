@@ -9,19 +9,20 @@
 /* Begin PBXBuildFile section */
 		B4218D222813968E00604436 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4218D212813968E00604436 /* Track.swift */; };
 		B42BC3922812E77E00FC1486 /* CommandCLLocationServiceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC3912812E77E00FC1486 /* CommandCLLocationServiceUseCase.swift */; };
-		B4535CE22809D8E20020018E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CE12809D8DF0020018E /* Common.framework */; };
-		B4535CE32809D8E20020018E /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CE12809D8DF0020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4535E5A2809E9690020018E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A7227E8DA2B00425734 /* Domain.framework */; };
 		B4775A7627E8DA2B00425734 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775A7527E8DA2B00425734 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4AABB4C2822658500AFDA4C /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CE12809D8DF0020018E /* Common.framework */; platformFilter = ios; };
+		B4AABB4D2822658500AFDA4C /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4535CE12809D8DF0020018E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4AABB7A2822682B00AFDA4C /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B4AABB792822682B00AFDA4C /* RxTest */; };
 		B4ACBE3028140B6E00E09E5C /* ZoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE2F28140B6E00E09E5C /* ZoneRepository.swift */; };
 		B4ACBEA02815530200E09E5C /* QueryZoneUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE9F2815530200E09E5C /* QueryZoneUseCase.swift */; };
 		B4ACBEA42815547000E09E5C /* ZoneRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBEA32815547000E09E5C /* ZoneRepositoryStub.swift */; };
 		B4C062D72815D89C00C23D79 /* DefaultQueryZoneUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C062D62815D89C00C23D79 /* DefaultQueryZoneUseCaseTests.swift */; };
 		B4E12DDD281303B10064AA3E /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12DDC281303B10064AA3E /* Zone.swift */; };
-		B4E12E3D281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E3C281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift */; };
-		B4E12E41281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E40281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift */; };
-		B4E12E45281327EE0064AA3E /* CLLocationManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E44281327EE0064AA3E /* CLLocationManagerMock.swift */; };
-		B4E12E47281327FF0064AA3E /* CLLocationManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */; };
+		B4E12E3D281326CF0064AA3E /* DefaultCommandCLLocationServiceUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E3C281326CF0064AA3E /* DefaultCommandCLLocationServiceUseCaseTests.swift */; };
+		B4E12E41281326FD0064AA3E /* DefaultQueryCLLocationServiceUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E40281326FD0064AA3E /* DefaultQueryCLLocationServiceUseCaseTests.swift */; };
+		B4E12E45281327EE0064AA3E /* CLLocationServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E44281327EE0064AA3E /* CLLocationServiceMock.swift */; };
+		B4E12E47281327FF0064AA3E /* CLLocationServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E46281327FF0064AA3E /* CLLocationServiceStub.swift */; };
 		B4F087CB280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F087CA280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,13 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B4535CE42809D8E20020018E /* Embed Frameworks */ = {
+		B4AABB4E2822658500AFDA4C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B4535CE32809D8E20020018E /* Common.framework in Embed Frameworks */,
+				B4AABB4D2822658500AFDA4C /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,10 +80,10 @@
 		B4ACBEA32815547000E09E5C /* ZoneRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepositoryStub.swift; sourceTree = "<group>"; };
 		B4C062D62815D89C00C23D79 /* DefaultQueryZoneUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultQueryZoneUseCaseTests.swift; sourceTree = "<group>"; };
 		B4E12DDC281303B10064AA3E /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
-		B4E12E3C281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCommandLocationManagerUseCaseTests.swift; sourceTree = "<group>"; };
-		B4E12E40281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultQueryLocationManagerUseCaseTests.swift; sourceTree = "<group>"; };
-		B4E12E44281327EE0064AA3E /* CLLocationManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerMock.swift; sourceTree = "<group>"; };
-		B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerStub.swift; sourceTree = "<group>"; };
+		B4E12E3C281326CF0064AA3E /* DefaultCommandCLLocationServiceUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCommandCLLocationServiceUseCaseTests.swift; sourceTree = "<group>"; };
+		B4E12E40281326FD0064AA3E /* DefaultQueryCLLocationServiceUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultQueryCLLocationServiceUseCaseTests.swift; sourceTree = "<group>"; };
+		B4E12E44281327EE0064AA3E /* CLLocationServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationServiceMock.swift; sourceTree = "<group>"; };
+		B4E12E46281327FF0064AA3E /* CLLocationServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationServiceStub.swift; sourceTree = "<group>"; };
 		B4F087CA280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCLLocationServiceUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4AABB7A2822682B00AFDA4C /* RxTest in Frameworks */,
 				B4535E5A2809E9690020018E /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4535CE22809D8E20020018E /* Common.framework in Frameworks */,
+				B4AABB4C2822658500AFDA4C /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,8 +150,8 @@
 			children = (
 				B4E12E422813273A0064AA3E /* Mocks */,
 				B4E12E432813273E0064AA3E /* Stubs */,
-				B4E12E3C281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift */,
-				B4E12E40281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift */,
+				B4E12E3C281326CF0064AA3E /* DefaultCommandCLLocationServiceUseCaseTests.swift */,
+				B4E12E40281326FD0064AA3E /* DefaultQueryCLLocationServiceUseCaseTests.swift */,
 				B4C062D62815D89C00C23D79 /* DefaultQueryZoneUseCaseTests.swift */,
 			);
 			path = DomainTests;
@@ -225,7 +227,7 @@
 		B4E12E422813273A0064AA3E /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				B4E12E44281327EE0064AA3E /* CLLocationManagerMock.swift */,
+				B4E12E44281327EE0064AA3E /* CLLocationServiceMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -233,7 +235,7 @@
 		B4E12E432813273E0064AA3E /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */,
+				B4E12E46281327FF0064AA3E /* CLLocationServiceStub.swift */,
 				B4ACBEA32815547000E09E5C /* ZoneRepositoryStub.swift */,
 			);
 			path = Stubs;
@@ -275,6 +277,7 @@
 			);
 			name = DomainTests;
 			packageProductDependencies = (
+				B4AABB792822682B00AFDA4C /* RxTest */,
 			);
 			productName = DomainTests;
 			productReference = B4535E562809E9690020018E /* DomainTests.xctest */;
@@ -288,7 +291,7 @@
 				B4775A6E27E8DA2B00425734 /* Sources */,
 				B4775A6F27E8DA2B00425734 /* Frameworks */,
 				B4775A7027E8DA2B00425734 /* Resources */,
-				B4535CE42809D8E20020018E /* Embed Frameworks */,
+				B4AABB4E2822658500AFDA4C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,6 +334,7 @@
 			);
 			mainGroup = B4775A6827E8DA2B00425734;
 			packageReferences = (
+				B4AABB782822682B00AFDA4C /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B4775A7327E8DA2B00425734 /* Products */;
 			projectDirPath = "";
@@ -387,12 +391,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4E12E45281327EE0064AA3E /* CLLocationManagerMock.swift in Sources */,
-				B4E12E3D281326CF0064AA3E /* DefaultCommandLocationManagerUseCaseTests.swift in Sources */,
+				B4E12E45281327EE0064AA3E /* CLLocationServiceMock.swift in Sources */,
+				B4E12E3D281326CF0064AA3E /* DefaultCommandCLLocationServiceUseCaseTests.swift in Sources */,
 				B4C062D72815D89C00C23D79 /* DefaultQueryZoneUseCaseTests.swift in Sources */,
 				B4ACBEA42815547000E09E5C /* ZoneRepositoryStub.swift in Sources */,
-				B4E12E41281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift in Sources */,
-				B4E12E47281327FF0064AA3E /* CLLocationManagerStub.swift in Sources */,
+				B4E12E41281326FD0064AA3E /* DefaultQueryCLLocationServiceUseCaseTests.swift in Sources */,
+				B4E12E47281327FF0064AA3E /* CLLocationServiceStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +691,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B4AABB782822682B00AFDA4C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4AABB792822682B00AFDA4C /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4AABB782822682B00AFDA4C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B4775A6927E8DA2B00425734 /* Project object */;
 }

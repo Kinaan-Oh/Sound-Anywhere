@@ -9,16 +9,16 @@ import XCTest
 
 import Domain
 
-final class CommandLocationManagerUseCaseTests: XCTestCase {
+final class DefaultCommandCLLocationServiceUseCaseTests: XCTestCase {
     // Given
-    var locationManagerMock: CLLocationManagerMock!
-    var commandLocationManagerUseCase: DefaultCommandLocationManagerUseCase!
+    var locationServiceMock: CLLocationServiceMock!
+    var commandLocationManagerUseCase: DefaultCommandCLLocationServiceUseCase!
     
     override func setUp() {
         super.setUp()
         
-        locationManagerMock = CLLocationManagerMock()
-        commandLocationManagerUseCase = DefaultCommandLocationManagerUseCase(locationManager: locationManagerMock)
+        locationServiceMock = CLLocationServiceMock()
+        commandLocationManagerUseCase = DefaultCommandCLLocationServiceUseCase(locationService: locationServiceMock)
     }
 
     func test_requestWhenInUseAuthorization() {
@@ -26,7 +26,7 @@ final class CommandLocationManagerUseCaseTests: XCTestCase {
         commandLocationManagerUseCase.requestWhenInUseAuthorization()
         
         // Then
-        XCTAssertTrue(locationManagerMock.requestWhenInUseAuthorization_Called)
+        XCTAssertTrue(locationServiceMock.requestWhenInUseAuthorization_Called)
     }
     
     func test_startUpdatingLocation() {
@@ -34,7 +34,7 @@ final class CommandLocationManagerUseCaseTests: XCTestCase {
         commandLocationManagerUseCase.startUpdatingLocation()
         
         // Then
-        XCTAssertTrue(locationManagerMock.startUpdatingLocation_Called)
+        XCTAssertTrue(locationServiceMock.startUpdatingLocation_Called)
     }
     
     func test_stopUpdatingLocation() {
@@ -42,6 +42,6 @@ final class CommandLocationManagerUseCaseTests: XCTestCase {
         commandLocationManagerUseCase.stopUpdatingLocation()
         
         // Then
-        XCTAssertTrue(locationManagerMock.stopUpdatingLocation_Called)
+        XCTAssertTrue(locationServiceMock.stopUpdatingLocation_Called)
     }
 }

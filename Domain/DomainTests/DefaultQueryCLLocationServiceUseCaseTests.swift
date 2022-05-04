@@ -12,18 +12,18 @@ import Domain
 import RxSwift
 import RxTest
 
-final class DefaultQueryLocationManagerUseCaseTests: XCTestCase {
+final class DefaultQueryCLLocationServiceUseCaseTests: XCTestCase {
     // Given
-    var locationManagerStub: CLLocationManagerStub!
-    var defaultQueryLocationManagerUseCase: DefaultQueryLocationManagerUseCase!
+    var locationServiceStub: CLLocationServiceStub!
+    var defaultQueryLocationManagerUseCase: DefaultQueryCLLocationServiceUseCase!
     var scheduler: TestScheduler!
     var disposeBag = DisposeBag()
     
     override func setUp() {
         super.setUp()
         
-        locationManagerStub = CLLocationManagerStub()
-        defaultQueryLocationManagerUseCase = DefaultQueryLocationManagerUseCase(locationManager: locationManagerStub)
+        locationServiceStub = CLLocationServiceStub()
+        defaultQueryLocationManagerUseCase = DefaultQueryCLLocationServiceUseCase(locationService: locationServiceStub)
         scheduler = TestScheduler(initialClock: 0)
     }
     

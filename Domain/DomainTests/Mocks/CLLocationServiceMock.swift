@@ -7,7 +7,7 @@
 
 import Common
 
-final class CLLocationManagerMock: CLLocationManagerCommanding {
+final class CLLocationServiceMock: CLLocationServiceCommanding {
     var requestWhenInUseAuthorization_Called = false
     var startUpdatingLocation_Called = false
     var stopUpdatingLocation_Called = false

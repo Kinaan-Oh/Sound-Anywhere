@@ -10,7 +10,7 @@ import CoreLocation
 import Common
 import RxSwift
 
-final class CLLocationManagerStub: CLLocationManagerQuerying {
+final class CLLocationServiceStub: CLLocationServiceQuerying {
     private let observeAuthorizationStatus_ReturnValue: Observable<CLAuthorizationStatus>
     private let  observeLocation_ReturnValue: Observable<CLLocation?>
     
