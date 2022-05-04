@@ -22,8 +22,6 @@
 		B4E12E41281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E40281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift */; };
 		B4E12E45281327EE0064AA3E /* CLLocationManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E44281327EE0064AA3E /* CLLocationManagerMock.swift */; };
 		B4E12E47281327FF0064AA3E /* CLLocationManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */; };
-		B4EEA884281FCCF00065B1B1 /* CLLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EEA883281FCCF00065B1B1 /* CLLocationService.swift */; };
-		B4EEA8ED281FE0BA0065B1B1 /* CLLocationService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EEA8EC281FE0BA0065B1B1 /* CLLocationService+Rx.swift */; };
 		B4F087CB280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F087CA280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,8 +83,6 @@
 		B4E12E40281326FD0064AA3E /* DefaultQueryLocationManagerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultQueryLocationManagerUseCaseTests.swift; sourceTree = "<group>"; };
 		B4E12E44281327EE0064AA3E /* CLLocationManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerMock.swift; sourceTree = "<group>"; };
 		B4E12E46281327FF0064AA3E /* CLLocationManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerStub.swift; sourceTree = "<group>"; };
-		B4EEA883281FCCF00065B1B1 /* CLLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationService.swift; sourceTree = "<group>"; };
-		B4EEA8EC281FE0BA0065B1B1 /* CLLocationService+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationService+Rx.swift"; sourceTree = "<group>"; };
 		B4F087CA280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCLLocationServiceUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,8 +242,6 @@
 		B4EEA880281FCCDC0065B1B1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B4EEA8EC281FE0BA0065B1B1 /* CLLocationService+Rx.swift */,
-				B4EEA883281FCCF00065B1B1 /* CLLocationService.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -409,9 +403,7 @@
 				B4ACBEA02815530200E09E5C /* QueryZoneUseCase.swift in Sources */,
 				B42BC3922812E77E00FC1486 /* CommandCLLocationServiceUseCase.swift in Sources */,
 				B4ACBE3028140B6E00E09E5C /* ZoneRepository.swift in Sources */,
-				B4EEA8ED281FE0BA0065B1B1 /* CLLocationService+Rx.swift in Sources */,
 				B4218D222813968E00604436 /* Track.swift in Sources */,
-				B4EEA884281FCCF00065B1B1 /* CLLocationService.swift in Sources */,
 				B4E12DDD281303B10064AA3E /* Zone.swift in Sources */,
 				B4F087CB280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift in Sources */,
 			);

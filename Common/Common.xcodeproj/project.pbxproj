@@ -17,6 +17,8 @@
 		B491B20F2812B08A003E2F7F /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775AB027E8DB5A00425734 /* Common.framework */; platformFilter = ios; };
 		B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */; };
 		B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */; };
+		B4AABB52282265BF00AFDA4C /* CLLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AABB51282265BF00AFDA4C /* CLLocationService.swift */; };
+		B4AABB54282265C700AFDA4C /* CLLocationService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AABB53282265C700AFDA4C /* CLLocationService+Rx.swift */; };
 		B4ACBE7428146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */; };
 		B4DE25572816783A00A1D3C0 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE25562816783A00A1D3C0 /* DIContainer.swift */; };
 		B4EEA88A281FCD440065B1B1 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B4EEA889281FCD440065B1B1 /* RxCocoa */; };
@@ -59,6 +61,8 @@
 		B491B20D2812B08A003E2F7F /* UserDefaultsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsServiceTests.swift; sourceTree = "<group>"; };
 		B4AA2DD2280DE46800FF176D /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		B4AA2DF8280DEEE500FF176D /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
+		B4AABB51282265BF00AFDA4C /* CLLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationService.swift; sourceTree = "<group>"; };
+		B4AABB53282265C700AFDA4C /* CLLocationService+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationService+Rx.swift"; sourceTree = "<group>"; };
 		B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 		B4DE25562816783A00A1D3C0 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +124,7 @@
 				B4775AB327E8DB5A00425734 /* Common.h */,
 				B4775B3427EA184B00425734 /* Extensions */,
 				B4535EE6280ABB990020018E /* UserDefaults */,
+				B4AABB50282265B100AFDA4C /* CLLocationService */,
 				B4DE25552816781700A1D3C0 /* DIContainer */,
 			);
 			path = Common;
@@ -143,6 +148,15 @@
 				B491B20D2812B08A003E2F7F /* UserDefaultsServiceTests.swift */,
 			);
 			path = CommonTests;
+			sourceTree = "<group>";
+		};
+		B4AABB50282265B100AFDA4C /* CLLocationService */ = {
+			isa = PBXGroup;
+			children = (
+				B4AABB51282265BF00AFDA4C /* CLLocationService.swift */,
+				B4AABB53282265C700AFDA4C /* CLLocationService+Rx.swift */,
+			);
+			path = CLLocationService;
 			sourceTree = "<group>";
 		};
 		B4C0655F2815F4AC00C23D79 /* Frameworks */ = {
@@ -281,7 +295,9 @@
 			files = (
 				B4AA2DD3280DE46800FF176D /* UserDefaultsService.swift in Sources */,
 				B4199FE128168C9200EB19CF /* ObservableConvertibleType+Extension.swift in Sources */,
+				B4AABB54282265C700AFDA4C /* CLLocationService+Rx.swift in Sources */,
 				B481ECE2281705E7001C8CD8 /* CALayer+Extension.swift in Sources */,
+				B4AABB52282265BF00AFDA4C /* CLLocationService.swift in Sources */,
 				B4ACBE7428146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				B4AA2DF9280DEEE500FF176D /* ObservableType+Extension.swift in Sources */,
 				B4DE25572816783A00A1D3C0 /* DIContainer.swift in Sources */,

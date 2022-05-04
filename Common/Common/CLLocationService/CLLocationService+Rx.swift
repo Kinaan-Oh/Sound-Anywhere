@@ -1,8 +1,8 @@
 //
 //  CLLocationService+Rx.swift
-//  Domain
+//  Common
 //
-//  Created by 오현식 on 2022/05/02.
+//  Created by 오현식 on 2022/05/04.
 //
 
 import CoreLocation

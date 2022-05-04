@@ -1,8 +1,8 @@
 //
-//  CLLocationManager+Extension.swift
-//  Domain
+//  CLLocationService.swift
+//  Common
 //
-//  Created by 오현식 on 2022/05/02.
+//  Created by 오현식 on 2022/05/04.
 //
 
 import CoreLocation
@@ -83,3 +83,4 @@ extension CLLocationService: CLLocationServiceQuerying {
         return rx.location.asObservable()
     }
 }
+
