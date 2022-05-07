@@ -28,7 +28,6 @@
 - Clean Architecture 각 Layer를 별도 모듈로 분리하여 Layer간 의존성을 명확하게 관리하였습니다.
 - Storyboard, Asset, Dummy Data(json)를 Resource 모듈로 분리하였습니다.
 - 전역적으로 사용되는 Extension, UserDefault를 Common 모듈로 분리하였습니다.
-- 빌드 속도를 개선하였습니다.
 
 ---
 
