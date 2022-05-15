@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-import Common
+import RxCommon
 import RxSwift
 
 public protocol QueryCLLocationServiceUseCase {

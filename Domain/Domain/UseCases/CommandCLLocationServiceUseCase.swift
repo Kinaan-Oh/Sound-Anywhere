@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-import Common
+import RxCommon
 
 public protocol CommandCLLocationServiceUseCase {
     func requestWhenInUseAuthorization()

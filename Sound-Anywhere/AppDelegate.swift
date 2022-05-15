@@ -13,6 +13,7 @@ import Data
 import Domain
 import Presentation
 import Resource
+import RxCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

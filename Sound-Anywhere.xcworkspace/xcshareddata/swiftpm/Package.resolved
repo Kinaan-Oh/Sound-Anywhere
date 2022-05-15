@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "rxcorelocation",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/RxSwiftCommunity/RxCoreLocation",
-      "state" : {
-        "branch" : "master",
-        "revision" : "8c4b301640e84c258018a82a105678ae287576a7"
-      }
-    },
-    {
       "identity" : "rxswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReactiveX/RxSwift",

@@ -7,6 +7,8 @@
 
 import CoreLocation
 
+import Common
+
 public struct Zone {
     public let id: String
     public let name: String
