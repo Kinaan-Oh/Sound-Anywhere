@@ -7,7 +7,6 @@
 
 import Nimble
 import RxSwift
-import RxTest
 
 /// A Nimble matcher that succeeds when the actual events emit an error
 /// of any type.

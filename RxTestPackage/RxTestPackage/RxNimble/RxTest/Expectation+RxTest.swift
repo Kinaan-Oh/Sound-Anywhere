@@ -7,7 +7,6 @@
 
 import Nimble
 import RxSwift
-import RxTest
 
 public typealias RecordedEvents<E> = [Recorded<Event<E>>]
 

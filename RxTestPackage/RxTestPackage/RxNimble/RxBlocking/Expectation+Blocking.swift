@@ -8,7 +8,6 @@
 import Foundation
 import Nimble
 import RxSwift
-import RxBlocking
 
 public extension Expectation where T: ObservableConvertibleType {
 
