@@ -5,7 +5,7 @@
 //  Created by 오현식 on 2022/04/23.
 //
 
-import Common
+import RxCommon
 
 final class CLLocationServiceMock: CLLocationServiceCommanding {
     var requestWhenInUseAuthorization_Called = false

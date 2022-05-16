@@ -5,6 +5,7 @@
 //  Created by 오현식 on 2022/04/23.
 //
 
+import RxCommon
 import RxSwift
 
 public protocol ZoneRepositoryQuerying {

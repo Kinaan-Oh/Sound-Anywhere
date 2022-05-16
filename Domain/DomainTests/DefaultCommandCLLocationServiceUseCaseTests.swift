@@ -7,7 +7,7 @@
 
 import XCTest
 
-import Domain
+@testable import Domain
 
 final class DefaultCommandCLLocationServiceUseCaseTests: XCTestCase {
     // Given

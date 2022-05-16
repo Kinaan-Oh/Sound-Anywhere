@@ -8,9 +8,9 @@
 import CoreLocation
 import XCTest
 
-import Domain
+@testable import Domain
 import RxSwift
-import RxTest
+import RxTestPackage
 
 final class DefaultQueryCLLocationServiceUseCaseTests: XCTestCase {
     // Given
@@ -18,39 +18,39 @@ final class DefaultQueryCLLocationServiceUseCaseTests: XCTestCase {
     var defaultQueryLocationManagerUseCase: DefaultQueryCLLocationServiceUseCase!
     var scheduler: TestScheduler!
     var disposeBag = DisposeBag()
-    
+
     override func setUp() {
         super.setUp()
-        
+
         locationServiceStub = CLLocationServiceStub()
         defaultQueryLocationManagerUseCase = DefaultQueryCLLocationServiceUseCase(locationService: locationServiceStub)
         scheduler = TestScheduler(initialClock: 0)
     }
-    
+
     func test_observeAuthorizationStatus() {
         // Given
         let res = scheduler.createObserver(CLAuthorizationStatus.self)
-        
+
         // When
         defaultQueryLocationManagerUseCase
             .observeAuthorizationStatus()
             .bind(to: res)
             .disposed(by: disposeBag)
-        
+
         // Then
         XCTAssertEqual(res.events, [.next(0, .notDetermined), .completed(0)])
     }
-    
+
     func test_observeLocation() {
         // Given
         let res = scheduler.createObserver(CLLocation?.self)
-        
+
         // When
         defaultQueryLocationManagerUseCase
             .observeLocation()
             .bind(to: res)
             .disposed(by: disposeBag)
-        
+
         // Then
         XCTAssertEqual(res.events, [.next(0, nil), .completed(0)])
     }
