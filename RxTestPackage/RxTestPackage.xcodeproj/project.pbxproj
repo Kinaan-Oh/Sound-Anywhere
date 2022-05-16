@@ -26,8 +26,6 @@
 		B408BE7F2831D0B300044B81 /* RunLoopLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BE742831D0B300044B81 /* RunLoopLock.swift */; };
 		B408BE802831D0B300044B81 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BE752831D0B300044B81 /* Resources.swift */; };
 		B408BE822831D0B300044B81 /* BlockingObservable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BE772831D0B300044B81 /* BlockingObservable+Operators.swift */; };
-		B408BE852831D13600044B81 /* RxCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BE842831D13600044B81 /* RxCommon.framework */; };
-		B408BE862831D13600044B81 /* RxCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BE842831D13600044B81 /* RxCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B408BE932831D95100044B81 /* Platform.Darwin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BE922831D95100044B81 /* Platform.Darwin.swift */; };
 		B408BE952831D95B00044B81 /* AtomicInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BE942831D95B00044B81 /* AtomicInt.swift */; };
 		B408BE972831D96600044B81 /* Platform.Linux.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BE962831D96600044B81 /* Platform.Linux.swift */; };
@@ -35,6 +33,8 @@
 		B408BE9B2831DA3600044B81 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BE9A2831DA3600044B81 /* Bag.swift */; };
 		B408BE9D2831DB1400044B81 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BE9C2831DB1400044B81 /* XCTest.framework */; };
 		B408BE9E2831DB1400044B81 /* XCTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BE9C2831DB1400044B81 /* XCTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B408BEEF2832215400044B81 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BEEE2832215400044B81 /* RxPackage.framework */; };
+		B408BEF02832215400044B81 /* RxPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BEEE2832215400044B81 /* RxPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,8 +44,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B408BE862831D13600044B81 /* RxCommon.framework in Embed Frameworks */,
 				B408BE9E2831DB1400044B81 /* XCTest.framework in Embed Frameworks */,
+				B408BEF02832215400044B81 /* RxPackage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,13 +73,13 @@
 		B408BE742831D0B300044B81 /* RunLoopLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunLoopLock.swift; sourceTree = "<group>"; };
 		B408BE752831D0B300044B81 /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		B408BE772831D0B300044B81 /* BlockingObservable+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BlockingObservable+Operators.swift"; sourceTree = "<group>"; };
-		B408BE842831D13600044B81 /* RxCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BE922831D95100044B81 /* Platform.Darwin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.Darwin.swift; sourceTree = "<group>"; };
 		B408BE942831D95B00044B81 /* AtomicInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicInt.swift; sourceTree = "<group>"; };
 		B408BE962831D96600044B81 /* Platform.Linux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.Linux.swift; sourceTree = "<group>"; };
 		B408BE982831D97100044B81 /* RecursiveLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveLock.swift; sourceTree = "<group>"; };
 		B408BE9A2831DA3600044B81 /* Bag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		B408BE9C2831DB1400044B81 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B408BEEE2832215400044B81 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B408BE852831D13600044B81 /* RxCommon.framework in Frameworks */,
 				B408BE9D2831DB1400044B81 /* XCTest.framework in Frameworks */,
+				B408BEEF2832215400044B81 /* RxPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,8 +183,8 @@
 		B408BE832831D13600044B81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B408BEEE2832215400044B81 /* RxPackage.framework */,
 				B408BE9C2831DB1400044B81 /* XCTest.framework */,
-				B408BE842831D13600044B81 /* RxCommon.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

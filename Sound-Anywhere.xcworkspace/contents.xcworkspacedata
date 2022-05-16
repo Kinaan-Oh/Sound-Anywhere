@@ -8,10 +8,13 @@
       location = "group:Common/Common.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:RxCommon/RxCommon.xcodeproj">
+      location = "group:RxPackage/RxPackage.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:RxTestPackage/RxTestPackage.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RxCommon/RxCommon.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Resource/Resource.xcodeproj">

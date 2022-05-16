@@ -7,154 +7,107 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B408BE12283124BE00044B81 /* RxCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = B408BE11283124BE00044B81 /* RxCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B408BE1A2831257800044B81 /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BE192831257800044B81 /* ObservableType+Extension.swift */; };
-		B408BE1C2831258300044B81 /* ObservableConvertibleType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BE1B2831258300044B81 /* ObservableConvertibleType+Extension.swift */; };
-		B408BE1F283125B600044B81 /* CLLocationService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BE1E283125B600044B81 /* CLLocationService+Rx.swift */; };
-		B408BE21283125BA00044B81 /* CLLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BE20283125BA00044B81 /* CLLocationService.swift */; };
-		B408BEF22832216A00044B81 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BEF12832216A00044B81 /* RxPackage.framework */; };
-		B408BEF32832216A00044B81 /* RxPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BEF12832216A00044B81 /* RxPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B408BEC12831EEDC00044B81 /* RxPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = B408BEC02831EEDC00044B81 /* RxPackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B408BEC92831EF0500044B81 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B408BEC82831EF0500044B81 /* RxCocoa */; };
+		B408BECB2831EF0500044B81 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B408BECA2831EF0500044B81 /* RxRelay */; };
+		B408BECD2831EF0500044B81 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B408BECC2831EF0500044B81 /* RxSwift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		B408BED82831EF5200044B81 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B408BEF32832216A00044B81 /* RxPackage.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		B408BE0E283124BE00044B81 /* RxCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B408BE11283124BE00044B81 /* RxCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxCommon.h; sourceTree = "<group>"; };
-		B408BE192831257800044B81 /* ObservableType+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
-		B408BE1B2831258300044B81 /* ObservableConvertibleType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableConvertibleType+Extension.swift"; sourceTree = "<group>"; };
-		B408BE1E283125B600044B81 /* CLLocationService+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationService+Rx.swift"; sourceTree = "<group>"; };
-		B408BE20283125BA00044B81 /* CLLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationService.swift; sourceTree = "<group>"; };
-		B408BEF12832216A00044B81 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BEBD2831EEDC00044B81 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BEC02831EEDC00044B81 /* RxPackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxPackage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B408BE0B283124BE00044B81 /* Frameworks */ = {
+		B408BEBA2831EEDC00044B81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B408BEF22832216A00044B81 /* RxPackage.framework in Frameworks */,
+				B408BECD2831EF0500044B81 /* RxSwift in Frameworks */,
+				B408BECB2831EF0500044B81 /* RxRelay in Frameworks */,
+				B408BEC92831EF0500044B81 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B408BE04283124BE00044B81 = {
+		B408BEB32831EEDC00044B81 = {
 			isa = PBXGroup;
 			children = (
-				B408BE10283124BE00044B81 /* RxCommon */,
-				B408BE0F283124BE00044B81 /* Products */,
-				B408BED42831EF5200044B81 /* Frameworks */,
+				B408BEBF2831EEDC00044B81 /* RxPackage */,
+				B408BEBE2831EEDC00044B81 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		B408BE0F283124BE00044B81 /* Products */ = {
+		B408BEBE2831EEDC00044B81 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B408BE0E283124BE00044B81 /* RxCommon.framework */,
+				B408BEBD2831EEDC00044B81 /* RxPackage.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B408BE10283124BE00044B81 /* RxCommon */ = {
+		B408BEBF2831EEDC00044B81 /* RxPackage */ = {
 			isa = PBXGroup;
 			children = (
-				B408BE18283124C900044B81 /* Extensions */,
-				B408BE1D283125AB00044B81 /* CLLocationService */,
-				B408BE11283124BE00044B81 /* RxCommon.h */,
+				B408BEC02831EEDC00044B81 /* RxPackage.h */,
 			);
-			path = RxCommon;
-			sourceTree = "<group>";
-		};
-		B408BE18283124C900044B81 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B408BE1B2831258300044B81 /* ObservableConvertibleType+Extension.swift */,
-				B408BE192831257800044B81 /* ObservableType+Extension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B408BE1D283125AB00044B81 /* CLLocationService */ = {
-			isa = PBXGroup;
-			children = (
-				B408BE1E283125B600044B81 /* CLLocationService+Rx.swift */,
-				B408BE20283125BA00044B81 /* CLLocationService.swift */,
-			);
-			path = CLLocationService;
-			sourceTree = "<group>";
-		};
-		B408BED42831EF5200044B81 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B408BEF12832216A00044B81 /* RxPackage.framework */,
-			);
-			name = Frameworks;
+			path = RxPackage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		B408BE09283124BE00044B81 /* Headers */ = {
+		B408BEB82831EEDC00044B81 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B408BE12283124BE00044B81 /* RxCommon.h in Headers */,
+				B408BEC12831EEDC00044B81 /* RxPackage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B408BE0D283124BE00044B81 /* RxCommon */ = {
+		B408BEBC2831EEDC00044B81 /* RxPackage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B408BE15283124BE00044B81 /* Build configuration list for PBXNativeTarget "RxCommon" */;
+			buildConfigurationList = B408BEC42831EEDC00044B81 /* Build configuration list for PBXNativeTarget "RxPackage" */;
 			buildPhases = (
-				B408BE09283124BE00044B81 /* Headers */,
-				B408BE0A283124BE00044B81 /* Sources */,
-				B408BE0B283124BE00044B81 /* Frameworks */,
-				B408BE0C283124BE00044B81 /* Resources */,
-				B408BED82831EF5200044B81 /* Embed Frameworks */,
+				B408BEB82831EEDC00044B81 /* Headers */,
+				B408BEB92831EEDC00044B81 /* Sources */,
+				B408BEBA2831EEDC00044B81 /* Frameworks */,
+				B408BEBB2831EEDC00044B81 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RxCommon;
+			name = RxPackage;
 			packageProductDependencies = (
+				B408BEC82831EF0500044B81 /* RxCocoa */,
+				B408BECA2831EF0500044B81 /* RxRelay */,
+				B408BECC2831EF0500044B81 /* RxSwift */,
 			);
-			productName = RxCommon;
-			productReference = B408BE0E283124BE00044B81 /* RxCommon.framework */;
+			productName = RxPackage;
+			productReference = B408BEBD2831EEDC00044B81 /* RxPackage.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B408BE05283124BE00044B81 /* Project object */ = {
+		B408BEB42831EEDC00044B81 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					B408BE0D283124BE00044B81 = {
+					B408BEBC2831EEDC00044B81 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
 			};
-			buildConfigurationList = B408BE08283124BE00044B81 /* Build configuration list for PBXProject "RxCommon" */;
+			buildConfigurationList = B408BEB72831EEDC00044B81 /* Build configuration list for PBXProject "RxPackage" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -162,21 +115,21 @@
 				en,
 				Base,
 			);
-			mainGroup = B408BE04283124BE00044B81;
+			mainGroup = B408BEB32831EEDC00044B81;
 			packageReferences = (
-				B408BE29283126EF00044B81 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B408BEC72831EF0500044B81 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
-			productRefGroup = B408BE0F283124BE00044B81 /* Products */;
+			productRefGroup = B408BEBE2831EEDC00044B81 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B408BE0D283124BE00044B81 /* RxCommon */,
+				B408BEBC2831EEDC00044B81 /* RxPackage */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B408BE0C283124BE00044B81 /* Resources */ = {
+		B408BEBB2831EEDC00044B81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -186,21 +139,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B408BE0A283124BE00044B81 /* Sources */ = {
+		B408BEB92831EEDC00044B81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B408BE1C2831258300044B81 /* ObservableConvertibleType+Extension.swift in Sources */,
-				B408BE1A2831257800044B81 /* ObservableType+Extension.swift in Sources */,
-				B408BE1F283125B600044B81 /* CLLocationService+Rx.swift in Sources */,
-				B408BE21283125BA00044B81 /* CLLocationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		B408BE13283124BE00044B81 /* Debug */ = {
+		B408BEC22831EEDC00044B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -263,7 +212,7 @@
 			};
 			name = Debug;
 		};
-		B408BE14283124BE00044B81 /* Release */ = {
+		B408BEC32831EEDC00044B81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -320,7 +269,7 @@
 			};
 			name = Release;
 		};
-		B408BE16283124BE00044B81 /* Debug */ = {
+		B408BEC52831EEDC00044B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -340,7 +289,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Homunculus.RxCommon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Homunculus.RxPackage;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -350,7 +299,7 @@
 			};
 			name = Debug;
 		};
-		B408BE17283124BE00044B81 /* Release */ = {
+		B408BEC62831EEDC00044B81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -370,7 +319,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Homunculus.RxCommon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Homunculus.RxPackage;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -383,20 +332,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B408BE08283124BE00044B81 /* Build configuration list for PBXProject "RxCommon" */ = {
+		B408BEB72831EEDC00044B81 /* Build configuration list for PBXProject "RxPackage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B408BE13283124BE00044B81 /* Debug */,
-				B408BE14283124BE00044B81 /* Release */,
+				B408BEC22831EEDC00044B81 /* Debug */,
+				B408BEC32831EEDC00044B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B408BE15283124BE00044B81 /* Build configuration list for PBXNativeTarget "RxCommon" */ = {
+		B408BEC42831EEDC00044B81 /* Build configuration list for PBXNativeTarget "RxPackage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B408BE16283124BE00044B81 /* Debug */,
-				B408BE17283124BE00044B81 /* Release */,
+				B408BEC52831EEDC00044B81 /* Debug */,
+				B408BEC62831EEDC00044B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -404,7 +353,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B408BE29283126EF00044B81 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		B408BEC72831EF0500044B81 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
@@ -413,6 +362,24 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B408BEC82831EF0500044B81 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B408BEC72831EF0500044B81 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B408BECA2831EF0500044B81 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B408BEC72831EF0500044B81 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		B408BECC2831EF0500044B81 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B408BEC72831EF0500044B81 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = B408BE05283124BE00044B81 /* Project object */;
+	rootObject = B408BEB42831EEDC00044B81 /* Project object */;
 }
