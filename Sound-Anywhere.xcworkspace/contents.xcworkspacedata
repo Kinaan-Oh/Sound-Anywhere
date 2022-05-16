@@ -11,6 +11,9 @@
       location = "group:RxCommon/RxCommon.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:RxTestPackage/RxTestPackage.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Resource/Resource.xcodeproj">
    </FileRef>
    <FileRef
