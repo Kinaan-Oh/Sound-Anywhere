@@ -17,9 +17,10 @@
 		B408BF0A2832254E00044B81 /* RxCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BEFD2832226800044B81 /* RxCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B408BF0C2832255200044B81 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF0B2832255200044B81 /* RxPackage.framework */; };
 		B408BF0D2832255200044B81 /* RxPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF0B2832255200044B81 /* RxPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B408BF262832280800044B81 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF252832280800044B81 /* RxPackage.framework */; };
+		B408BF282832280F00044B81 /* RxTestPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF272832280F00044B81 /* RxTestPackage.framework */; };
 		B419A0CE2816A05900EB19CF /* Zone.json in Resources */ = {isa = PBXBuildFile; fileRef = B419A0CD2816A05900EB19CF /* Zone.json */; };
 		B4535E952809EB910020018E /* FakeFirestoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535E942809EB910020018E /* FakeFirestoreTests.swift */; };
-		B4535E962809EB910020018E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775A8627E8DA6500425734 /* Data.framework */; };
 		B4775A8A27E8DA6500425734 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775A8927E8DA6500425734 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4ACBE4628142C3300E09E5C /* FakeFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE4528142C3300E09E5C /* FakeFirestore.swift */; };
 		B4ACBE592814494B00E09E5C /* ZoneDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE582814494B00E09E5C /* ZoneDTO.swift */; };
@@ -64,6 +65,8 @@
 		B408BD9F282D6C2900044B81 /* Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BEFD2832226800044B81 /* RxCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BF0B2832255200044B81 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BF252832280800044B81 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BF272832280F00044B81 /* RxTestPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxTestPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B419A0CD2816A05900EB19CF /* Zone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Zone.json; sourceTree = "<group>"; };
 		B4535E922809EB910020018E /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4535E942809EB910020018E /* FakeFirestoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeFirestoreTests.swift; sourceTree = "<group>"; };
@@ -83,7 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4535E962809EB910020018E /* Data.framework in Frameworks */,
+				B408BF282832280F00044B81 /* RxTestPackage.framework in Frameworks */,
+				B408BF262832280800044B81 /* RxPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +156,8 @@
 		B4775AED27E9E6B600425734 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B408BF272832280F00044B81 /* RxTestPackage.framework */,
+				B408BF252832280800044B81 /* RxPackage.framework */,
 				B408BF0B2832255200044B81 /* RxPackage.framework */,
 				B408BEFD2832226800044B81 /* RxCommon.framework */,
 				B408BD9F282D6C2900044B81 /* Resource.framework */,

@@ -17,10 +17,11 @@
 		B408BF052832253B00044B81 /* RxCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF032832253B00044B81 /* RxCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B408BF072832253F00044B81 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF062832253F00044B81 /* RxPackage.framework */; };
 		B408BF082832253F00044B81 /* RxPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF062832253F00044B81 /* RxPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B408BF222832277800044B81 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF212832277800044B81 /* RxPackage.framework */; };
+		B408BF242832278200044B81 /* RxTestPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF232832278200044B81 /* RxTestPackage.framework */; };
 		B419A1232816A35400EB19CF /* AnnotationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419A1222816A35400EB19CF /* AnnotationFactory.swift */; };
 		B419A1252816A3D600EB19CF /* AnnotationViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */; };
 		B42BC38B2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC38A2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift */; };
-		B4535DF02809E0E20020018E /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47759A327E8D73C00425734 /* Presentation.framework */; };
 		B4535DF72809E0EC0020018E /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535DF62809E0EC0020018E /* MapViewModelTests.swift */; };
 		B47759A727E8D73C00425734 /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = B47759A627E8D73C00425734 /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B47759CD27E8D76C00425734 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759AF27E8D76C00425734 /* SearchViewModel.swift */; };
@@ -72,6 +73,8 @@
 		B408BD9C282D6C2400044B81 /* Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BF032832253B00044B81 /* RxCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BF062832253F00044B81 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BF212832277800044B81 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BF232832278200044B81 /* RxTestPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxTestPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B419A1222816A35400EB19CF /* AnnotationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationFactory.swift; sourceTree = "<group>"; };
 		B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationViewFactory.swift; sourceTree = "<group>"; };
 		B42BC38A2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCLLocationServiceUseCaseStub.swift; sourceTree = "<group>"; };
@@ -99,7 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4535DF02809E0E20020018E /* Presentation.framework in Frameworks */,
+				B408BF242832278200044B81 /* RxTestPackage.framework in Frameworks */,
+				B408BF222832277800044B81 /* RxPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +295,8 @@
 		B4775AE327E9E6A400425734 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B408BF232832278200044B81 /* RxTestPackage.framework */,
+				B408BF212832277800044B81 /* RxPackage.framework */,
 				B408BF062832253F00044B81 /* RxPackage.framework */,
 				B408BF032832253B00044B81 /* RxCommon.framework */,
 				B408BD9C282D6C2400044B81 /* Resource.framework */,
