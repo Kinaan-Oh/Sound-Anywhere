@@ -1,11 +1,9 @@
 //
 //  MapViewModel.swift
-//  Time Capsule
+//  Presentation
 //
-//  Created by 오현식 on 2022/03/11.
+//  Created by 오현식 on 2022/05/16.
 //
-
-// Reference: https://github.com/sergdort/CleanArchitectureRxSwift
 
 import CoreLocation
 
@@ -13,99 +11,86 @@ import Domain
 import RxCocoa
 import RxSwift
 
-protocol MapViewModelQuerying {
-    func getDefaultLocation() -> CLLocation
+public protocol MapViewModelInputs {
+    /// Call when the scene is activated.
+    func sceneDidActivate()
+    
+    /// Call when the view appeared with animated property.
+    func viewDidAppear()
 }
 
-protocol MapViewModelCommanding {
-    func startUpdatingLocation()
-    func stopUpdatingLocation()
+public protocol MapViewModelOutputs {
+    /// The starting value of the location.
+    var defaultLocation: CLLocation { get }
+    
+    /// Emits a current location that should be annotated in the map view.
+    var currentLocation: Driver<CLLocation?> { get }
+    
+    /// Emits when authorization when in use was requested.
+    var authorizationWhenInUseRequested: Driver<Void> { get }
+    
+    /// Emits an authorization status that should be used to decide to annotate the current location.
+    var authorizationStatus: Driver<CLAuthorizationStatus> { get }
+    
+    /// Emits array of zones that should be annotated in the map view.
+    var zones: Driver<[Zone]> { get }
 }
 
-public final class MapViewModel: ViewModelType {
-    public struct Input {
-        let viewDidAppearEvent: Driver<Void>
-        let sceneDidActivateNotificationEvent: Driver<Void>
-    }
+public protocol MapViewModelType {
+    var inputs: MapViewModelInputs { get }
+    var outputs: MapViewModelOutputs { get }
+}
+
+final class MapViewModel: MapViewModelInputs, MapViewModelOutputs, MapViewModelType {
+    // MARK: - Initializer
     
-    public struct Output {
-        let authorizationStatus: Driver<CLAuthorizationStatus>
-        let location: Driver<CLLocation?>
-        let zone: Driver<[Zone]>
-    }
-    
-    public struct Dependencies {
-        var defaultLocation: CLLocation
-        var queryCLLocationServiceUseCase: QueryCLLocationServiceUseCase
-        var commandCLLocationServiceUseCase: CommandCLLocationServiceUseCase
-        var queryZoneUseCase: QueryZoneUseCase
+    public init(defaultLocation: CLLocation,
+                queryCLLocationServiceUseCase: QueryCLLocationServiceUseCase,
+                commandCLLocationServiceUseCase: CommandCLLocationServiceUseCase,
+                queryZoneUseCase: QueryZoneUseCase
+    ) {
+        self.defaultLocation = defaultLocation
         
-        public init(defaultLocation: CLLocation,
-                    queryCLLocationServiceUseCase: QueryCLLocationServiceUseCase,
-                    commandCLLocationServiceUseCase: CommandCLLocationServiceUseCase,
-                    queryZoneUseCase: QueryZoneUseCase
-        ) {
-            self.defaultLocation = defaultLocation
-            self.queryCLLocationServiceUseCase = queryCLLocationServiceUseCase
-            self.commandCLLocationServiceUseCase = commandCLLocationServiceUseCase
-            self.queryZoneUseCase = queryZoneUseCase
-        }
-    }
-    
-    public let dependencies: Dependencies
-    public var disposeBag = DisposeBag()
-    
-    public init(dependencies: Dependencies) {
-        self.dependencies = dependencies
-    }
-    
-    public func transform(input: Input) -> Output {
-        Driver.merge(input.viewDidAppearEvent, input.sceneDidActivateNotificationEvent)
-            .drive { [weak self] _ in
-                guard let self = self else { return }
-                self.dependencies.commandCLLocationServiceUseCase.requestWhenInUseAuthorization()
-            }
-            .disposed(by: disposeBag)
-        
-        let zone: Driver<[Zone]> = input.viewDidAppearEvent
-            .flatMapLatest { [weak self] _ in
-                guard let self = self else { return Driver<[Zone]>.just([]) }
-                return self.dependencies.queryZoneUseCase.query()
-                    .asDriverOnErrorJustComplete()
-            }
-        
-        let authorizationStatus = dependencies.queryCLLocationServiceUseCase
-            .observeAuthorizationStatus()
+        self.currentLocation = queryCLLocationServiceUseCase.observeLocation()
             .asDriverOnErrorJustComplete()
         
-        let location = dependencies.queryCLLocationServiceUseCase
-            .observeLocation()
+        self.authorizationWhenInUseRequested = Observable
+            .merge(viewDidAppearRelay.asObservable(),
+                   sceneDidActivateRelay.asObservable()
+            )
+            .map { _ in commandCLLocationServiceUseCase.requestWhenInUseAuthorization() }
             .asDriverOnErrorJustComplete()
         
-        return Output(authorizationStatus: authorizationStatus,
-                      location: location,
-                      zone: zone)
-    }
-}
-
-
-// MARK: - MapViewModelCommanding
-
-extension MapViewModel: MapViewModelCommanding {
-    func startUpdatingLocation() {
-        dependencies.commandCLLocationServiceUseCase.startUpdatingLocation()
+        self.authorizationStatus = queryCLLocationServiceUseCase.observeAuthorizationStatus()
+            .asDriverOnErrorJustComplete()
+        
+        self.zones = viewDidAppearRelay.asObservable()
+            .flatMapLatest { _ in return queryZoneUseCase.query() }
+            .asDriverOnErrorJustComplete()
     }
     
-    func stopUpdatingLocation() {
-        dependencies.commandCLLocationServiceUseCase.stopUpdatingLocation()
+    // MARK: - MapViewModelInputs
+    
+    private let sceneDidActivateRelay = PublishRelay<Void>()
+    public func sceneDidActivate() {
+        sceneDidActivateRelay.accept(())
     }
-}
-
-
-// MARK: - MapViewModelQuerying
-
-extension MapViewModel: MapViewModelQuerying {
-    func getDefaultLocation() -> CLLocation {
-        return dependencies.defaultLocation
+    
+    private let viewDidAppearRelay = PublishRelay<Void>()
+    public func viewDidAppear() {
+        viewDidAppearRelay.accept(())
     }
+    
+    // MARK: - MapViewModelOutputs
+    
+    public let defaultLocation: CLLocation
+    public let currentLocation: Driver<CLLocation?>
+    public let authorizationWhenInUseRequested: Driver<Void>
+    public let authorizationStatus: Driver<CLAuthorizationStatus>
+    public let zones: Driver<[Zone]>
+    
+    // MARK: - MapViewModelType
+    
+    public var inputs: MapViewModelInputs { return self }
+    public var outputs: MapViewModelOutputs { return self }
 }

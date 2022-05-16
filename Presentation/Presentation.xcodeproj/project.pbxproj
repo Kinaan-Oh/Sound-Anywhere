@@ -19,6 +19,7 @@
 		B408BF082832253F00044B81 /* RxPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF062832253F00044B81 /* RxPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B408BF222832277800044B81 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF212832277800044B81 /* RxPackage.framework */; };
 		B408BF242832278200044B81 /* RxTestPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF232832278200044B81 /* RxTestPackage.framework */; };
+		B408BF412832478200044B81 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BF402832478100044B81 /* MapViewModel.swift */; };
 		B419A1232816A35400EB19CF /* AnnotationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419A1222816A35400EB19CF /* AnnotationFactory.swift */; };
 		B419A1252816A3D600EB19CF /* AnnotationViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */; };
 		B42BC38B2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC38A2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift */; };
@@ -30,7 +31,6 @@
 		B47759D227E8D76C00425734 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759B827E8D76C00425734 /* HomeViewController.swift */; };
 		B47759D427E8D76C00425734 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759BE27E8D76C00425734 /* RecordViewModel.swift */; };
 		B47759D527E8D76C00425734 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C027E8D76C00425734 /* RecordViewController.swift */; };
-		B47759D727E8D76C00425734 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C427E8D76C00425734 /* MapViewModel.swift */; };
 		B47759D927E8D76C00425734 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C727E8D76C00425734 /* MapViewController.swift */; };
 		B47759DA27E8D76C00425734 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C927E8D76C00425734 /* ViewModelType.swift */; };
 		B491B1EF2812A220003E2F7F /* MKMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B1EE2812A220003E2F7F /* MKMapView+Extension.swift */; };
@@ -75,6 +75,7 @@
 		B408BF062832253F00044B81 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BF212832277800044B81 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BF232832278200044B81 /* RxTestPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxTestPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BF402832478100044B81 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		B419A1222816A35400EB19CF /* AnnotationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationFactory.swift; sourceTree = "<group>"; };
 		B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationViewFactory.swift; sourceTree = "<group>"; };
 		B42BC38A2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCLLocationServiceUseCaseStub.swift; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		B47759B827E8D76C00425734 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B47759BE27E8D76C00425734 /* RecordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		B47759C027E8D76C00425734 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
-		B47759C427E8D76C00425734 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		B47759C727E8D76C00425734 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B47759C927E8D76C00425734 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		B491B1EE2812A220003E2F7F /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 		B47759C327E8D76C00425734 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B47759C427E8D76C00425734 /* MapViewModel.swift */,
+				B408BF402832478100044B81 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -455,9 +455,9 @@
 				B47759D027E8D76C00425734 /* HomeViewModel.swift in Sources */,
 				B47759CD27E8D76C00425734 /* SearchViewModel.swift in Sources */,
 				B47759D527E8D76C00425734 /* RecordViewController.swift in Sources */,
-				B47759D727E8D76C00425734 /* MapViewModel.swift in Sources */,
 				B47759D427E8D76C00425734 /* RecordViewModel.swift in Sources */,
 				B47759D227E8D76C00425734 /* HomeViewController.swift in Sources */,
+				B408BF412832478200044B81 /* MapViewModel.swift in Sources */,
 				B491B1EF2812A220003E2F7F /* MKMapView+Extension.swift in Sources */,
 				B47759D927E8D76C00425734 /* MapViewController.swift in Sources */,
 				B491B1F12812A356003E2F7F /* UIViewController+Rx.swift in Sources */,
