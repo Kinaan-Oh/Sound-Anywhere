@@ -10,7 +10,7 @@ import CoreLocation
 import Domain
 import RxSwift
 
-final class CommandLocationManagerUseCaseMock: CommandLocationManagerUseCase {
+final class CommandCLLocationServiceUseCaseMock: CommandCLLocationServiceUseCase {
     var requestWhenInUseAuthorization_Called_Count = 0
     var startUpdatingLocation_Called = false
     var stopUpdatingLocation_Called = false

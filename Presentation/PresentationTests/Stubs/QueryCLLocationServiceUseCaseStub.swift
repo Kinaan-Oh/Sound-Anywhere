@@ -10,7 +10,7 @@ import CoreLocation
 import Domain
 import RxSwift
 
-final class QueryLocationManagerUseCaseStub: QueryLocationManagerUseCase {
+final class QueryCLLocationServiceUseCaseStub: QueryCLLocationServiceUseCase {
     var observeAuthorizationStatus_ReturnValue: Observable<CLAuthorizationStatus> = Observable.just(.notDetermined)
     var observeLocation_ReturnValue: Observable<CLLocation?> = Observable.just(nil)
     

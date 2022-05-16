@@ -13,6 +13,9 @@
 		B408BD94282D653100044B81 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BD92282D653100044B81 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B408BD9D282D6C2400044B81 /* Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BD9C282D6C2400044B81 /* Resource.framework */; };
 		B408BD9E282D6C2400044B81 /* Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BD9C282D6C2400044B81 /* Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B408BEAF2831ED1700044B81 /* RxCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BEAE2831ED1700044B81 /* RxCommon.framework */; };
+		B408BEB02831ED1700044B81 /* RxCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BEAE2831ED1700044B81 /* RxCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B408BEB22831ED2300044B81 /* RxTestPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BEB12831ED2300044B81 /* RxTestPackage.framework */; };
 		B419A1232816A35400EB19CF /* AnnotationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419A1222816A35400EB19CF /* AnnotationFactory.swift */; };
 		B419A1252816A3D600EB19CF /* AnnotationViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */; };
 		B42BC38B2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC38A2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift */; };
@@ -52,6 +55,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B408BD94282D653100044B81 /* Domain.framework in Embed Frameworks */,
+				B408BEB02831ED1700044B81 /* RxCommon.framework in Embed Frameworks */,
 				B408BD9E282D6C2400044B81 /* Resource.framework in Embed Frameworks */,
 				B408BD90282D652700044B81 /* Common.framework in Embed Frameworks */,
 			);
@@ -64,6 +68,10 @@
 		B408BD8E282D652700044B81 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BD92282D653100044B81 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BD9C282D6C2400044B81 /* Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BEA82831EBF600044B81 /* RxTestPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxTestPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BEAA2831EC1200044B81 /* RxTestPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxTestPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BEAE2831ED1700044B81 /* RxCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BEB12831ED2300044B81 /* RxTestPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxTestPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B419A1222816A35400EB19CF /* AnnotationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationFactory.swift; sourceTree = "<group>"; };
 		B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationViewFactory.swift; sourceTree = "<group>"; };
 		B42BC38A2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCLLocationServiceUseCaseStub.swift; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B408BEB22831ED2300044B81 /* RxTestPackage.framework in Frameworks */,
 				B4535DF02809E0E20020018E /* Presentation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B408BD93282D653100044B81 /* Domain.framework in Frameworks */,
+				B408BEAF2831ED1700044B81 /* RxCommon.framework in Frameworks */,
 				B408BD9D282D6C2400044B81 /* Resource.framework in Frameworks */,
 				B408BD8F282D652700044B81 /* Common.framework in Frameworks */,
 			);
@@ -281,6 +291,10 @@
 		B4775AE327E9E6A400425734 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B408BEB12831ED2300044B81 /* RxTestPackage.framework */,
+				B408BEAE2831ED1700044B81 /* RxCommon.framework */,
+				B408BEAA2831EC1200044B81 /* RxTestPackage.framework */,
+				B408BEA82831EBF600044B81 /* RxTestPackage.framework */,
 				B408BD9C282D6C2400044B81 /* Resource.framework */,
 				B408BD92282D653100044B81 /* Domain.framework */,
 				B408BD8E282D652700044B81 /* Common.framework */,

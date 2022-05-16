@@ -12,12 +12,12 @@ import XCTest
 import Domain
 import RxCocoa
 import RxSwift
-import RxTest
+import RxTestPackage
 
 final class MapViewModelTests: XCTestCase {
     // Given
-    var queryLocationManagerUseCaseStub: QueryLocationManagerUseCaseStub!
-    var commandLocationManagerUseCaseMock: CommandLocationManagerUseCaseMock!
+    var queryLocationManagerUseCaseStub: QueryCLLocationServiceUseCaseStub!
+    var commandLocationManagerUseCaseMock: CommandCLLocationServiceUseCaseMock!
     var queryZoneUseCaseStub: QueryZoneUseCaseStub!
     var viewModel: MapViewModel!
     var scheduler: TestScheduler!
@@ -26,14 +26,14 @@ final class MapViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        queryLocationManagerUseCaseStub = QueryLocationManagerUseCaseStub()
-        commandLocationManagerUseCaseMock = CommandLocationManagerUseCaseMock()
+        queryLocationManagerUseCaseStub = QueryCLLocationServiceUseCaseStub()
+        commandLocationManagerUseCaseMock = CommandCLLocationServiceUseCaseMock()
         queryZoneUseCaseStub = QueryZoneUseCaseStub()
         viewModel = MapViewModel(dependencies:
                 .init(defaultLocation: CLLocation(latitude: 37.54330366639085,
                                                   longitude: 127.04455548501139),
-                      queryLocationManagerUseCase: queryLocationManagerUseCaseStub,
-                      commandLocationManagerUseCase: commandLocationManagerUseCaseMock,
+                      queryCLLocationServiceUseCase: queryLocationManagerUseCaseStub,
+                      commandCLLocationServiceUseCase: commandLocationManagerUseCaseMock,
                       queryZoneUseCase: queryZoneUseCaseStub)
         )
         scheduler = TestScheduler(initialClock: 0)
@@ -136,7 +136,7 @@ final class MapViewModelTests: XCTestCase {
         scheduler.start()
         
         // Then
-        XCTAssertEqual(res.events, [.next(100, []), .next(200, []), .completed(200)])
+        XCTAssertEqual(res.events, [.next(100, [])])
     }
     
     // MARK: - Commanding
