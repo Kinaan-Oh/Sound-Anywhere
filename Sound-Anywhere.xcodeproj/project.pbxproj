@@ -19,6 +19,8 @@
 		B408BDB0282D7A9700044B81 /* Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BDAE282D7A9700044B81 /* Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B408BE332831348500044B81 /* RxCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BE322831348500044B81 /* RxCommon.framework */; };
 		B408BE342831348500044B81 /* RxCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BE322831348500044B81 /* RxCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B408BF3E2832300400044B81 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF3D2832300400044B81 /* RxPackage.framework */; };
+		B408BF3F2832300400044B81 /* RxPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF3D2832300400044B81 /* RxPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B45164C427E8C81100347409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C327E8C81100347409 /* AppDelegate.swift */; };
 		B45164C627E8C81100347409 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C527E8C81100347409 /* SceneDelegate.swift */; };
 		B45164D027E8C81300347409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45164CE27E8C81300347409 /* LaunchScreen.storyboard */; };
@@ -37,6 +39,7 @@
 				B408BDAD282D7A9300044B81 /* Presentation.framework in Embed Frameworks */,
 				B408BDA3282D7A8800044B81 /* Common.framework in Embed Frameworks */,
 				B408BDB0282D7A9700044B81 /* Resource.framework in Embed Frameworks */,
+				B408BF3F2832300400044B81 /* RxPackage.framework in Embed Frameworks */,
 				B408BE342831348500044B81 /* RxCommon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -51,6 +54,7 @@
 		B408BDAB282D7A9300044B81 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BDAE282D7A9700044B81 /* Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BE322831348500044B81 /* RxCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B408BF3D2832300400044B81 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45164C027E8C81100347409 /* Sound-Anywhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound-Anywhere.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45164C327E8C81100347409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B45164C527E8C81100347409 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 				B408BDAC282D7A9300044B81 /* Presentation.framework in Frameworks */,
 				B408BDA2282D7A8800044B81 /* Common.framework in Frameworks */,
 				B408BDAF282D7A9700044B81 /* Resource.framework in Frameworks */,
+				B408BF3E2832300400044B81 /* RxPackage.framework in Frameworks */,
 				B408BE332831348500044B81 /* RxCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +115,7 @@
 		C1D1493B6941818B7A88DDB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B408BF3D2832300400044B81 /* RxPackage.framework */,
 				B408BE322831348500044B81 /* RxCommon.framework */,
 				B408BDAE282D7A9700044B81 /* Resource.framework */,
 				B408BDAB282D7A9300044B81 /* Presentation.framework */,
