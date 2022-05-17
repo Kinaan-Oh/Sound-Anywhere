@@ -17,6 +17,12 @@ public protocol MapViewModelInputs {
     
     /// Call when the view appeared with animated property.
     func viewDidAppear()
+    
+    /// Call when authorization status changes to authorizedWhenInUse.
+    func startUpdatingLocation()
+    
+    /// Call when authorization status changes from authorizedWhenInUse to others(denied, restricted).
+    func stopUpdatingLocation()
 }
 
 public protocol MapViewModelOutputs {
@@ -25,10 +31,7 @@ public protocol MapViewModelOutputs {
     
     /// Emits a current location that should be annotated in the map view.
     var currentLocation: Driver<CLLocation?> { get }
-    
-    /// Emits when authorization when in use was requested.
-    var authorizationWhenInUseRequested: Driver<Void> { get }
-    
+
     /// Emits an authorization status that should be used to decide to annotate the current location.
     var authorizationStatus: Driver<CLAuthorizationStatus> { get }
     
@@ -41,7 +44,8 @@ public protocol MapViewModelType {
     var outputs: MapViewModelOutputs { get }
 }
 
-final class MapViewModel: MapViewModelInputs, MapViewModelOutputs, MapViewModelType {
+public final class MapViewModel: MapViewModelInputs, MapViewModelOutputs, MapViewModelType {
+    
     // MARK: - Initializer
     
     public init(defaultLocation: CLLocation,
@@ -49,16 +53,39 @@ final class MapViewModel: MapViewModelInputs, MapViewModelOutputs, MapViewModelT
                 commandCLLocationServiceUseCase: CommandCLLocationServiceUseCase,
                 queryZoneUseCase: QueryZoneUseCase
     ) {
-        self.defaultLocation = defaultLocation
         
-        self.currentLocation = queryCLLocationServiceUseCase.observeLocation()
-            .asDriverOnErrorJustComplete()
+        // MARK: - Configure Dependencies
+
+        self.queryCLLocationServiceUseCase = queryCLLocationServiceUseCase
+        self.commandCLLocationServiceUseCase = commandCLLocationServiceUseCase
+        self.queryZoneUseCase = queryZoneUseCase
         
-        self.authorizationWhenInUseRequested = Observable
+        // MARK: - Subscribe Inputs
+        
+        Observable
             .merge(viewDidAppearRelay.asObservable(),
                    sceneDidActivateRelay.asObservable()
             )
-            .map { _ in commandCLLocationServiceUseCase.requestWhenInUseAuthorization() }
+            .subscribe(onNext: { _ in
+                commandCLLocationServiceUseCase.requestWhenInUseAuthorization()
+            })
+            .disposed(by: disposeBag)
+        
+        updateLocationRelay.asObservable()
+            .subscribe(onNext: { updateLocation in
+                if updateLocation {
+                    commandCLLocationServiceUseCase.startUpdatingLocation()
+                } else {
+                    commandCLLocationServiceUseCase.stopUpdatingLocation()
+                }
+            })
+            .disposed(by: disposeBag)
+
+        // MARK: - Configure Outputs
+        
+        self.defaultLocation = defaultLocation
+        
+        self.currentLocation = queryCLLocationServiceUseCase.observeLocation()
             .asDriverOnErrorJustComplete()
         
         self.authorizationStatus = queryCLLocationServiceUseCase.observeAuthorizationStatus()
@@ -69,6 +96,16 @@ final class MapViewModel: MapViewModelInputs, MapViewModelOutputs, MapViewModelT
             .asDriverOnErrorJustComplete()
     }
     
+    // MARK: - Private Properties
+    
+    private var disposeBag = DisposeBag()
+    
+    // MARK: - Dependencies
+
+    private let queryCLLocationServiceUseCase: QueryCLLocationServiceUseCase
+    private let commandCLLocationServiceUseCase: CommandCLLocationServiceUseCase
+    private let queryZoneUseCase: QueryZoneUseCase
+
     // MARK: - MapViewModelInputs
     
     private let sceneDidActivateRelay = PublishRelay<Void>()
@@ -81,11 +118,18 @@ final class MapViewModel: MapViewModelInputs, MapViewModelOutputs, MapViewModelT
         viewDidAppearRelay.accept(())
     }
     
+    private let updateLocationRelay = PublishRelay<Bool>()
+    public func startUpdatingLocation() {
+        updateLocationRelay.accept(true)
+    }
+    public func stopUpdatingLocation() {
+        updateLocationRelay.accept(false)
+    }
+    
     // MARK: - MapViewModelOutputs
     
     public let defaultLocation: CLLocation
     public let currentLocation: Driver<CLLocation?>
-    public let authorizationWhenInUseRequested: Driver<Void>
     public let authorizationStatus: Driver<CLAuthorizationStatus>
     public let zones: Driver<[Zone]>
     

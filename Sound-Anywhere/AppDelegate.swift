@@ -56,13 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let queryZoneUseCase = DefaultQueryZoneUseCase(zoneRepository: zoneRepository)
     
-        let mapViewModel = MapViewModel(dependencies: .init(
-            defaultLocation: CLLocation(latitude: 37.54330366639085,
-                                        longitude: 127.04455548501139),
-            queryCLLocationServiceUseCase: queryCLLocationServiceUseCase,
-            commandCLLocationServiceUseCase: commandCLLocationServiceUseCase,
-            queryZoneUseCase: queryZoneUseCase))
-        
+        let mapViewModel = MapViewModel(defaultLocation: CLLocation(latitude: 37.54330366639085,
+                                                                    longitude: 127.04455548501139),
+                                        queryCLLocationServiceUseCase: queryCLLocationServiceUseCase,
+                                        commandCLLocationServiceUseCase: commandCLLocationServiceUseCase,
+                                        queryZoneUseCase: queryZoneUseCase)
+    
         DIContainer.shared.register(dependency: mapViewModel)
     }
 }

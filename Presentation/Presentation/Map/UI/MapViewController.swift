@@ -27,6 +27,7 @@ final class MapViewController: UIViewController {
     private var disposeBag = DisposeBag()
     private var currentLocationAnnotation = AnnotationFactory.create(of: .currentLocation,
                                                                      coordinate: .init())
+    private var zoneAnnotations: [MKAnnotation] = []
     
     // MARK: - Lifecycle Methods
     
@@ -36,6 +37,12 @@ final class MapViewController: UIViewController {
         configureLocation()
         bindViewModel()
         bindUI()
+        bindNotifications()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.inputs.viewDidAppear()
     }
     
     // MARK: - Helpers
@@ -48,6 +55,16 @@ final class MapViewController: UIViewController {
                          forAnnotationViewWithReuseIdentifier: CurrentLocationAnnotationView.identifier)
     }
     
+    private func configureLocation() {
+        if let recentLocation = UserDefaultsService.recentLocation {
+            mapView.setRegion(location: recentLocation)
+            configureCurrentLocationAnnotation(location: recentLocation)
+        } else {
+            let defaultLocation = viewModel.outputs.defaultLocation
+            mapView.setRegion(location: defaultLocation)
+        }
+    }
+    
     private func configureCurrentLocationAnnotation(location: CLLocation) {
         mapView.removeAnnotation(currentLocationAnnotation)
         currentLocationAnnotation = AnnotationFactory.create(of: .currentLocation,
@@ -55,52 +72,30 @@ final class MapViewController: UIViewController {
         mapView.addAnnotation(currentLocationAnnotation)
     }
     
-    private func configureZoneAnnotations(zone: [Zone]) {
-        let annotations = zone.map { AnnotationFactory.create(of: .zone, coordinate: $0.coordinate)}
-        mapView.addAnnotations(annotations)
-    }
-    
-    private func configureLocation() {
-        if let recentLocation = UserDefaultsService.recentLocation {
-            mapView.setRegion(location: recentLocation)
-            configureCurrentLocationAnnotation(location: recentLocation)
-        } else {
-            let defaultLocation = viewModel.getDefaultLocation()
-            mapView.setRegion(location: defaultLocation)
-        }
+    private func configureZoneAnnotations(zones: [Zone]) {
+        mapView.removeAnnotations(zoneAnnotations)
+        zoneAnnotations = zones.map { AnnotationFactory.create(of: .zone, coordinate: $0.coordinate) }
+        mapView.addAnnotations(zoneAnnotations)
     }
     
     private func bindViewModel() {
-        let viewDidAppearEvent = rx.viewDidAppear
-            .mapToVoid()
-            .asDriverOnErrorJustComplete()
-        
-        let sceneDidActivateNotificationEvent = NotificationCenter.default.rx
-            .notification(UIScene.didActivateNotification)
-            .mapToVoid()
-            .asDriverOnErrorJustComplete()
-        
-        let input = MapViewModel.Input(viewDidAppearEvent: viewDidAppearEvent,
-                                       sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
-        let output = viewModel.transform(input: input)
-        
-        output.authorizationStatus
+        viewModel.outputs.authorizationStatus
             .drive { [weak self] authorizationStatus in
                 guard let self = self else { return }
                 switch authorizationStatus {
                 case .authorizedWhenInUse:
-                    self.viewModel.startUpdatingLocation()
+                    self.viewModel.inputs.startUpdatingLocation()
                     self.currentLocationButton.isEnabled = true
                     self.mapView.addAnnotation(self.currentLocationAnnotation)
                 default:
-                    self.viewModel.stopUpdatingLocation()
+                    self.viewModel.inputs.stopUpdatingLocation()
                     self.currentLocationButton.isEnabled = false
                     self.mapView.removeAnnotation(self.currentLocationAnnotation)
                 }
             }
             .disposed(by: disposeBag)
         
-        output.location
+        viewModel.outputs.currentLocation
             .throttle(.seconds(1), latest: true)
             .drive { location in
                 guard let location = location else { return }
@@ -108,10 +103,10 @@ final class MapViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        output.zone
-            .drive { [weak self] zone in
+        viewModel.outputs.zones
+            .drive { [weak self] zones in
                 guard let self = self else { return }
-                self.configureZoneAnnotations(zone: zone)
+                self.configureZoneAnnotations(zones: zones)
             }
             .disposed(by: disposeBag)
     }
@@ -120,8 +115,19 @@ final class MapViewController: UIViewController {
         currentLocationButton.rx.tap
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
-                self?.configureLocation()
+                guard let self = self else { return }
+                self.configureLocation()
             })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindNotifications() {
+        NotificationCenter.default.rx
+            .notification(UIScene.didActivateNotification)
+            .subscribe { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.inputs.sceneDidActivate()
+            }
             .disposed(by: disposeBag)
     }
 }
