@@ -50,5 +50,5 @@
 
 ## Trouble Shooting
 
-### UnitTest Target에 RxTest/RxBlocking 추가시 RxSwift 중복적재 문제
-![001](./PS/001.md)
+### 
+[1. UnitTest Target에 RxTest/RxBlocking 추가시 RxSwift 중복적재](./PS/001.md)
