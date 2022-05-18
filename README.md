@@ -2,9 +2,9 @@
 > Sound Anywhere은 일상 속 의미있는 공간에 어울리는 음원을 공유하는 서비스입니다.
 
 ## 프로젝트 구조
-### **MVVM** 기반 **Clean Architecture**
+### **MVVM** / **Clean Architecture**
 * * *
-![텍스트목록](./ScreenShots/001.jpeg)
+![](./ScreenShots/001.jpeg)
 * * *
 
 
@@ -47,3 +47,8 @@
 - Firestore 대신 HashTable로 구현한 FakeFirestore를 Debug/Unit Test에 이용하여 Firestore에 대한 Side Effect와 Unit Test 시간을 줄였습니다.
 
 ---
+
+## Trouble Shooting
+
+### UnitTest Target에 RxTest/RxBlocking 추가시 RxSwift 중복적재 문제
+![001](./PS/001.md)
