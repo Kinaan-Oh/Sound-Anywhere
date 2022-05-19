@@ -40,9 +40,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // MARK: - Private Methods
     
     private func configureWindow(_ windowScene: UIWindowScene) {
-        let mainTabBarViewController = Resource.Storyboard.main.instance()
+        let mapViewController = Resource.Storyboard.map.instance()
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = mainTabBarViewController
+        window?.rootViewController = mapViewController
         window?.makeKeyAndVisible()
     }
 }
