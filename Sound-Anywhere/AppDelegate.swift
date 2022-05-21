@@ -55,9 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let queryZoneUseCase = DefaultQueryZoneUseCase(zoneRepository: zoneRepository)
-    
-        let mapViewModel = MapViewModel(defaultLocation: CLLocation(latitude: 37.54330366639085,
-                                                                    longitude: 127.04455548501139),
+      
+        let mapViewModel = MapViewModel(defaultLocation: CLLocation(latitude: 37.54887101,
+                                                                    longitude: 126.91332598),
                                         queryCLLocationServiceUseCase: queryCLLocationServiceUseCase,
                                         commandCLLocationServiceUseCase: commandCLLocationServiceUseCase,
                                         queryZoneUseCase: queryZoneUseCase)

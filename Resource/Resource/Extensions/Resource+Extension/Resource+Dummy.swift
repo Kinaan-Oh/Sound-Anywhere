@@ -6,6 +6,7 @@
 //
 
 import Common
+import UIKit
 
 extension Resource {
     public final class Dummy {
@@ -20,10 +21,10 @@ extension Resource {
         let data: Data
         
         init?(id: ID) {
-            guard let path = Resource.bundle.path(forResource: id.stringValue, ofType: "json"),
-                  let data = try? String(contentsOfFile: path).data(using: .utf8)
-            else { return nil }
-            self.data = data
+            guard let asset = NSDataAsset.init(name: id.stringValue, bundle: Resource.bundle) else {
+                return nil
+            }
+            self.data = asset.data
         }
     }
 }

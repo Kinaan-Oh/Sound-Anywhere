@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B408BD88282D64C900044B81 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BD87282D64C900044B81 /* Common.framework */; };
 		B408BD89282D64C900044B81 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BD87282D64C900044B81 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B419A09828169D8600EB19CF /* Zone.json in Resources */ = {isa = PBXBuildFile; fileRef = B419A09728169D8600EB19CF /* Zone.json */; };
 		B4775B0027E9F42900425734 /* Resource.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775AFF27E9F42900425734 /* Resource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4775B0727E9F44700425734 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4775B0627E9F44700425734 /* Resource.swift */; };
 		B4775B2127E9F71B00425734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4775B2027E9F71B00425734 /* Main.storyboard */; };
@@ -44,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		B408BD87282D64C900044B81 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B419A09728169D8600EB19CF /* Zone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Zone.json; sourceTree = "<group>"; };
 		B4775AFC27E9F42900425734 /* Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775AFF27E9F42900425734 /* Resource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
 		B4775B0627E9F44700425734 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -76,14 +74,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B419A0AD28169DFE00EB19CF /* Dummies */ = {
-			isa = PBXGroup;
-			children = (
-				B419A09728169D8600EB19CF /* Zone.json */,
-			);
-			path = Dummies;
-			sourceTree = "<group>";
-		};
 		B4775AF227E9F42900425734 = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +96,6 @@
 			children = (
 				B4775AFF27E9F42900425734 /* Resource.h */,
 				B49F7FD3280865DE00BE5952 /* Assets.xcassets */,
-				B419A0AD28169DFE00EB19CF /* Dummies */,
 				B49F7FEE280925A200BE5952 /* Extensions */,
 				B4775B1D27E9F69B00425734 /* Storyboard */,
 			);
@@ -234,7 +223,6 @@
 			files = (
 				B4775B2127E9F71B00425734 /* Main.storyboard in Resources */,
 				B4775B2527E9F79900425734 /* Home.storyboard in Resources */,
-				B419A09828169D8600EB19CF /* Zone.json in Resources */,
 				B4775B2927E9F7E200425734 /* Map.storyboard in Resources */,
 				B4775B2D27E9F82900425734 /* Search.storyboard in Resources */,
 				B49F7FDF2808849200BE5952 /* Assets.xcassets in Resources */,
