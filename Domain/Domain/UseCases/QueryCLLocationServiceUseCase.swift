@@ -11,6 +11,7 @@ import RxCommon
 import RxSwift
 
 public protocol QueryCLLocationServiceUseCase {
+    func queryInitialAuthorizationStatus() -> CLAuthorizationStatus?
     func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus>
     func observeLocation() -> Observable<CLLocation?>
 }
@@ -26,6 +27,10 @@ public final class DefaultQueryCLLocationServiceUseCase {
 }
 
 extension DefaultQueryCLLocationServiceUseCase: QueryCLLocationServiceUseCase {
+    public func queryInitialAuthorizationStatus() -> CLAuthorizationStatus? {
+        return locationService.queryInitialAuthorizationStatus()
+    }
+    
     public func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus> {
         return locationService.observeAuthorizationStatus()
     }
