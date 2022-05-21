@@ -13,6 +13,7 @@ import RxSwift
 
 public final class CLLocationService: NSObject {
     private let locationManager = CLLocationManager()
+    private var initialAuthorizationStatus: CLAuthorizationStatus? = nil
     
     public override init() {
         super.init()
@@ -23,13 +24,35 @@ public final class CLLocationService: NSObject {
 // MARK: - CLLocationManagerDelegate
 
 extension CLLocationService: CLLocationManagerDelegate {
+    
+    @available(iOS 14.0, *)
     public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        if initialAuthorizationStatus == nil {
+            initialAuthorizationStatus = manager.authorizationStatus
+        }
+        
+        switch manager.authorizationStatus {
+        case .authorizedWhenInUse:
+            manager.startUpdatingLocation()
+        default:
+            manager.stopUpdatingLocation()
+        }
     }
     
     public func locationManager(
         _ manager: CLLocationManager,
         didChangeAuthorization status: CLAuthorizationStatus
     ) {
+        if initialAuthorizationStatus == nil {
+            initialAuthorizationStatus = status
+        }
+        
+        switch status {
+        case .authorizedWhenInUse:
+            manager.startUpdatingLocation()
+        default:
+            manager.stopUpdatingLocation()
+        }
     }
     
     public func locationManager(
@@ -70,11 +93,16 @@ extension CLLocationService: CLLocationServiceCommanding {
 // MARK: - CLLocationServiceQuerying
 
 public protocol CLLocationServiceQuerying {
+    func queryInitialAuthorizationStatus() -> CLAuthorizationStatus?
     func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus>
     func observeLocation() -> Observable<CLLocation?>
 }
 
 extension CLLocationService: CLLocationServiceQuerying {
+    public func queryInitialAuthorizationStatus() -> CLAuthorizationStatus? {
+        return initialAuthorizationStatus
+    }
+    
     public func observeAuthorizationStatus() -> Observable<CLAuthorizationStatus> {
         return rx.authorizationStatus.asObservable()
     }

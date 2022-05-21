@@ -84,11 +84,9 @@ final class MapViewController: UIViewController {
                 guard let self = self else { return }
                 switch authorizationStatus {
                 case .authorizedWhenInUse:
-                    self.viewModel.inputs.startUpdatingLocation()
                     self.currentLocationButton.isEnabled = true
                     self.mapView.addAnnotation(self.currentLocationAnnotation)
                 default:
-                    self.viewModel.inputs.stopUpdatingLocation()
                     self.currentLocationButton.isEnabled = false
                     self.mapView.removeAnnotation(self.currentLocationAnnotation)
                 }
