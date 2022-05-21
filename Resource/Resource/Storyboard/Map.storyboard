@@ -24,7 +24,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rTQ-oG-RdR" userLabel="FavoriteZoneButton">
                                 <rect key="frame" x="16" y="60" width="119" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="즐겨찾는 존"/>
+                                <accessibility key="accessibilityConfiguration" identifier="FavoriteZones" label="즐겨찾는 존"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="119" id="8uQ-E4-dTc"/>
                                     <constraint firstAttribute="height" constant="44" id="eBC-KK-UTK"/>
@@ -62,6 +62,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kr-LJ-paO" userLabel="CurrentLocationButton">
                                 <rect key="frame" x="350" y="729" width="44" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="CurrentLocation" label="현재 위치"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="SP7-Q2-zso"/>
                                     <constraint firstAttribute="width" constant="44" id="fgh-Bj-O9N"/>
