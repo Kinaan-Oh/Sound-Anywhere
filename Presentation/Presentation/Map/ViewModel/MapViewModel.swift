@@ -32,6 +32,9 @@ public protocol MapViewModelOutputs {
     /// Emits a current location that should be annotated in the map view.
     var currentLocation: Driver<CLLocation?> { get }
 
+    /// The initial authorization status emitted when location service initiated.
+    var initialAuthorizationStatus: CLAuthorizationStatus? { get }
+
     /// Emits an authorization status that should be used to decide to annotate the current location.
     var authorizationStatus: Driver<CLAuthorizationStatus> { get }
     
@@ -130,6 +133,9 @@ public final class MapViewModel: MapViewModelInputs, MapViewModelOutputs, MapVie
     
     public let defaultLocation: CLLocation
     public let currentLocation: Driver<CLLocation?>
+    public var initialAuthorizationStatus: CLAuthorizationStatus? {
+        return queryCLLocationServiceUseCase.queryInitialAuthorizationStatus()
+    }
     public let authorizationStatus: Driver<CLAuthorizationStatus>
     public let zones: Driver<[Zone]>
     
