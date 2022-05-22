@@ -20,31 +20,35 @@
 ---
 
 ### Clean Architecture
-- 비즈니스 로직을 외부 레이어(Presentation, Data)에 독립적으로 테스트 할 수 있습니다. (외부 레이어에 의존하지 않습니다)
+- 비즈니스 로직(Domain)을 외부 레이어(Presentation, Data)에 독립적으로 테스트. (외부 레이어에 의존하지 않음)
 
 ---
 
 ### Modularization
-- Clean Architecture 각 Layer를 별도 모듈로 분리하여 Layer간 의존성을 명확하게 관리하였습니다.
-- Storyboard, Asset, Dummy Data(json)를 Resource 모듈로 분리하였습니다.
-- 전역적으로 사용되는 Extension, UserDefault를 Common 모듈로 분리하였습니다.
+- Clean Architecture Layer를 별도 모듈로 분리.
+- Storyboard, Asset, Dummy(json)를 Resource 모듈로 분리.
+- 전역적으로 사용되는 Extension, UserDefault를 Common 모듈로 분리.
+- Rx에 의존적인 Extension을 RxCommon 모듈로 분리.
+- RxPackage, RxTestPackage 모듈로 분리하여 Unit Test시 RxSwift 중복적재 이슈 해결. (트러블 슈팅 1번 참고)
 
 ---
 
 ### MVVM
-- Data Binding을 통해 ViewModel이 View에 의존하지 않으므로 View에 독립적으로 테스트 할 수 있습니다.
+- Data Binding을 통해 ViewModel이 View에 의존하지 않으므로 View에 독립적으로 테스트 가능.
 
 ---
 
 ### RxSwift
-- Observable 모델은 비동기 이벤트 스트림을 Operator로 쉽게 처리할 수 있습니다. 복잡한 CallBack을 회피하여 가독성을 개선하고 의도치 않은 버그를 피할 수 있습니다.
+- Observable 모델은 비동기 이벤트 스트림을 Operator로 쉽게 처리가능. 또한 복잡한 CallBack을 회피하여 가독성 개선,
+의도하지 않은 버그 회피 가능.
 
 ---
 
 ### Testablity
-- Concrete Type 대신 Interface에 의존하여 Testability를 개선하였습니다.
-- 인터페이스를 Command, Query 인터페이스로 분리하여 Mock, Stub의 활용성을 높였습니다.
-- Firestore 대신 HashTable로 구현한 FakeFirestore를 Debug/Unit Test에 이용하여 Firestore에 대한 Side Effect와 Unit Test 시간을 줄였습니다.
+- Concrete Type 대신 Interface에 의존하여 Testability를 개선.
+- 인터페이스를 Command, Query 인터페이스로 분리하여 Mock, Stub 적극적 활용.
+- Firestore 대신 HashTable로 구현한 FakeFirestore를 Debug/Unit Test에 도입하여 Side Effect 제거, 
+Unit Test 시간 감소.
 
 ---
 
