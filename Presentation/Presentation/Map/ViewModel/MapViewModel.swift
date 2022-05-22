@@ -18,10 +18,10 @@ public protocol MapViewModelInputs {
     /// Call when the view appeared with animated property.
     func viewDidAppear()
     
-    /// Call when authorization status changes to authorizedWhenInUse.
+    /// Call when location service is needed.
     func startUpdatingLocation()
     
-    /// Call when authorization status changes from authorizedWhenInUse to others(denied, restricted).
+    /// Call when location service is not needed. This can help improve power performance.
     func stopUpdatingLocation()
 }
 
