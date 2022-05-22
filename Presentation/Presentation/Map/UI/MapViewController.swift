@@ -34,7 +34,7 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMapView()
-        configureLocation()
+        configureUI()
         bindViewModel()
         bindUI()
         bindNotifications()
@@ -55,13 +55,28 @@ final class MapViewController: UIViewController {
                          forAnnotationViewWithReuseIdentifier: CurrentLocationAnnotationView.identifier)
     }
     
-    private func configureLocation() {
+    private func configureUI() {
+        if let authorizationStatus = viewModel.outputs.initialAuthorizationStatus {
+            switch authorizationStatus {
+            case .authorizedWhenInUse:
+                currentLocationButton.isEnabled = true
+                setRecentRegion()
+            default:
+                currentLocationButton.isEnabled = false
+                setDefaultRegion()
+            }
+        }
+    }
+    
+    private func setDefaultRegion() {
+        let defaultLocation = viewModel.outputs.defaultLocation
+        mapView.setRegion(location: defaultLocation)
+    }
+    
+    private func setRecentRegion() {
         if let recentLocation = UserDefaultsService.recentLocation {
             mapView.setRegion(location: recentLocation)
             configureCurrentLocationAnnotation(location: recentLocation)
-        } else {
-            let defaultLocation = viewModel.outputs.defaultLocation
-            mapView.setRegion(location: defaultLocation)
         }
     }
     
@@ -85,7 +100,7 @@ final class MapViewController: UIViewController {
                 switch authorizationStatus {
                 case .authorizedWhenInUse:
                     self.currentLocationButton.isEnabled = true
-                    self.mapView.addAnnotation(self.currentLocationAnnotation)
+                    self.setRecentRegion()
                 default:
                     self.currentLocationButton.isEnabled = false
                     self.mapView.removeAnnotation(self.currentLocationAnnotation)
@@ -114,7 +129,7 @@ final class MapViewController: UIViewController {
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
-                self.configureLocation()
+                self.setRecentRegion()
             })
             .disposed(by: disposeBag)
     }
