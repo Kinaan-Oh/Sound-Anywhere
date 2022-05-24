@@ -15,56 +15,6 @@ public final class FakeFirestore<T> {
         case dummyNotExist
     }
     
-    final class Collection {
-        final class Document {
-            // MARK: - Document Properties, Methods
-            
-            var data: T?
-            
-            func setData(from data: T, completion: @escaping (Result<T, FirestoreError>) -> Void) {
-                guard self.data != nil else {
-                    self.data = data
-                    completion(.success(data))
-                    return
-                }
-                completion(.failure(.documentAleadyExist))
-            }
-            
-            func getDocument(completion: @escaping (Result<T, FirestoreError>) -> Void) {
-                guard let data = data else {
-                    completion(.failure(.documentNotExist))
-                    return
-                }
-                completion(.success(data))
-            }
-        }
-        
-        // MARK: - Collection Properties, Methods
-        
-        var collection: [String: Document] = [:]
-        
-        func document(name: String) -> Document {
-            guard let document = collection[name] else {
-                let newDocument = Document()
-                collection[name] = newDocument
-                return newDocument
-            }
-            return document
-        }
-        
-        func getDocuments(completion: @escaping (Result<[T], FirestoreError>) -> Void) {
-            let data = collection.compactMap { $0.value.data }
-            
-            if data.isEmpty {
-                completion(.failure(.documentsNotExist))
-            } else {
-                completion(.success(data))
-            }
-        }
-    }
-    
-    // MARK: - FakeFirestore Properties, Methods
-    
     var db: [String: Collection] = [:]
     
     public init() {}
@@ -79,6 +29,57 @@ public final class FakeFirestore<T> {
     }
 }
 
+// MARK: - FakeFirestore.Collection
+
+extension FakeFirestore {
+    final class Collection {
+        var collection: [String: Document] = [:]
+        
+        func document(name: String) -> Document {
+            guard let document = collection[name] else {
+                let newDocument = Document()
+                collection[name] = newDocument
+                return newDocument
+            }
+            return document
+        }
+        
+        func getDocuments(completion: @escaping (Result<[T],FirestoreError>) -> Void) {
+            let data = collection.compactMap { $0.value.data }
+            
+            if data.isEmpty {
+                completion(.failure(.documentsNotExist))
+            } else {
+                completion(.success(data))
+            }
+        }
+    }
+}
+
+// MARK: - FakeFirestore.Collection.Document
+
+extension FakeFirestore.Collection {
+    final class Document {
+        var data: T?
+        
+        func setData(from data: T, completion: @escaping (Result<T,FakeFirestore.FirestoreError>) -> Void) {
+            guard self.data != nil else {
+                self.data = data
+                completion(.success(data))
+                return
+            }
+            completion(.failure(.documentAleadyExist))
+        }
+        
+        func getDocument(completion: @escaping (Result<T,FakeFirestore.FirestoreError>) -> Void) {
+            guard let data = data else {
+                completion(.failure(.documentNotExist))
+                return
+            }
+            completion(.success(data))
+        }
+    }
+}
 
 // MARK: - FirestoreCommanding
 
