@@ -10,14 +10,14 @@ import XCTest
 
 @testable import Presentation
 import Domain
+import Nimble
 import RxCocoa
 import RxSwift
 import RxTestPackage
 
 final class MapViewModelTests: XCTestCase {
-    // Given
-    var queryLocationManagerUseCaseStub: QueryCLLocationServiceUseCaseStub!
-    var commandLocationManagerUseCaseMock: CommandCLLocationServiceUseCaseMock!
+    var queryCLLocationServiceUseCaseStub: QueryCLLocationServiceUseCaseStub!
+    var commandCLLocationServiceUseCaseMock: CommandCLLocationServiceUseCaseMock!
     var queryZoneUseCaseStub: QueryZoneUseCaseStub!
     var viewModel: MapViewModel!
     var scheduler: TestScheduler!
@@ -26,155 +26,88 @@ final class MapViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        queryLocationManagerUseCaseStub = QueryCLLocationServiceUseCaseStub()
-        commandLocationManagerUseCaseMock = CommandCLLocationServiceUseCaseMock()
+        queryCLLocationServiceUseCaseStub = QueryCLLocationServiceUseCaseStub()
+        commandCLLocationServiceUseCaseMock = CommandCLLocationServiceUseCaseMock()
         queryZoneUseCaseStub = QueryZoneUseCaseStub()
-        viewModel = MapViewModel(dependencies:
-                .init(defaultLocation: CLLocation(latitude: 37.54330366639085,
-                                                  longitude: 127.04455548501139),
-                      queryCLLocationServiceUseCase: queryLocationManagerUseCaseStub,
-                      commandCLLocationServiceUseCase: commandLocationManagerUseCaseMock,
-                      queryZoneUseCase: queryZoneUseCaseStub)
-        )
+        viewModel = MapViewModel(defaultLocation: CLLocation(latitude: 37.54887101,
+                                                             longitude: 126.91332598),
+                                 queryCLLocationServiceUseCase: queryCLLocationServiceUseCaseStub,
+                                 commandCLLocationServiceUseCase: commandCLLocationServiceUseCaseMock,
+                                 queryZoneUseCase: queryZoneUseCaseStub)
         scheduler = TestScheduler(initialClock: 0)
     }
     
-    // MARK: - Transform
-    
-    func test_transform_viewDidAppearEvent_requestWhenInUseAuthorization() {
+    func test_sceneDidActivate_then_requestWhenInUseAuthorization() {
         // When
-        let viewDidAppearEvent = scheduler.createColdObservable([.next(100, true)])
-            .mapToVoid()
-            .asDriverOnErrorJustComplete()
-        let sceneDidActivateNotificationEvent = scheduler.createColdObservable([.next(200, true)])
-            .mapToVoid()
-            .asDriverOnErrorJustComplete()
-        
-        let input = createInput(viewDidAppearEvent: viewDidAppearEvent,
-                                sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
-        let output = viewModel.transform(input: input)
-        
-        scheduler.start()
+        viewModel.inputs.sceneDidActivate()
         
         // Then
-        XCTAssertEqual(commandLocationManagerUseCaseMock.requestWhenInUseAuthorization_Called_Count,
-                       2)
+        expect(self.commandCLLocationServiceUseCaseMock.requestWhenInUseAuthorization_Called_Count) == 1
     }
     
-    func test_transform_authorizationStatus() {
-        // Given
-        let res = scheduler.createObserver(CLAuthorizationStatus.self)
-        
+    func test_viewDidAppear_then_requestWhenInUseAuthorization() {
         // When
-        let viewDidAppearEvent = scheduler.createColdObservable([.next(100, true)])
-            .mapToVoid()
-            .asDriverOnErrorJustComplete()
-        let sceneDidActivateNotificationEvent = scheduler.createColdObservable([.next(200, true)])
-            .mapToVoid()
-            .asDriverOnErrorJustComplete()
-        
-        let input = createInput(viewDidAppearEvent: viewDidAppearEvent,
-                                sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
-        let output = viewModel.transform(input: input)
-        
-        output.authorizationStatus
-            .drive(res)
-            .disposed(by: disposeBag)
-        
-        scheduler.start()
+        viewModel.inputs.viewDidAppear()
         
         // Then
-        XCTAssertEqual(res.events, [.next(0, .notDetermined), .completed(0)])
+        expect(self.commandCLLocationServiceUseCaseMock.requestWhenInUseAuthorization_Called_Count) == 1
     }
     
-    func test_transform_location() {
-        // Given
-        let res = scheduler.createObserver(CLLocation?.self)
-        
+    func test_startUpdatingLocation_then_startUpdatingLocationCalled() {
         // When
-        let viewDidAppearEvent = scheduler.createColdObservable([.next(100, true)])
-            .mapToVoid()
-            .asDriverOnErrorJustComplete()
-        let sceneDidActivateNotificationEvent = scheduler.createColdObservable([.next(200, true)])
-            .mapToVoid()
-            .asDriverOnErrorJustComplete()
-        
-        let input = createInput(viewDidAppearEvent: viewDidAppearEvent,
-                                sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
-        let output = viewModel.transform(input: input)
-        
-        output.location
-            .drive(res)
-            .disposed(by: disposeBag)
-        
-        scheduler.start()
+        viewModel.inputs.startUpdatingLocation()
         
         // Then
-        XCTAssertEqual(res.events, [.next(0, nil), .completed(0)])
+        expect(self.commandCLLocationServiceUseCaseMock.startUpdatingLocation_Called) == true
     }
     
-    func test_transform_zone() {
-        // Given
-        let res = scheduler.createObserver([Zone].self)
-        
+    func test_stopUpdatingLocation_then_stopUpdatingLocationCalled() {
         // When
-        let viewDidAppearEvent = scheduler.createColdObservable([.next(100, true)])
-            .mapToVoid()
-            .asDriverOnErrorJustComplete()
-        let sceneDidActivateNotificationEvent = scheduler.createColdObservable([.next(200, true)])
-            .mapToVoid()
-            .asDriverOnErrorJustComplete()
-        
-        let input = createInput(viewDidAppearEvent: viewDidAppearEvent,
-                                sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
-        let output = viewModel.transform(input: input)
-        
-        output.zone
-            .drive(res)
-            .disposed(by: disposeBag)
-        
-        scheduler.start()
+        viewModel.inputs.stopUpdatingLocation()
         
         // Then
-        XCTAssertEqual(res.events, [.next(100, [])])
+        expect(self.commandCLLocationServiceUseCaseMock.stopUpdatingLocation_Called) == true
     }
     
-    // MARK: - Commanding
-    
-    func test_startUpdatingLocation() {
+    func test_viewDidAppear_then_queryZones() {
         // When
-        viewModel.startUpdatingLocation()
-        
+        scheduler.createColdObservable(
+            [
+                .next(10, ()),
+                .next(20, ()),
+                .next(30, ())
+            ]
+        )
+        .subscribe { [weak self] _ in
+            guard let self = self else { return }
+            self.viewModel.inputs.viewDidAppear()
+        }
+        .disposed(by: disposeBag)
+       
         // Then
-        XCTAssertTrue(commandLocationManagerUseCaseMock.startUpdatingLocation_Called)
+        expect(self.viewModel.outputs.zones)
+            .events(scheduler: scheduler, disposeBag: disposeBag)
+            .to(equal([
+                Recorded.next(10, []),
+                Recorded.next(20, []),
+                Recorded.next(30, [])
+            ]))
     }
     
-    func test_stopUpdatingLocation() {
-        // When
-        viewModel.stopUpdatingLocation()
-        
-        // Then
-        XCTAssertTrue(commandLocationManagerUseCaseMock.stopUpdatingLocation_Called)
+    func test_authorizationStatus() {
+        expect(self.viewModel.outputs.authorizationStatus).array == [CLAuthorizationStatus.notDetermined]
     }
     
-    // MARK: - Querying
-    
-    func test_getDefaultLocation() {
-        // When
-        let res = viewModel.getDefaultLocation()
-        
-        // Then
-        XCTAssertEqual(res.coordinate.latitude, 37.54330366639085)
-        XCTAssertEqual(res.coordinate.longitude, 127.04455548501139)
+    func test_currentLocation() {
+        expect(self.viewModel.outputs.currentLocation).array == [nil]
     }
     
-    // MARK: - Private Methods
+    func test_initialAuthorizationStatus() {
+        expect(self.viewModel.outputs.initialAuthorizationStatus) == CLAuthorizationStatus.notDetermined
+    }
     
-    private func createInput(
-        viewDidAppearEvent: Driver<Void> = Driver.never(),
-        sceneDidActivateNotificationEvent: Driver<Void> = Driver.never()
-    ) -> MapViewModel.Input {
-        return MapViewModel.Input(viewDidAppearEvent: viewDidAppearEvent,
-                                  sceneDidActivateNotificationEvent: sceneDidActivateNotificationEvent)
+    func test_defaultLocation() {
+        expect(self.viewModel.outputs.defaultLocation.coordinate) == CLLocationCoordinate2D(latitude: 37.54887101,
+                                                                                            longitude: 126.91332598)
     }
 }
