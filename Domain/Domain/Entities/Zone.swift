@@ -27,7 +27,11 @@ public struct Zone {
     }
 }
 
-extension Zone: Equatable {
+extension Zone: Comparable {
+    public static func < (lhs: Zone, rhs: Zone) -> Bool {
+        return lhs.id < rhs.id
+    }
+    
     public static func == (lhs: Zone, rhs: Zone) -> Bool {
         return
             lhs.id == rhs.id &&
