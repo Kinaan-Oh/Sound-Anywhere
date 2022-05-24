@@ -10,7 +10,9 @@ import XCTest
 
 @testable import Data
 import Domain
+import Nimble
 import RxSwift
+import RxTestPackage
 
 final class DefaultZoneRepositoryTests: XCTestCase {
     // Given
@@ -26,154 +28,71 @@ final class DefaultZoneRepositoryTests: XCTestCase {
         disposeBag = DisposeBag()
     }
     
-    func test_query_succeed() {
-        // Given
-        let path = Bundle(for: DefaultZoneRepositoryTests.self).path(forResource: "Zone", ofType: "json")
-        XCTAssertNotNil(path)
-        
-        let data = try? String(contentsOfFile: path!).data(using: .utf8)
-        XCTAssertNotNil(data)
-        
-        let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data!)
-        XCTAssertNotNil(dummy)
-        
-        let expect = dummy!.map { $0.toEntity() }
+    func test_query_then_succeed() {
+        let dummy = getDummy()
         
         // When
-        defaultZoneRepository.setDummy(dummy: dummy!)
-        
-        defaultZoneRepository.query()
-            .subscribe { result in
-                // Then
-                XCTAssertEqual(result.sorted(by: { z1, z2 in z1.id<z2.id }), expect)
-            } onFailure: { error in
-            }
-            .disposed(by: disposeBag)
-    }
-    
-    func test_query_failed() {
-        // Given
-        let path = Bundle(for: DefaultZoneRepositoryTests.self).path(forResource: "Zone", ofType: "json")
-        XCTAssertNotNil(path)
-        
-        let data = try? String(contentsOfFile: path!).data(using: .utf8)
-        XCTAssertNotNil(data)
-        
-        let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data!)
-        XCTAssertNotNil(dummy)
-        
-        let expect = dummy!.map { $0.toEntity() }
-        
-        // When
-        defaultZoneRepository.query()
-            .subscribe { result in
-            } onFailure: { error in
-                // Then
-                let error = error as? FakeFirestore<ZoneDTO>.FirestoreError
-                XCTAssertNotNil(error)
-                XCTAssertEqual(error!, FakeFirestore<ZoneDTO>.FirestoreError.documentsNotExist)
-            }
-            .disposed(by: disposeBag)
-    }
-    
-    func test_queryName_succeed() {
-        // Given
-        let path = Bundle(for: DefaultZoneRepositoryTests.self).path(forResource: "Zone", ofType: "json")
-        XCTAssertNotNil(path)
-        
-        let data = try? String(contentsOfFile: path!).data(using: .utf8)
-        XCTAssertNotNil(data)
-        
-        let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data!)
-        XCTAssertNotNil(dummy)
-        
-        let expect = dummy!.first?.toEntity()
-        XCTAssertNotNil(expect)
-        
-        // When
-        defaultZoneRepository.setDummy(dummy: dummy!)
-        
-        defaultZoneRepository.query(name: "서울숲01")
-            .subscribe { result in
-                // Then
-                XCTAssertEqual(result, expect!)
-            } onFailure: { error in
-            }
-            .disposed(by: disposeBag)
-    }
-    
-    func test_queryName_failed() {
-        // Given
-        let path = Bundle(for: DefaultZoneRepositoryTests.self).path(forResource: "Zone", ofType: "json")
-        XCTAssertNotNil(path)
-        
-        let data = try? String(contentsOfFile: path!).data(using: .utf8)
-        XCTAssertNotNil(data)
-        
-        let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data!)
-        XCTAssertNotNil(dummy)
-        
-        let expect = dummy!.first?.toEntity()
-        XCTAssertNotNil(expect)
-        
-        // When
-        defaultZoneRepository.query(name: "서울숲01")
-            .subscribe { result in
-            } onFailure: { error in
-                // Then
-                let error = error as? FakeFirestore<ZoneDTO>.FirestoreError
-                XCTAssertNotNil(error)
-                XCTAssertEqual(error!, FakeFirestore<ZoneDTO>.FirestoreError.documentNotExist)
-            }
-            .disposed(by: disposeBag)
-    }
-    
-    func test_save_succeed() {
-        // Given
-        let input = Zone(id: "006", name: "서울숲06", trackList: [], coordinate: CLLocationCoordinate2D() )
-        
-        // When
-        defaultZoneRepository.save(data: input)
-            .subscribe()
-            .disposed(by: disposeBag)
-        
+        defaultZoneRepository.setDummy(dummy: dummy)
         
         // Then
-        let collection = fakeFirestore.db["zone"]
-        XCTAssertNotNil(collection)
-        
-        let document = collection!.collection["서울숲06"]
-        XCTAssertNotNil(document)
-        
-        let result = document!.data?.toEntity()
-        XCTAssertNotNil(result)
-        
-        XCTAssertEqual(result, input)
+        expect(self.defaultZoneRepository.query()).first == dummy.map { $0.toEntity() }
     }
     
-    func test_save_failed() {
-        // Given
-        let path = Bundle(for: DefaultZoneRepositoryTests.self).path(forResource: "Zone", ofType: "json")
-        XCTAssertNotNil(path)
-        
-        let data = try? String(contentsOfFile: path!).data(using: .utf8)
-        XCTAssertNotNil(data)
-        
-        let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data!)
-        XCTAssertNotNil(dummy)
-        
-        let input = dummy?.first?.toEntity()
-        XCTAssertNotNil(input)
+    func test_query_then_fail() {
+        let dummy = getDummy()
         
         // When
-        defaultZoneRepository.setDummy(dummy: dummy!)
+        expect(self.defaultZoneRepository.query()).first
+            .to(throwError(FakeFirestore<ZoneDTO>.FirestoreError.documentsNotExist))
+    }
+    
+    func test_queryName_then_succeed() {
+        let dummy = getDummy()
         
-        defaultZoneRepository.save(data: input!)
-            .subscribe(onError: { error in
-                let error = error as? FakeFirestore<ZoneDTO>.FirestoreError
-                XCTAssertNotNil(error)
-                XCTAssertEqual(error!, FakeFirestore<ZoneDTO>.FirestoreError.documentAleadyExist)
-            })
-            .disposed(by: disposeBag)
+        // When
+        defaultZoneRepository.setDummy(dummy: dummy)
+        
+        // Then
+        expect(self.defaultZoneRepository.query(name: "서울숲01")).first == dummy.first!.toEntity()
+    }
+    
+    func test_queryName_then_fail() {
+        // Then
+        expect(self.defaultZoneRepository.query(name: "서울숲01")).first
+            .to(throwError(FakeFirestore<ZoneDTO>.FirestoreError.documentNotExist))
+    }
+    
+    func test_saveZone_then_succeed() {
+        let zone = Zone(id: "006", name: "서울숲06", trackList: [], coordinate: CLLocationCoordinate2D() )
+        
+        // When
+        expect(self.defaultZoneRepository.save(data: zone)).first
+            .to(beNil())
+    
+        // Then
+        let collection = fakeFirestore.db["zone"]
+        let document = collection?.collection["서울숲06"]
+        let result = document?.data?.toEntity()
+        
+        expect(result) == zone
+    }
+    
+    func test_save_then_fail() {
+        let dummy = getDummy()
+        let zone = dummy.first!.toEntity()
+        
+        // When
+        defaultZoneRepository.setDummy(dummy: dummy)
+        
+        // Then
+        expect(self.defaultZoneRepository.save(data: zone)).first
+            .to(throwError(FakeFirestore<ZoneDTO>.FirestoreError.documentAleadyExist))
+    }
+    
+    private func getDummy() -> [ZoneDTO] {
+        let path = Bundle(for: DefaultZoneRepositoryTests.self).path(forResource: "Zone", ofType: "json")
+        let data = try? String(contentsOfFile: path!).data(using: .utf8)
+        let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data!)
+        return dummy!
     }
 }

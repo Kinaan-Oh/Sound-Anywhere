@@ -10,96 +10,75 @@ import XCTest
 
 @testable import Data
 import Domain
+import Nimble
+import RxTestPackage
 
 final class FakeFirestoreTests: XCTestCase {
     // Given
     var fakeFirestore: FakeFirestore<ZoneDTO>!
-    var input: ZoneDTO!
+    var data: ZoneDTO!
     
     override func setUp() {
         super.setUp()
-        
+    
         fakeFirestore = FakeFirestore<ZoneDTO>()
-        let track = TrackDTO(id: "001",
-                             imageURLString: "https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228",
-                             genres: [],
-                             album: "Dance",
-                             artist: "Seinabo Sey",
-                             title: "Younger",
-                             description: "")
-        input = ZoneDTO(id: "001", name: "서울숲", latitude: 77, longitude: 77, trackList: [track])
+        let dummy = getDummy()
+        data = dummy.first!
     }
     
-    func test_setData() {
+    func test_setData_then_succeed() {
+        // Then
+        expect(self.fakeFirestore.setData(collection: "zone", document: "합정", data: self.data)).first
+            .to(beNil())
+    }
+    
+    func test_setData_then_fail() {
         // When
-        fakeFirestore.collection(name: "zone")
-            .document(name: "서울숲")
-            .setData(from: input) { [weak self] result in
-                guard let self = self else { return }
-                // Then
-                switch result {
-                case.success(let ret):
-                    XCTAssertEqual(ret, self.input)
-                case.failure(let error):
-                    XCTAssertEqual(error, .documentAleadyExist)
-                }
-            }
+        setData()
         
         // Then
-        let collection = fakeFirestore.db["zone"]
-        XCTAssertNotNil(collection)
-        
-        let document = collection!.collection["서울숲"]
-        XCTAssertNotNil(document)
-        
-        let data = document!.data
-        XCTAssertEqual(input, data)
+        expect(self.fakeFirestore.setData(collection: "zone", document: "합정", data: self.data)).first
+            .to(throwError(FakeFirestore<ZoneDTO>.FirestoreError.documentAleadyExist))
     }
     
-    func test_getDocument() {
-        // Given
-        setInput()
-        
+    func test_getDocument_then_succeed() {
         // When
-        fakeFirestore
-            .collection(name: "zone")
-            .document(name: "서울숲")
-            .getDocument { [weak self] result in
-                guard let self = self else { return }
-                // Then
-                switch result {
-                case .success(let ret):
-                    XCTAssertEqual(ret, self.input)
-                case .failure(let error):
-                    XCTAssertEqual(error, .documentNotExist)
-                }
-            }
-    }
-    
-    func test_getDocuments() {
-        // Given
-        setInput()
+        setData()
         
-        // When
-        fakeFirestore
-            .collection(name: "zone")
-            .getDocuments { [weak self] result in
-                guard let self = self else { return }
-                // Then
-                switch result {
-                case .success(let ret):
-                    XCTAssertEqual(ret, [self.input])
-                case .failure(let error):
-                    XCTAssertEqual(error, .documentsNotExist)
-                }
-            }
+        // Then
+        expect(self.fakeFirestore.getDocument(collection: "zone", document: "합정")).first == data
     }
     
-    // MARK: - set input
+    func test_getDocument_then_fail() {
+        // Then
+        expect(self.fakeFirestore.getDocument(collection: "zone", document: "합정")).first
+            .to(throwError(FakeFirestore<ZoneDTO>.FirestoreError.documentNotExist))
+    }
     
-    private func setInput() {
+    func test_getDocuments_then_succeed() {
+        // When
+        setData()
+        
+        // Then
+        expect(self.fakeFirestore.getDocuments(collection: "zone")).first == [data]
+    }
+    
+    func test_getDocuments_then_fail() {
+        // Then
+        expect(self.fakeFirestore.getDocuments(collection: "zone")).first
+            .to(throwError(FakeFirestore<ZoneDTO>.FirestoreError.documentsNotExist))
+    }
+    
+    private func getDummy() -> [ZoneDTO] {
+        let path = Bundle(for: DefaultZoneRepositoryTests.self).path(forResource: "Zone", ofType: "json")
+        let data = try? String(contentsOfFile: path!).data(using: .utf8)
+        let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data!)
+        return dummy!
+    }
+    
+    private func setData() {
         fakeFirestore.db["zone"] = FakeFirestore.Collection()
-        fakeFirestore.db["zone"]!.collection[input.name] = FakeFirestore.Collection.Document()
-        fakeFirestore.db["zone"]!.collection[input.name]!.data = input
+        fakeFirestore.db["zone"]!.collection["합정"] = FakeFirestore.Collection.Document()
+        fakeFirestore.db["zone"]!.collection["합정"]!.data = data
     }
 }

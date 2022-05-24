@@ -33,7 +33,7 @@ public final class DefaultZoneRepository<Firestore> where Firestore: FirestoreTy
 extension DefaultZoneRepository: ZoneRepositoryQuerying {
     public func query() -> Single<[Zone]> {
         return firestore.getDocuments(collection: "zone")
-            .map { $0.map { $0.toEntity() } }
+            .map { $0.map { $0.toEntity() }.sorted(by: <) }
     }
     
     public func query(name: String) -> Single<Zone> {
