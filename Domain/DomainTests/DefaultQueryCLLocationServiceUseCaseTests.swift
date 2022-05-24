@@ -9,6 +9,7 @@ import CoreLocation
 import XCTest
 
 @testable import Domain
+import Nimble
 import RxSwift
 import RxTestPackage
 
@@ -27,31 +28,18 @@ final class DefaultQueryCLLocationServiceUseCaseTests: XCTestCase {
         scheduler = TestScheduler(initialClock: 0)
     }
 
+    func test_queryInitialAuthorizationStatus() {
+        expect(self.defaultQueryLocationManagerUseCase.queryInitialAuthorizationStatus()) == CLAuthorizationStatus.notDetermined
+        
+    }
+    
     func test_observeAuthorizationStatus() {
-        // Given
-        let res = scheduler.createObserver(CLAuthorizationStatus.self)
-
-        // When
-        defaultQueryLocationManagerUseCase
-            .observeAuthorizationStatus()
-            .bind(to: res)
-            .disposed(by: disposeBag)
-
-        // Then
-        XCTAssertEqual(res.events, [.next(0, .notDetermined), .completed(0)])
+        expect(self.defaultQueryLocationManagerUseCase.observeAuthorizationStatus()).array == [
+            .notDetermined
+        ]
     }
 
     func test_observeLocation() {
-        // Given
-        let res = scheduler.createObserver(CLLocation?.self)
-
-        // When
-        defaultQueryLocationManagerUseCase
-            .observeLocation()
-            .bind(to: res)
-            .disposed(by: disposeBag)
-
-        // Then
-        XCTAssertEqual(res.events, [.next(0, nil), .completed(0)])
+        expect(self.defaultQueryLocationManagerUseCase.observeLocation).array == [nil]
     }
 }

@@ -5,10 +5,13 @@
 //  Created by 오현식 on 2022/04/25.
 //
 
+import CoreLocation
 import XCTest
 
 @testable import Domain
+import Nimble
 import RxSwift
+import RxTestPackage
 
 final class DefaultQueryZoneUseCaseTests: XCTestCase {
     // Given
@@ -24,20 +27,19 @@ final class DefaultQueryZoneUseCaseTests: XCTestCase {
 
     func test_query() {
         // When
-        defaultQueryZoneUseCase.query()
-            .subscribe(onSuccess: { result in
-                XCTAssertEqual(result.first?.name, "stub")
-            })
-            .disposed(by: disposeBag)
+        expect(self.defaultQueryZoneUseCase.query()).first == [
+            Zone(id: "",
+                 name: "합정",
+                 trackList: [],
+                 coordinate: CLLocationCoordinate2D())
+        ]
     }
     
     func test_queryName() {
         // When
-        defaultQueryZoneUseCase.query(name: "test")
-            .subscribe(onSuccess: { result in
-                // Then
-                XCTAssertEqual(result.name, "stub")
-            })
-            .disposed(by: disposeBag)
+        expect(self.defaultQueryZoneUseCase.query(name: "test")).first == Zone(id: "",
+                                                                               name: "합정",
+                                                                               trackList: [],
+                                                                               coordinate: CLLocationCoordinate2D())
     }
 }

@@ -16,9 +16,9 @@ final class ZoneRepositoryStub: ZoneRepositoryQuerying {
     
     init() {
         let zone = Zone(id: "",
-                                name: "stub",
-                                trackList: [],
-                                coordinate: CLLocationCoordinate2D())
+                        name: "합정",
+                        trackList: [],
+                        coordinate: CLLocationCoordinate2D())
         queryReturnValue = Single<[Zone]>.just([zone])
         queryNameReturnValue = Single<Zone>.just(zone)
     }

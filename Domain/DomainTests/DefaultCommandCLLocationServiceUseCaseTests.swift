@@ -8,6 +8,8 @@
 import XCTest
 
 @testable import Domain
+import Nimble
+import RxTestPackage
 
 final class DefaultCommandCLLocationServiceUseCaseTests: XCTestCase {
     // Given
@@ -26,7 +28,7 @@ final class DefaultCommandCLLocationServiceUseCaseTests: XCTestCase {
         commandLocationManagerUseCase.requestWhenInUseAuthorization()
         
         // Then
-        XCTAssertTrue(locationServiceMock.requestWhenInUseAuthorization_Called)
+        expect(self.locationServiceMock.requestWhenInUseAuthorization_Called) == true
     }
     
     func test_startUpdatingLocation() {
@@ -34,7 +36,7 @@ final class DefaultCommandCLLocationServiceUseCaseTests: XCTestCase {
         commandLocationManagerUseCase.startUpdatingLocation()
         
         // Then
-        XCTAssertTrue(locationServiceMock.startUpdatingLocation_Called)
+        expect(self.locationServiceMock.startUpdatingLocation_Called) == true
     }
     
     func test_stopUpdatingLocation() {
@@ -42,6 +44,6 @@ final class DefaultCommandCLLocationServiceUseCaseTests: XCTestCase {
         commandLocationManagerUseCase.stopUpdatingLocation()
         
         // Then
-        XCTAssertTrue(locationServiceMock.stopUpdatingLocation_Called)
+        expect(self.locationServiceMock.stopUpdatingLocation_Called) == true
     }
 }
