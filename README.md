@@ -29,7 +29,7 @@
 - Storyboard, Asset, Dummy(json)를 Resource 모듈로 분리.
 - 전역적으로 사용되는 Extension, UserDefault를 Common 모듈로 분리.
 - Rx에 의존적인 Extension을 RxCommon 모듈로 분리.
-- RxPackage, RxTestPackage 모듈로 분리하여 Unit Test시 RxSwift [중복적재 이슈](./Trouble-Shooting/001.md) 해결. 
+- RxPackage, RxTestPackage 모듈로 Unit Test시 RxSwift [중복적재 이슈](./Trouble-Shooting/001.md) 해결. 
 
 ---
 
