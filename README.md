@@ -56,7 +56,12 @@ Unit Test 시간 감축.
 ###
 [1. CoreLocation 위치권한처리](./Technical-Difficulties/001.md)
 <br/>
-2. Storyboard Based UI 선택한 이유
+[2. Storyboard Based UI VS Code Based UI](./Technical-Difficulties/002.md)
+<br/>
+[3. Unit Test 도입하기](./Technical-Difficulties/003.md)
+<br/>
+[4. UI Test 도입하기](./Technical-Difficulties/004.md)
+<br/>
 ###
 
 ---
