@@ -29,6 +29,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B4FFD713283E0D2E0074C64C"
+               BuildableName = "Sound-AnywhereUITests.xctest"
+               BlueprintName = "Sound-AnywhereUITests"
+               ReferencedContainer = "container:Sound-Anywhere.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
