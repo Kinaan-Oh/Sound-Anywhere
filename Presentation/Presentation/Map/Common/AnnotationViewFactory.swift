@@ -60,6 +60,8 @@ final class CurrentLocationAnnotationView: MKAnnotationView {
     
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        self.accessibilityLabel = "현재 위치"
+        self.accessibilityIdentifier = "현재 위치"
     }
     
     required init?(coder aDecoder: NSCoder) {
