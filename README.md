@@ -26,7 +26,7 @@
 
 ### Modularization
 - Clean Architecture Layer를 별도 모듈로 분리.
-- Storyboard, Asset, Dummy(json)를 Resource 모듈로 분리.
+- Storyboard, Asset(color, image, json, etc)를 Resource 모듈로 분리.
 - 전역적으로 사용되는 Extension, UserDefault를 Common 모듈로 분리.
 - Rx에 의존적인 Extension을 RxCommon 모듈로 분리.
 - RxPackage, RxTestPackage 모듈로 Unit Test시 RxSwift [중복적재 이슈](./Trouble-Shooting/001.md) 해결. 
@@ -56,7 +56,9 @@ Unit Test 시간 감축.
 ###
 [1. CoreLocation 위치권한처리](./Technical-Difficulties/001.md)
 <br/>
-[2. UI Test 도입하기](./Technical-Difficulties/004.md)
+[2. Unit Test 도입하기](./Technical-Difficulties/002.md)
+<br/>
+[3. UI Test 도입하기](./Technical-Difficulties/003.md)
 <br/>
 ###
 
