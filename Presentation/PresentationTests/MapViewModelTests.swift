@@ -42,7 +42,7 @@ final class MapViewModelTests: XCTestCase {
         viewModel.inputs.sceneDidActivate()
         
         // Then
-        expect(self.commandCLLocationServiceUseCaseMock.requestWhenInUseAuthorization_Called_Count) == 1
+        expect(self.commandCLLocationServiceUseCaseMock.requestWhenInUseAuthorization_Called) == true
     }
     
     func test_viewDidAppear_then_requestWhenInUseAuthorization() {
@@ -50,7 +50,7 @@ final class MapViewModelTests: XCTestCase {
         viewModel.inputs.viewDidAppear()
         
         // Then
-        expect(self.commandCLLocationServiceUseCaseMock.requestWhenInUseAuthorization_Called_Count) == 1
+        expect(self.commandCLLocationServiceUseCaseMock.requestWhenInUseAuthorization_Called) == true
     }
     
     func test_startUpdatingLocation_then_startUpdatingLocationCalled() {
