@@ -25,9 +25,6 @@
 		B42BC38B2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC38A2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift */; };
 		B4535DF72809E0EC0020018E /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535DF62809E0EC0020018E /* MapViewModelTests.swift */; };
 		B47759A727E8D73C00425734 /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = B47759A627E8D73C00425734 /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B47759CE27E8D76C00425734 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759B127E8D76C00425734 /* SearchViewController.swift */; };
-		B47759D227E8D76C00425734 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759B827E8D76C00425734 /* HomeViewController.swift */; };
-		B47759D527E8D76C00425734 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C027E8D76C00425734 /* RecordViewController.swift */; };
 		B47759D927E8D76C00425734 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C727E8D76C00425734 /* MapViewController.swift */; };
 		B491B1EF2812A220003E2F7F /* MKMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B1EE2812A220003E2F7F /* MKMapView+Extension.swift */; };
 		B491B1F12812A356003E2F7F /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B1F02812A356003E2F7F /* UIViewController+Rx.swift */; };
@@ -79,9 +76,6 @@
 		B4535DF62809E0EC0020018E /* MapViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
 		B47759A327E8D73C00425734 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47759A627E8D73C00425734 /* Presentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Presentation.h; sourceTree = "<group>"; };
-		B47759B127E8D76C00425734 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		B47759B827E8D76C00425734 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B47759C027E8D76C00425734 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		B47759C727E8D76C00425734 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B491B1EE2812A220003E2F7F /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
 		B491B1F02812A356003E2F7F /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
@@ -166,118 +160,19 @@
 			children = (
 				B47759A627E8D73C00425734 /* Presentation.h */,
 				B491B1EA2812A216003E2F7F /* Extensions */,
-				B47759C827E8D76C00425734 /* Common */,
-				B47759B327E8D76C00425734 /* Home */,
 				B47759C227E8D76C00425734 /* Map */,
-				B47759AD27E8D76C00425734 /* Search */,
-				B47759BC27E8D76C00425734 /* Record */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		B47759AD27E8D76C00425734 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				B47759B027E8D76C00425734 /* UI */,
-				B47759AE27E8D76C00425734 /* ViewModel */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		B47759AE27E8D76C00425734 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		B47759B027E8D76C00425734 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				B47759B127E8D76C00425734 /* SearchViewController.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		B47759B327E8D76C00425734 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				B47759B627E8D76C00425734 /* UI */,
-				B47759B427E8D76C00425734 /* ViewModel */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		B47759B427E8D76C00425734 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		B47759B627E8D76C00425734 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				B47759B827E8D76C00425734 /* HomeViewController.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		B47759BC27E8D76C00425734 /* Record */ = {
-			isa = PBXGroup;
-			children = (
-				B47759BF27E8D76C00425734 /* UI */,
-				B47759BD27E8D76C00425734 /* ViewModel */,
-			);
-			path = Record;
-			sourceTree = "<group>";
-		};
-		B47759BD27E8D76C00425734 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		B47759BF27E8D76C00425734 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				B47759C027E8D76C00425734 /* RecordViewController.swift */,
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		B47759C227E8D76C00425734 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				B419A11B2816A33F00EB19CF /* Common */,
-				B47759C527E8D76C00425734 /* UI */,
-				B47759C327E8D76C00425734 /* ViewModel */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
-		B47759C327E8D76C00425734 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
+				B47759C727E8D76C00425734 /* MapViewController.swift */,
 				B408BF402832478100044B81 /* MapViewModel.swift */,
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		B47759C527E8D76C00425734 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				B47759C727E8D76C00425734 /* MapViewController.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		B47759C827E8D76C00425734 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
+			path = Map;
 			sourceTree = "<group>";
 		};
 		B4775AE327E9E6A400425734 /* Frameworks */ = {
@@ -438,10 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B47759CE27E8D76C00425734 /* SearchViewController.swift in Sources */,
 				B419A1232816A35400EB19CF /* AnnotationFactory.swift in Sources */,
-				B47759D527E8D76C00425734 /* RecordViewController.swift in Sources */,
-				B47759D227E8D76C00425734 /* HomeViewController.swift in Sources */,
 				B408BF412832478200044B81 /* MapViewModel.swift in Sources */,
 				B491B1EF2812A220003E2F7F /* MKMapView+Extension.swift in Sources */,
 				B47759D927E8D76C00425734 /* MapViewController.swift in Sources */,
