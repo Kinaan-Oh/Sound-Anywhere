@@ -56,9 +56,9 @@ Unit Test 시간 감축.
 ###
 [1. CoreLocation 위치권한처리](./Technical-Difficulties/001.md)
 <br/>
-[2. Unit Test 도입하기](./Technical-Difficulties/002.md)
+[2. Unit Test](./Technical-Difficulties/002.md)
 <br/>
-[3. UI Test 도입하기](./Technical-Difficulties/003.md)
+[3. UI Test](./Technical-Difficulties/003.md)
 <br/>
 ###
 
