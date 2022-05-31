@@ -10,5 +10,5 @@
 import UIKit
 
 public final class Resource {
-    static let bundle = Bundle(for: Resource.self)
+    public static let bundle = Bundle(for: Resource.self)
 }
