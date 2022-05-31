@@ -13,7 +13,7 @@ import Domain
 import RxCocoa
 import RxSwift
 
-final class MapViewController: UIViewController {
+public final class MapViewController: UIViewController {
     
     // MARK: - Subviews
     
@@ -23,7 +23,7 @@ final class MapViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private let viewModel: MapViewModel = DIContainer.shared.resolve()
+    public var viewModel: MapViewModelType?
     private var disposeBag = DisposeBag()
     private var currentLocationAnnotation = AnnotationFactory.create(of: .currentLocation,
                                                                      coordinate: .init())
@@ -31,7 +31,7 @@ final class MapViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         configureMapView()
         configureUI()
@@ -40,9 +40,9 @@ final class MapViewController: UIViewController {
         bindNotifications()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.inputs.viewDidAppear()
+        viewModel?.inputs.viewDidAppear()
     }
     
     // MARK: - Helpers
@@ -56,20 +56,18 @@ final class MapViewController: UIViewController {
     }
     
     private func configureUI() {
-        if let authorizationStatus = viewModel.outputs.initialAuthorizationStatus {
-            switch authorizationStatus {
-            case .authorizedWhenInUse:
-                currentLocationButton.isEnabled = true
-                setRecentRegion()
-            default:
-                currentLocationButton.isEnabled = false
-                setDefaultRegion()
-            }
+        if let authorizationStatus = viewModel?.outputs.initialAuthorizationStatus,
+           authorizationStatus == .authorizedWhenInUse {
+            currentLocationButton.isEnabled = true
+            setRecentRegion()
+        } else {
+            currentLocationButton.isEnabled = false
+            setDefaultRegion()
         }
     }
     
     private func setDefaultRegion() {
-        let defaultLocation = viewModel.outputs.defaultLocation
+        guard let defaultLocation = viewModel?.outputs.defaultLocation else { return }
         mapView.setRegion(location: defaultLocation)
     }
     
@@ -94,7 +92,7 @@ final class MapViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        viewModel.outputs.authorizationStatus
+        viewModel?.outputs.authorizationStatus
             .drive { [weak self] authorizationStatus in
                 guard let self = self else { return }
                 switch authorizationStatus {
@@ -108,7 +106,7 @@ final class MapViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        viewModel.outputs.currentLocation
+        viewModel?.outputs.currentLocation
             .throttle(.seconds(1), latest: true)
             .drive { location in
                 guard let location = location else { return }
@@ -116,7 +114,7 @@ final class MapViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        viewModel.outputs.zones
+        viewModel?.outputs.zones
             .drive { [weak self] zones in
                 guard let self = self else { return }
                 self.configureZoneAnnotations(zones: zones)
@@ -139,7 +137,7 @@ final class MapViewController: UIViewController {
             .notification(UIScene.didActivateNotification)
             .subscribe { [weak self] _ in
                 guard let self = self else { return }
-                self.viewModel.inputs.sceneDidActivate()
+                self.viewModel?.inputs.sceneDidActivate()
             }
             .disposed(by: disposeBag)
     }
@@ -148,7 +146,7 @@ final class MapViewController: UIViewController {
 // MARK: - MKMapViewDelegate
 
 extension MapViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         switch annotation {
         case is CurrentLocationAnnotation:
             let identifier = CurrentLocationAnnotationView.identifier

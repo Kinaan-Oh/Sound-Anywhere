@@ -47,7 +47,7 @@ public protocol MapViewModelType {
     var outputs: MapViewModelOutputs { get }
 }
 
-public final class MapViewModel: MapViewModelInputs, MapViewModelOutputs, MapViewModelType {
+public final class MapViewModel: MapViewModelType, MapViewModelInputs, MapViewModelOutputs {
     
     // MARK: - Initializer
     

@@ -5,23 +5,13 @@
 //  Created by 오현식 on 2022/03/21.
 //
 
-import CoreLocation
 import UIKit
-
-import Common
-import Data
-import Domain
-import Presentation
-import Resource
-import RxCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        registerDependencies()
         return true
     }
 
@@ -38,30 +28,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didDiscardSceneSessions sceneSessions: Set<UISceneSession>
     ) {
-    }
-    
-    private func registerDependencies() {
-        let locationService = CLLocationService()
-        
-        let queryCLLocationServiceUseCase = DefaultQueryCLLocationServiceUseCase(locationService: locationService)
-        let commandCLLocationServiceUseCase = DefaultCommandCLLocationServiceUseCase(locationService: locationService)
-        
-        let firestore = FakeFirestore<ZoneDTO>()
-        let zoneRepository = DefaultZoneRepository<FakeFirestore<ZoneDTO>>(firestore: firestore)
-
-        if let data = Resource.Dummy.zone,
-           let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data) {
-            zoneRepository.setDummy(dummy: dummy)
-        }
-        
-        let queryZoneUseCase = DefaultQueryZoneUseCase(zoneRepository: zoneRepository)
-      
-        let mapViewModel = MapViewModel(defaultLocation: CLLocation(latitude: 37.54887101,
-                                                                    longitude: 126.91332598),
-                                        queryCLLocationServiceUseCase: queryCLLocationServiceUseCase,
-                                        commandCLLocationServiceUseCase: commandCLLocationServiceUseCase,
-                                        queryZoneUseCase: queryZoneUseCase)
-    
-        DIContainer.shared.register(dependency: mapViewModel)
     }
 }

@@ -15,7 +15,6 @@
 		B491B20E2812B08A003E2F7F /* UserDefaultsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B20D2812B08A003E2F7F /* UserDefaultsServiceTests.swift */; };
 		B491B20F2812B08A003E2F7F /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4775AB027E8DB5A00425734 /* Common.framework */; platformFilter = ios; };
 		B4ACBE7428146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */; };
-		B4DE25572816783A00A1D3C0 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE25562816783A00A1D3C0 /* DIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +50,6 @@
 		B491B20B2812B08A003E2F7F /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B491B20D2812B08A003E2F7F /* UserDefaultsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsServiceTests.swift; sourceTree = "<group>"; };
 		B4ACBE7328146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
-		B4DE25562816783A00A1D3C0 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +107,6 @@
 				B4775AB327E8DB5A00425734 /* Common.h */,
 				B4775B3427EA184B00425734 /* Extensions */,
 				B408BE22283126AA00044B81 /* UserDefaults */,
-				B4DE25552816781700A1D3C0 /* DIContainer */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -136,14 +133,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B4DE25552816781700A1D3C0 /* DIContainer */ = {
-			isa = PBXGroup;
-			children = (
-				B4DE25562816783A00A1D3C0 /* DIContainer.swift */,
-			);
-			path = DIContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +254,6 @@
 				B408BE28283126AA00044B81 /* UserDefaultOther.swift in Sources */,
 				B4ACBE7428146AE300E09E5C /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				B408BE27283126AA00044B81 /* UserDefaultsService.swift in Sources */,
-				B4DE25572816783A00A1D3C0 /* DIContainer.swift in Sources */,
 				B4775B3627EA184B00425734 /* String+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

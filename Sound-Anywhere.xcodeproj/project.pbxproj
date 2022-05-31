@@ -24,6 +24,7 @@
 		B45164C427E8C81100347409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C327E8C81100347409 /* AppDelegate.swift */; };
 		B45164C627E8C81100347409 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45164C527E8C81100347409 /* SceneDelegate.swift */; };
 		B45164D027E8C81300347409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45164CE27E8C81300347409 /* LaunchScreen.storyboard */; };
+		B469DF2E2845EE6200ABD5C9 /* SwinjectStoryboard in Frameworks */ = {isa = PBXBuildFile; productRef = B469DF2D2845EE6200ABD5C9 /* SwinjectStoryboard */; };
 		B47C4412283E5D4D0048B334 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = B47C4411283E5D4D0048B334 /* Quick */; };
 		B47C4415283E5D600048B334 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = B47C4414283E5D600048B334 /* Nimble */; };
 		B4E8D1AD280BEA8D003EEFFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4E8D1AC280BEA8D003EEFFC /* GoogleService-Info.plist */; };
@@ -86,6 +87,7 @@
 			files = (
 				B408BDA9282D7A9000044B81 /* Domain.framework in Frameworks */,
 				B408BDA6282D7A8C00044B81 /* Data.framework in Frameworks */,
+				B469DF2E2845EE6200ABD5C9 /* SwinjectStoryboard in Frameworks */,
 				B408BDAC282D7A9300044B81 /* Presentation.framework in Frameworks */,
 				B408BDA2282D7A8800044B81 /* Common.framework in Frameworks */,
 				B408BDAF282D7A9700044B81 /* Resource.framework in Frameworks */,
@@ -178,6 +180,7 @@
 			);
 			name = "Sound-Anywhere";
 			packageProductDependencies = (
+				B469DF2D2845EE6200ABD5C9 /* SwinjectStoryboard */,
 			);
 			productName = "Sound-Anywhere";
 			productReference = B45164C027E8C81100347409 /* Sound-Anywhere.app */;
@@ -236,6 +239,7 @@
 			packageReferences = (
 				B47C4410283E5D4D0048B334 /* XCRemoteSwiftPackageReference "Quick" */,
 				B47C4413283E5D600048B334 /* XCRemoteSwiftPackageReference "Nimble" */,
+				B469DF2C2845EE6200ABD5C9 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */,
 			);
 			productRefGroup = B45164C127E8C81100347409 /* Products */;
 			projectDirPath = "";
@@ -561,6 +565,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B469DF2C2845EE6200ABD5C9 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/SwinjectStoryboard";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
 		B47C4410283E5D4D0048B334 /* XCRemoteSwiftPackageReference "Quick" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Quick/Quick";
@@ -580,6 +592,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B469DF2D2845EE6200ABD5C9 /* SwinjectStoryboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B469DF2C2845EE6200ABD5C9 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */;
+			productName = SwinjectStoryboard;
+		};
 		B47C4411283E5D4D0048B334 /* Quick */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B47C4410283E5D4D0048B334 /* XCRemoteSwiftPackageReference "Quick" */;
