@@ -54,15 +54,15 @@ Unit Test 시간 감축.
 
 ## 기술 스터디
 ###
-[1. HLS](./Study/001.md)
+[1. HLS(예정)](./Study/001.md)
 <br/>
-[2. RTSP/RTP](./Study/002.md)
+[2. RTSP/RTP(예정)](./Study/002.md)
 <br/>
-[3. RTMP](./Study/003.md)
+[3. RTMP(예정)](./Study/003.md)
 <br/>
-[4. SRT](./Study/004.md)
+[4. SRT(예정)](./Study/004.md)
 <br/>
-[5. WebRTC](./Study/005.md)
+[5. WebRTC(예정)](./Study/005.md)
 <br/>
 ###
 
