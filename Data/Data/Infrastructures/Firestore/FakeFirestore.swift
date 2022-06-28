@@ -7,133 +7,51 @@
 
 import RxSwift
 
-public final class FakeFirestore<T> {
-    enum FirestoreError: Error {
+public final class FakeFirestore: FirestoreType {
+    enum FakeFireStoreError: Error {
+        case collectionNotExist
         case documentNotExist
-        case documentsNotExist
-        case documentAleadyExist
-        case dummyNotExist
     }
-    
-    var db: [String: Collection] = [:]
-    
+
+    var db: [String: [String: Any]] = [:]
+
     public init() {}
-    
-    func collection(name: String) -> Collection {
-        guard let collection = db[name] else {
-            let newCollection = Collection()
-            db[name] = newCollection
-            return newCollection
-        }
-        return collection
-    }
-}
 
-// MARK: - FakeFirestore.Collection
-
-extension FakeFirestore {
-    final class Collection {
-        var collection: [String: Document] = [:]
-        
-        func document(name: String) -> Document {
-            guard let document = collection[name] else {
-                let newDocument = Document()
-                collection[name] = newDocument
-                return newDocument
-            }
-            return document
-        }
-        
-        func getDocuments(completion: @escaping (Result<[T],FirestoreError>) -> Void) {
-            let data = collection.compactMap { $0.value.data }
-            
-            if data.isEmpty {
-                completion(.failure(.documentsNotExist))
-            } else {
-                completion(.success(data))
-            }
-        }
-    }
-}
-
-// MARK: - FakeFirestore.Collection.Document
-
-extension FakeFirestore.Collection {
-    final class Document {
-        var data: T?
-        
-        func setData(from data: T, completion: @escaping (Result<T,FakeFirestore.FirestoreError>) -> Void) {
-            guard self.data != nil else {
-                self.data = data
-                completion(.success(data))
-                return
-            }
-            completion(.failure(.documentAleadyExist))
-        }
-        
-        func getDocument(completion: @escaping (Result<T,FakeFirestore.FirestoreError>) -> Void) {
-            guard let data = data else {
-                completion(.failure(.documentNotExist))
-                return
-            }
-            completion(.success(data))
-        }
-    }
-}
-
-// MARK: - FirestoreCommanding
-
-extension FakeFirestore: FirestoreCommanding {
-    public func setData(collection: String, document: String, data: T) -> Completable {
+    public func setData<DTO: Encodable>(collection: String, document: String, data: DTO) -> Completable {
         Completable.create { observer in
-            self.collection(name: collection)
-                .document(name: document)
-                .setData(from: data) { result in
-                    switch result {
-                    case .success(_):
-                        observer(.completed)
-                    case .failure(let error):
-                        observer(.error(error))
-                    }
-                }
+            if self.db[collection] == nil {
+                self.db[collection] = [document: data]
+            } else {
+                self.db[collection]![document] = data
+            }
+            observer(.completed)
             
             return Disposables.create()
         }
     }
-}
 
-// MARK: - FirestoreQuerying
+    public func getDocument<DTO: Decodable>(collection: String, document: String) -> Single<DTO> {
+        Single.create { observer in
+            if let collection = self.db[collection],
+               let document = collection[document] as? DTO {
+                observer(.success(document))
+            } else {
+                observer(.failure(FakeFireStoreError.documentNotExist))
+            }
 
-extension FakeFirestore: FirestoreQuerying {
-    public func getDocument(collection: String, document: String) -> Single<T> {
-        return Single<T>.create { observer in
-            self.collection(name: collection)
-                .document(name: document)
-                .getDocument { result in
-                    switch result {
-                    case .success(let data):
-                        observer(.success(data))
-                    case .failure(let error):
-                        observer(.failure(error))
-                    }
-                }
-            
             return Disposables.create()
         }
     }
-    
-    public func getDocuments(collection: String) -> Single<[T]> {
-        return Single<[T]>.create { observer in
-            self.collection(name: collection)
-                .getDocuments { result in
-                    switch result {
-                    case .success(let data):
-                        observer(.success(data))
-                    case .failure(let error):
-                        observer(.failure(error))
-                    }
-                }
-            
+
+    public func getDocuments<DTO: Decodable>(collection: String) -> Single<[DTO]> {
+        Single.create { observer in
+            if let collection = self.db[collection] {
+                let documents = collection.map({ $0.value as? DTO }).compactMap { $0 }
+                observer(.success(documents))
+            } else {
+                observer(.failure(FakeFireStoreError.collectionNotExist))
+            }
+
             return Disposables.create()
         }
     }
