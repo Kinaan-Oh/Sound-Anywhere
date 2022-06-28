@@ -31,8 +31,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let queryCLLocationServiceUseCase = DefaultQueryCLLocationServiceUseCase(locationService: locationService)
             let commandCLLocationServiceUseCase = DefaultCommandCLLocationServiceUseCase(locationService: locationService)
             
-            let firestore = FakeFirestore<ZoneDTO>()
-            let zoneRepository = DefaultZoneRepository<FakeFirestore<ZoneDTO>>(firestore: firestore)
+            var firestore: FirestoreType
+            #if DEBUG
+                firestore = FakeFirestore()
+            #else
+                firestore = DefaultFireStore()
+            #endif
+
+            let zoneRepository = DefaultZoneRepository(firestore: firestore)
 
             if let data = Resource.Dummy.zone,
                let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data) {
