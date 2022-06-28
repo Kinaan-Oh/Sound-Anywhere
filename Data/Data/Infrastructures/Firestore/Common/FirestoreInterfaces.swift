@@ -7,17 +7,8 @@
 
 import RxSwift
 
-public protocol FirestoreCommanding {
-    associatedtype T
-
-    func setData(collection: String, document: String, data: T) -> Completable
+public protocol FirestoreType {
+    func setData<DTO: Encodable>(collection: String, document: String, data: DTO) -> Completable
+    func getDocument<DTO: Decodable>(collection: String, document: String) -> Single<DTO>
+    func getDocuments<DTO: Decodable>(collection: String) -> Single<[DTO]>
 }
-
-public protocol FirestoreQuerying {
-    associatedtype T
-    
-    func getDocument(collection: String, document: String) -> Single<T>
-    func getDocuments(collection: String) -> Single<[T]>
-}
-
-public typealias FirestoreType = FirestoreCommanding & FirestoreQuerying
