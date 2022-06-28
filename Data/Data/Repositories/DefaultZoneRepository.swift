@@ -9,11 +9,11 @@ import Domain
 import Resource
 import RxSwift
 
-public final class DefaultZoneRepository<Firestore> where Firestore: FirestoreType, Firestore.T == ZoneDTO {
-    private let firestore: Firestore
+public final class DefaultZoneRepository {
+    private let firestore: FirestoreType
     private let disposeBag: DisposeBag
     
-    public init(firestore: Firestore) {
+    public init(firestore: FirestoreType) {
         self.firestore = firestore
         self.disposeBag = DisposeBag()
     }
@@ -32,13 +32,13 @@ public final class DefaultZoneRepository<Firestore> where Firestore: FirestoreTy
 
 extension DefaultZoneRepository: ZoneRepositoryQuerying {
     public func query() -> Single<[Zone]> {
-        return firestore.getDocuments(collection: "zone")
-            .map { $0.map { $0.toEntity() }.sorted(by: <) }
+        let zoneDTOs: Single<[ZoneDTO]> = firestore.getDocuments(collection: "zone")
+        return zoneDTOs.map { $0.map { $0.toEntity() }.sorted(by: <) }
     }
     
     public func query(name: String) -> Single<Zone> {
-        return firestore.getDocument(collection: "zone", document: name)
-            .map { $0.toEntity() }
+        let zoneDTO: Single<ZoneDTO> = firestore.getDocument(collection: "zone", document: name)
+        return zoneDTO.map { $0.toEntity() }
     }
 }
 
@@ -46,6 +46,8 @@ extension DefaultZoneRepository: ZoneRepositoryQuerying {
 
 extension DefaultZoneRepository: ZoneRepositoryCommanding {
     public func save(data: Zone) -> Completable {
-        return firestore.setData(collection: "zone", document: "\(data.name)", data: ZoneDTO(zone: data))
+        return firestore.setData(collection: "zone",
+                                 document: "\(data.name)",
+                                 data: ZoneDTO(zone: data))
     }
 }
