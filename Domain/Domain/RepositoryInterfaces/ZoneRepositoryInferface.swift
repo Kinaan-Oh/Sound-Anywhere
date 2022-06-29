@@ -16,5 +16,3 @@ public protocol ZoneRepositoryQuerying {
 public protocol ZoneRepositoryCommanding {
     func save(data: Zone) -> Completable
 }
- 
-public typealias ZoneRepository = ZoneRepositoryQuerying & ZoneRepositoryCommanding

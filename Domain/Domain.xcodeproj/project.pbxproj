@@ -18,7 +18,7 @@
 		B4218D222813968E00604436 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4218D212813968E00604436 /* Track.swift */; };
 		B42BC3922812E77E00FC1486 /* CommandCLLocationServiceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC3912812E77E00FC1486 /* CommandCLLocationServiceUseCase.swift */; };
 		B4775A7627E8DA2B00425734 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = B4775A7527E8DA2B00425734 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4ACBE3028140B6E00E09E5C /* ZoneRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE2F28140B6E00E09E5C /* ZoneRepository.swift */; };
+		B4ACBE3028140B6E00E09E5C /* ZoneRepositoryInferface.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE2F28140B6E00E09E5C /* ZoneRepositoryInferface.swift */; };
 		B4ACBEA02815530200E09E5C /* QueryZoneUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBE9F2815530200E09E5C /* QueryZoneUseCase.swift */; };
 		B4ACBEA42815547000E09E5C /* ZoneRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACBEA32815547000E09E5C /* ZoneRepositoryStub.swift */; };
 		B4C062D72815D89C00C23D79 /* DefaultQueryZoneUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C062D62815D89C00C23D79 /* DefaultQueryZoneUseCaseTests.swift */; };
@@ -67,7 +67,7 @@
 		B4535E562809E9690020018E /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775A7227E8DA2B00425734 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4775A7527E8DA2B00425734 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
-		B4ACBE2F28140B6E00E09E5C /* ZoneRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepository.swift; sourceTree = "<group>"; };
+		B4ACBE2F28140B6E00E09E5C /* ZoneRepositoryInferface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepositoryInferface.swift; sourceTree = "<group>"; };
 		B4ACBE9F2815530200E09E5C /* QueryZoneUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryZoneUseCase.swift; sourceTree = "<group>"; };
 		B4ACBEA32815547000E09E5C /* ZoneRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneRepositoryStub.swift; sourceTree = "<group>"; };
 		B4C062D62815D89C00C23D79 /* DefaultQueryZoneUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultQueryZoneUseCaseTests.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 				B4775A7527E8DA2B00425734 /* Domain.h */,
 				B4E12DDB2813038C0064AA3E /* Entities */,
 				B4E12DD5281302540064AA3E /* UseCases */,
-				B4E12DD82813027E0064AA3E /* RepositoryInterface */,
+				B4E12DD82813027E0064AA3E /* RepositoryInterfaces */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -166,12 +166,12 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
-		B4E12DD82813027E0064AA3E /* RepositoryInterface */ = {
+		B4E12DD82813027E0064AA3E /* RepositoryInterfaces */ = {
 			isa = PBXGroup;
 			children = (
-				B4ACBE2F28140B6E00E09E5C /* ZoneRepository.swift */,
+				B4ACBE2F28140B6E00E09E5C /* ZoneRepositoryInferface.swift */,
 			);
-			path = RepositoryInterface;
+			path = RepositoryInterfaces;
 			sourceTree = "<group>";
 		};
 		B4E12DDB2813038C0064AA3E /* Entities */ = {
@@ -333,7 +333,7 @@
 			files = (
 				B4ACBEA02815530200E09E5C /* QueryZoneUseCase.swift in Sources */,
 				B42BC3922812E77E00FC1486 /* CommandCLLocationServiceUseCase.swift in Sources */,
-				B4ACBE3028140B6E00E09E5C /* ZoneRepository.swift in Sources */,
+				B4ACBE3028140B6E00E09E5C /* ZoneRepositoryInferface.swift in Sources */,
 				B4218D222813968E00604436 /* Track.swift in Sources */,
 				B4E12DDD281303B10064AA3E /* Zone.swift in Sources */,
 				B4F087CB280E81B000A901C1 /* QueryCLLocationServiceUseCase.swift in Sources */,

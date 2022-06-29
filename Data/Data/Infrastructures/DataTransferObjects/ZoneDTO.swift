@@ -45,13 +45,4 @@ public struct ZoneDTO: Codable {
     }
 }
 
-extension ZoneDTO: Equatable {
-    public static func == (lhs: ZoneDTO, rhs: ZoneDTO) -> Bool {
-        return
-            lhs.id == rhs.id &&
-            lhs.name == rhs.name &&
-            lhs.trackList == rhs.trackList &&
-            lhs.latitude == rhs.latitude &&
-            lhs.longitude == rhs.longitude
-    }
-}
+extension ZoneDTO: Equatable {}
