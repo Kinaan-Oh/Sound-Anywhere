@@ -1,12 +1,11 @@
 # 프로젝트 소개
-### Sound Anywhere은 일상 속 의미있는 공간에 어울리는 음원을 공유하는 위치기반 서비스입니다.
+### 일상 속 의미있는 공간에 어울리는 음원을 공유하는 위치기반 서비스
 
 ## 프로젝트 구조
 ### **MVVM** / **Clean Architecture**
 * * *
 ![](./ScreenShots/001.jpeg)
 * * *
-
 
 ## 프로젝트 구현 기능
 ### 지도 화면
@@ -20,12 +19,14 @@
 ---
 
 ### Clean Architecture
-- 비즈니스 로직(Domain)을 외부 레이어(Presentation, Data)에 독립적 테스트. (외부 레이어에 의존 X)
+- Dependency Rule: UI(View/ViewController) -> Presentation(ViewModel) -> Domain(Usecase,Entities) <-
+  Data(Repository) <- Infra(Network,DB)
+- 장점: 비즈니스 로직은 외부 레이어의 변경에 영향을 받지 않음(외부 레이어에 의존X). 외부 레이어에 독립적 테스트 가능.
 
 ---
 
 ### Modularization
-- Clean Architecture Layer를 별도 모듈로 분리.
+- Clean Architecture 각 Layer를 별도 모듈로 분리.
 - Storyboard, Asset(color, image, json, etc)를 Resource 모듈로 분리.
 - 전역적으로 사용되는 Extension, UserDefault를 Common 모듈로 분리.
 - Rx에 의존적인 Extension을 RxCommon 모듈로 분리.
@@ -34,13 +35,18 @@
 ---
 
 ### MVVM
-- Data Binding을 통해 ViewModel이 View에 의존하지 않으므로 View에 독립적 테스트.
+- Reponsibility: Abstraction Of View (ViewState, Command/Action(Execute Model Behavior), 
+  Value Converter(Convert ModelOutput to ViewState)).
+- 필요 조건: Data Binding (When the state of the view model is changed, the state of the view is
+  changed together, and vice versa. Reponsibility of View)
+- 장점: ViewModel has no dependency to a View -> ViewModel can be Testable, Reusable.
 
 ---
 
 ### RxSwift
 - Observable 모델은 비동기 이벤트 스트림을 Operator로 쉽게 처리. 또한 복잡한 CallBack을 회피하여 가독성 개선,
 의도하지 않은 버그 회피.
+- MVVM(View와 ViewModel간 Data Binding)에 적합.
 
 ---
 
