@@ -5,6 +5,7 @@
 //  Created by 오현식 on 2022/04/24.
 //
 
+import Data
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import RxSwift

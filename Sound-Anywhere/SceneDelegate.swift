@@ -10,6 +10,7 @@ import UIKit
 
 import Data
 import Domain
+import Infrastructure
 import Presentation
 import Resource
 import RxCommon

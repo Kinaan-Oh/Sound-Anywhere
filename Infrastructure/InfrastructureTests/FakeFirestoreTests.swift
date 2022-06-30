@@ -15,13 +15,13 @@ import RxTestPackage
 
 final class FakeFirestoreTests: XCTestCase {
     // Given
-    var fakeFirestore: FakeFirestore<ZoneDTO>!
+    var fakeFirestore: FakeFirestore!
     var data: ZoneDTO!
     
     override func setUp() {
         super.setUp()
     
-        fakeFirestore = FakeFirestore<ZoneDTO>()
+        fakeFirestore = FakeFirestore()
         let dummy = getDummy()
         data = dummy.first!
     }
@@ -32,15 +32,6 @@ final class FakeFirestoreTests: XCTestCase {
             .to(beNil())
     }
     
-    func test_setData_then_fail() {
-        // When
-        setData()
-        
-        // Then
-        expect(self.fakeFirestore.setData(collection: "zone", document: "합정", data: self.data)).first
-            .to(throwError(FakeFirestore<ZoneDTO>.FirestoreError.documentAleadyExist))
-    }
-    
     func test_getDocument_then_succeed() {
         // When
         setData()
@@ -49,10 +40,10 @@ final class FakeFirestoreTests: XCTestCase {
         expect(self.fakeFirestore.getDocument(collection: "zone", document: "합정")).first == data
     }
     
-    func test_getDocument_then_fail() {
+    func test_getDocumentWhenDocumentNotExists_then_fail() {
         // Then
         expect(self.fakeFirestore.getDocument(collection: "zone", document: "합정")).first
-            .to(throwError(FakeFirestore<ZoneDTO>.FirestoreError.documentNotExist))
+            .to(throwError(FakeFirestore<ZoneDTO>.FakeFirestoreError.documentNotExist))
     }
     
     func test_getDocuments_then_succeed() {
@@ -63,10 +54,10 @@ final class FakeFirestoreTests: XCTestCase {
         expect(self.fakeFirestore.getDocuments(collection: "zone")).first == [data]
     }
     
-    func test_getDocuments_then_fail() {
+    func test_getDocumentsWhenDocumentsNotExist_then_fail() {
         // Then
         expect(self.fakeFirestore.getDocuments(collection: "zone")).first
-            .to(throwError(FakeFirestore<ZoneDTO>.FirestoreError.documentsNotExist))
+            .to(throwError(FakeFirestore<ZoneDTO>.FakeFirestoreError.documentsNotExist))
     }
     
     private func getDummy() -> [ZoneDTO] {
@@ -77,8 +68,6 @@ final class FakeFirestoreTests: XCTestCase {
     }
     
     private func setData() {
-        fakeFirestore.db["zone"] = FakeFirestore.Collection()
-        fakeFirestore.db["zone"]!.collection["합정"] = FakeFirestore.Collection.Document()
-        fakeFirestore.db["zone"]!.collection["합정"]!.data = data
+        fakeFirestore.db["zone"] = ["합정": data]
     }
 }
