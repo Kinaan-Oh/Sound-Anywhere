@@ -27,6 +27,8 @@
 		B469DF2E2845EE6200ABD5C9 /* SwinjectStoryboard in Frameworks */ = {isa = PBXBuildFile; productRef = B469DF2D2845EE6200ABD5C9 /* SwinjectStoryboard */; };
 		B47C4412283E5D4D0048B334 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = B47C4411283E5D4D0048B334 /* Quick */; };
 		B47C4415283E5D600048B334 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = B47C4414283E5D600048B334 /* Nimble */; };
+		B4875E53286D642F009E2603 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4875E52286D642F009E2603 /* UI.framework */; };
+		B4875E54286D642F009E2603 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4875E52286D642F009E2603 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4E8D1AD280BEA8D003EEFFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4E8D1AC280BEA8D003EEFFC /* GoogleService-Info.plist */; };
 		B4FFD717283E0D2E0074C64C /* SoundAnywhereUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FFD716283E0D2E0074C64C /* SoundAnywhereUITests.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,7 @@
 				B408BDA3282D7A8800044B81 /* Common.framework in Embed Frameworks */,
 				B408BDB0282D7A9700044B81 /* Resource.framework in Embed Frameworks */,
 				B408BF3F2832300400044B81 /* RxPackage.framework in Embed Frameworks */,
+				B4875E54286D642F009E2603 /* UI.framework in Embed Frameworks */,
 				B408BE342831348500044B81 /* RxCommon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -75,6 +78,7 @@
 		B45164CF27E8C81300347409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B45164D127E8C81300347409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B47758A027E8D01700425734 /* Sound-Anywhere.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sound-Anywhere.entitlements"; sourceTree = "<group>"; };
+		B4875E52286D642F009E2603 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E8D1AC280BEA8D003EEFFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B4FFD714283E0D2E0074C64C /* Sound-AnywhereUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sound-AnywhereUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FFD716283E0D2E0074C64C /* SoundAnywhereUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundAnywhereUITests.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				B408BDA2282D7A8800044B81 /* Common.framework in Frameworks */,
 				B408BDAF282D7A9700044B81 /* Resource.framework in Frameworks */,
 				B408BF3E2832300400044B81 /* RxPackage.framework in Frameworks */,
+				B4875E53286D642F009E2603 /* UI.framework in Frameworks */,
 				B408BE332831348500044B81 /* RxCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +156,7 @@
 		C1D1493B6941818B7A88DDB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B4875E52286D642F009E2603 /* UI.framework */,
 				B408BF3D2832300400044B81 /* RxPackage.framework */,
 				B408BE322831348500044B81 /* RxCommon.framework */,
 				B408BDAE282D7A9700044B81 /* Resource.framework */,

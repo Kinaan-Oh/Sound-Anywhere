@@ -9,7 +9,7 @@ import MapKit
 import UIKit
 
 import Common
-import Domain
+import Presentation
 import RxCocoa
 import RxSwift
 
@@ -23,7 +23,13 @@ public final class MapViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    public var viewModel: MapViewModelType?
+    public var viewModel: MapViewModelType? {
+        didSet {
+            if viewModel != nil {
+                bindViewModel()
+            }
+        }
+    }
     private var disposeBag = DisposeBag()
     private var currentLocationAnnotation = AnnotationFactory.create(of: .currentLocation,
                                                                      coordinate: .init())
@@ -35,7 +41,6 @@ public final class MapViewController: UIViewController {
         super.viewDidLoad()
         configureMapView()
         configureUI()
-        bindViewModel()
         bindUI()
         bindNotifications()
     }
@@ -85,9 +90,9 @@ public final class MapViewController: UIViewController {
         mapView.addAnnotation(currentLocationAnnotation)
     }
     
-    private func configureZoneAnnotations(zones: [Zone]) {
+    private func configureZoneAnnotations(coordinates: [CLLocationCoordinate2D]) {
         mapView.removeAnnotations(zoneAnnotations)
-        zoneAnnotations = zones.map { AnnotationFactory.create(of: .zone, coordinate: $0.coordinate) }
+        zoneAnnotations = coordinates.map { AnnotationFactory.create(of: .zone, coordinate: $0) }
         mapView.addAnnotations(zoneAnnotations)
     }
     
@@ -114,10 +119,10 @@ public final class MapViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        viewModel?.outputs.zones
-            .drive { [weak self] zones in
+        viewModel?.outputs.zoneCoordinates
+            .drive { [weak self] zoneCoordinates in
                 guard let self = self else { return }
-                self.configureZoneAnnotations(zones: zones)
+                self.configureZoneAnnotations(coordinates: zoneCoordinates)
             }
             .disposed(by: disposeBag)
     }

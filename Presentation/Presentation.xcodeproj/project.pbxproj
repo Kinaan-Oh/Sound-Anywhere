@@ -11,8 +11,6 @@
 		B408BD90282D652700044B81 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BD8E282D652700044B81 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B408BD93282D653100044B81 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BD92282D653100044B81 /* Domain.framework */; };
 		B408BD94282D653100044B81 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BD92282D653100044B81 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B408BD9D282D6C2400044B81 /* Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BD9C282D6C2400044B81 /* Resource.framework */; };
-		B408BD9E282D6C2400044B81 /* Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BD9C282D6C2400044B81 /* Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B408BF042832253B00044B81 /* RxCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF032832253B00044B81 /* RxCommon.framework */; };
 		B408BF052832253B00044B81 /* RxCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF032832253B00044B81 /* RxCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B408BF072832253F00044B81 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF062832253F00044B81 /* RxPackage.framework */; };
@@ -20,14 +18,9 @@
 		B408BF222832277800044B81 /* RxPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF212832277800044B81 /* RxPackage.framework */; };
 		B408BF242832278200044B81 /* RxTestPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B408BF232832278200044B81 /* RxTestPackage.framework */; };
 		B408BF412832478200044B81 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408BF402832478100044B81 /* MapViewModel.swift */; };
-		B419A1232816A35400EB19CF /* AnnotationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419A1222816A35400EB19CF /* AnnotationFactory.swift */; };
-		B419A1252816A3D600EB19CF /* AnnotationViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */; };
 		B42BC38B2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42BC38A2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift */; };
 		B4535DF72809E0EC0020018E /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535DF62809E0EC0020018E /* MapViewModelTests.swift */; };
 		B47759A727E8D73C00425734 /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = B47759A627E8D73C00425734 /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B47759D927E8D76C00425734 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47759C727E8D76C00425734 /* MapViewController.swift */; };
-		B491B1EF2812A220003E2F7F /* MKMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B1EE2812A220003E2F7F /* MKMapView+Extension.swift */; };
-		B491B1F12812A356003E2F7F /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B491B1F02812A356003E2F7F /* UIViewController+Rx.swift */; };
 		B49487F42817032A0059F29A /* QueryZoneUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49487F32817032A0059F29A /* QueryZoneUseCaseStub.swift */; };
 		B4F1EBAA28104BF700F1BE4E /* CommandCLLocationServiceUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F1EBA928104BF700F1BE4E /* CommandCLLocationServiceUseCaseMock.swift */; };
 /* End PBXBuildFile section */
@@ -52,7 +45,6 @@
 				B408BF082832253F00044B81 /* RxPackage.framework in Embed Frameworks */,
 				B408BD94282D653100044B81 /* Domain.framework in Embed Frameworks */,
 				B408BF052832253B00044B81 /* RxCommon.framework in Embed Frameworks */,
-				B408BD9E282D6C2400044B81 /* Resource.framework in Embed Frameworks */,
 				B408BD90282D652700044B81 /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -69,16 +61,11 @@
 		B408BF212832277800044B81 /* RxPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BF232832278200044B81 /* RxTestPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxTestPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B408BF402832478100044B81 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		B419A1222816A35400EB19CF /* AnnotationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationFactory.swift; sourceTree = "<group>"; };
-		B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationViewFactory.swift; sourceTree = "<group>"; };
 		B42BC38A2812E58100FC1486 /* QueryCLLocationServiceUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryCLLocationServiceUseCaseStub.swift; sourceTree = "<group>"; };
 		B4535DEC2809E0E20020018E /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4535DF62809E0EC0020018E /* MapViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
 		B47759A327E8D73C00425734 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47759A627E8D73C00425734 /* Presentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Presentation.h; sourceTree = "<group>"; };
-		B47759C727E8D76C00425734 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		B491B1EE2812A220003E2F7F /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
-		B491B1F02812A356003E2F7F /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		B49487F32817032A0059F29A /* QueryZoneUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryZoneUseCaseStub.swift; sourceTree = "<group>"; };
 		B4F1EBA928104BF700F1BE4E /* CommandCLLocationServiceUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCLLocationServiceUseCaseMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,7 +87,6 @@
 				B408BF072832253F00044B81 /* RxPackage.framework in Frameworks */,
 				B408BD93282D653100044B81 /* Domain.framework in Frameworks */,
 				B408BF042832253B00044B81 /* RxCommon.framework in Frameworks */,
-				B408BD9D282D6C2400044B81 /* Resource.framework in Frameworks */,
 				B408BD8F282D652700044B81 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,15 +94,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B419A11B2816A33F00EB19CF /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				B419A1222816A35400EB19CF /* AnnotationFactory.swift */,
-				B419A1242816A3D600EB19CF /* AnnotationViewFactory.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		B42BC3832812E55F00FC1486 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,20 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				B47759A627E8D73C00425734 /* Presentation.h */,
-				B491B1EA2812A216003E2F7F /* Extensions */,
-				B47759C227E8D76C00425734 /* Map */,
+				B4875E4E286D5B54009E2603 /* ViewModels */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		B47759C227E8D76C00425734 /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				B419A11B2816A33F00EB19CF /* Common */,
-				B47759C727E8D76C00425734 /* MapViewController.swift */,
-				B408BF402832478100044B81 /* MapViewModel.swift */,
-			);
-			path = Map;
 			sourceTree = "<group>";
 		};
 		B4775AE327E9E6A400425734 /* Frameworks */ = {
@@ -189,13 +155,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B491B1EA2812A216003E2F7F /* Extensions */ = {
+		B4875E4E286D5B54009E2603 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				B491B1EE2812A220003E2F7F /* MKMapView+Extension.swift */,
-				B491B1F02812A356003E2F7F /* UIViewController+Rx.swift */,
+				B408BF402832478100044B81 /* MapViewModel.swift */,
 			);
-			path = Extensions;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		B4F1EBA528104BD000F1BE4E /* Mocks */ = {
@@ -333,12 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B419A1232816A35400EB19CF /* AnnotationFactory.swift in Sources */,
 				B408BF412832478200044B81 /* MapViewModel.swift in Sources */,
-				B491B1EF2812A220003E2F7F /* MKMapView+Extension.swift in Sources */,
-				B47759D927E8D76C00425734 /* MapViewController.swift in Sources */,
-				B491B1F12812A356003E2F7F /* UIViewController+Rx.swift in Sources */,
-				B419A1252816A3D600EB19CF /* AnnotationViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +480,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
 				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -552,6 +513,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
 				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";

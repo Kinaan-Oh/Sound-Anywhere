@@ -10,8 +10,6 @@
 import CoreLocation
 import MapKit
 
-import Domain
-
 enum AnnotationFactory {
     enum AnnotationType {
         case currentLocation
