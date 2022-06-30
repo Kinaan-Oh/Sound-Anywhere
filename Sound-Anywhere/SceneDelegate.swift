@@ -13,47 +13,39 @@ import Domain
 import Presentation
 import Resource
 import RxCommon
-import Swinject
-import SwinjectStoryboard
+import UI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
-    private lazy var container: Container = {
-        let container = Container()
+    private lazy var mapViewModel: MapViewModelType = {
+        let locationService = CLLocationService()
         
-        container.storyboardInitCompleted(MapViewController.self) { r, c in
-            c.viewModel = r.resolve(MapViewModelType.self)
-        }
-        container.register(MapViewModelType.self) { _ in
-            let locationService = CLLocationService()
-            
-            let queryCLLocationServiceUseCase = DefaultQueryCLLocationServiceUseCase(locationService: locationService)
-            let commandCLLocationServiceUseCase = DefaultCommandCLLocationServiceUseCase(locationService: locationService)
-            
-            var firestore: FirestoreType
-            #if DEBUG
-                firestore = FakeFirestore()
-            #else
-                firestore = DefaultFireStore()
-            #endif
+        let queryCLLocationServiceUseCase = DefaultQueryCLLocationServiceUseCase(locationService: locationService)
+        let commandCLLocationServiceUseCase = DefaultCommandCLLocationServiceUseCase(locationService: locationService)
+        
+        var firestore: FirestoreType
+        #if DEBUG
+            firestore = FakeFirestore()
+        #else
+            firestore = DefaultFireStore()
+        #endif
 
-            let zoneRepository = DefaultZoneRepository(firestore: firestore)
+        let zoneRepository = DefaultZoneRepository(firestore: firestore)
 
-            if let data = Resource.Dummy.zone,
-               let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data) {
-                zoneRepository.setDummy(dummy: dummy)
-            }
-            
-            let queryZoneUseCase = DefaultQueryZoneUseCase(zoneRepository: zoneRepository)
-          
-            return MapViewModel(defaultLocation: CLLocation(latitude: 37.54887101,
-                                                            longitude: 126.91332598),
-                                queryCLLocationServiceUseCase: queryCLLocationServiceUseCase,
-                                commandCLLocationServiceUseCase: commandCLLocationServiceUseCase,
-                                queryZoneUseCase: queryZoneUseCase)
+        if let data = Resource.Dummy.zone,
+           let dummy = try? JSONDecoder().decode([ZoneDTO].self, from: data) {
+            zoneRepository.setDummy(dummy: dummy)
         }
-        return container
+        
+        let queryZoneUseCase = DefaultQueryZoneUseCase(zoneRepository: zoneRepository)
+      
+        return MapViewModel(defaultLocation: CLLocation(latitude: 37.54887101,
+                                                        longitude: 126.91332598),
+                            queryCLLocationServiceUseCase: queryCLLocationServiceUseCase,
+                            commandCLLocationServiceUseCase: commandCLLocationServiceUseCase,
+                            queryZoneUseCase: queryZoneUseCase)
+        
     }()
     
     func scene(_ scene: UIScene,
@@ -82,12 +74,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // MARK: - Private Methods
     
     private func configureWindow(_ windowScene: UIWindowScene) {
-        let storyboardID = Resource.Storyboard.ID.map
-        let storyboard = SwinjectStoryboard.create(name: storyboardID.stringValue,
-                                                   bundle: Resource.bundle,
-                                                   container: container)
+        let storyboard = Resource.Storyboard(id: .map)
+        let mapViewController: MapViewController = storyboard.instance()
+        mapViewController.viewModel = mapViewModel
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: storyboardID.stringValue)
+        window?.rootViewController = mapViewController
         window?.makeKeyAndVisible()
     }
 }
